@@ -139,19 +139,6 @@ html, body {
     box-shadow: 0 0 0 2px var(--color-fondo-barra-navegacion);
 }
 
-.contenedor-aplicacion-pantalla-completa {
-    background-color: var(--fondo-oscuro);
-    width: 100%;
-    max-width: 1200px;
-    min-height: calc(100vh - 60px); /* Ajusta a la altura de la barra de navegacion */
-    margin: var(--espaciado-xl) auto;
-    border-radius: var(--espaciado-xl);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-}
-
 .cabecera-app {
     background-color: var(--fondo-cabecera);
     padding: var(--espaciado-m) var(--espaciado-xl);
