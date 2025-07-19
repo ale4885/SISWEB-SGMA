@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fondo-app: #000000;
+  --color-texto-claro: white;
+  --color-texto-oscuro: #2c3e50;
+  --color-primario: #e74c3c;
+  --color-primario-hover: #c0392b;
+  --sombra-general: 0 2px 5px rgba(0, 0, 0, 0.2);
+  --sombra-carta: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --radio-borde: 8px;
+  --padding-general: 10px;
+  --margen-general: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--fondo-app);
+  color: var(--color-texto-oscuro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.barra-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-texto-oscuro);
+  padding: var(--padding-general) var(--margen-general);
+  color: var(--color-texto-claro);
+  box-shadow: var(--sombra-general);
+  width: 100%;
+}
+
+.barra-navegacion-izquierda {
+  display: flex;
+  align-items: center;
+}
+
+.barra-navegacion-izquierda .logo-img {
+  height: 40px;
+  margin-right: 15px;
+}
+
+.barra-navegacion-centro {
+  margin-left: 0;
+}
+
+.barra-navegacion-centro ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.barra-navegacion-centro ul li {
+  margin-right: 5px;
+}
+
+.barra-navegacion-centro ul li .enlace-navegacion {
+  text-decoration: none;
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: var(--radio-borde);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+}
+
+.barra-navegacion-centro ul li .enlace-navegacion.activo {
+  background-color: white;
+  color: var(--color-texto-oscuro);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.barra-navegacion-centro ul li .enlace-navegacion:not(.activo):hover {
+  background-color: var(--color-primario-hover);
+  transform: translateY(-1px);
+}
+
+.barra-navegacion-centro ul li .enlace-navegacion.activo:hover {
+  transform: translateY(-1px);
+}
+
+.barra-navegacion-derecha {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-texto-claro);
+}
+
+.info-usuario {
+  text-align: right;
+  margin-right: 15px;
+}
+
+.info-usuario .nombre-usuario {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.info-usuario .rol-usuario,
+.info-usuario .detalle-usuario {
+  font-size: 0.85em;
+  color: #b0c4de;
+}
+
+.avatar-usuario img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px var(--color-texto-oscuro);
+}
+
+.contenido-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--margen-general);
+  gap: var(--margen-general);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contenedor-grafico {
+  margin: 0;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--sombra-carta);
+  max-width: 45%;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.contenedor-grafico h2 {
+  color: #333;
+  font-size: 1.8em;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.apexcharts-canvas {
+  margin: 0 auto;
+}
+
+.apexcharts-datalabels-group text {
+  fill: #333 !important;
+}
+
+.apexcharts-legend {
+  padding-top: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.apexcharts-legend-series {
+  margin: 0 15px;
+  font-size: 0.95em;
+  color: #555;
+}
