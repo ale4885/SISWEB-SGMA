@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/estudiante.css" />
+</head>
+
+<body>
+  <header class="barra-navegacion">
+    <div class="barra-navegacion-izquierda">
+      <div class="logo">
+        <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logo-imagen">
+      </div>
+      <nav class="barra-navegacion-central">
+        <ul>
+          <li><a href="estudiante.html" class="enlace-navegacion activo">Inicio</a></li>
+          <li><a href="mis-trabajos.html" class="enlace-navegacion">Mis trabajos</a></li>
+          <li><a href="registro-auto.html" class="enlace-navegacion">Registrar Vehículo</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="barra-navegacion-derecha" id="perfilUsuarioNav">
+      <div class="informacion-usuario">
+        <span class="nombre-usuario" id="nombreUsuarioHeader"></span>
+        <span class="rol-usuario" id="rolUsuarioHeader"></span>
+        <span class="detalle-usuario" id="detalleUsuarioHeader"></span>
+      </div>
+      <div class="avatar-usuario">
+        <img src="placeholder-avatar.png" alt="Avatar" id="avatarUsuarioHeader">
+      </div>
+    </div>
+  </header>
+
+  <div class="contenedor-app-pantalla-completa">
+    <main class="contenido-principal-estudiantes">
+
+      <h2 class="mensaje-bienvenida">Bienvenido/a: <span id="nombreBienvenida"></span></h2>
+
+      <div class="contenedor-tarjetas">
+        <div class="tarjeta">
+          <img src="https://img.icons8.com/ios-filled/100/000000/car--v1.png" alt="Registrar vehículo" />
+          <a class="boton" href="registro-auto.html">Registrar vehiculo <span class="flecha">➤</span></a>
+        </div>
+
+        <div class="tarjeta">
+          <img src="https://img.icons8.com/ios-filled/100/000000/activity-history.png" alt="Mis trabajos" />
+          <a class="boton" href="mis-trabajos.html">Mis trabajos <span class="flecha">➤</span></a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="js/estudiante.js"></script>
+  <script src="js/estudiante-nav.js"></script>
+</body>
+
+</html>

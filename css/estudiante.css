@@ -1,0 +1,297 @@
+/* Reinicio basico */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fondo-app: #2b2b2b;
+  --fondo-cabecera: #2c3e50;
+  --fondo-tarjeta: white;
+  --texto-claro: white;
+  --texto-resaltado: #dcdcdc;
+  --fondo-boton: #e74c3c;
+  --fondo-boton-hover: #c0392b;
+  --fondo-boton-volver: #444;
+  --fondo-boton-volver-hover: #555;
+  --tamano-fuente-bienvenida: 1.3rem;
+  --tamano-foto-perfil: 100px;
+  --altura-cabecera: 60px;
+  --rojo-primario: #A32F2A;
+  --color-texto-botones-nav: white;
+  --color-texto-activo-nav: #2c3e50;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--fondo-app);
+  color: var(--texto-claro);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-app-pantalla-completa {
+  background-color: var(--fondo-app);
+  width: 100%;
+  max-width: 960px; /* Ancho ajustado para escritorio */
+  flex-grow: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinear arriba en escritorio */
+  align-items: center;
+  margin: 20px auto; /* Centrar y dar margen vertical */
+  position: relative;
+  padding-bottom: 20px; /* Espacio inferior */
+  box-sizing: border-box;
+  border-radius: 20px;
+  height: calc(100vh - var(--altura-cabecera) - 40px); /* Ajustar altura */
+}
+
+
+/* --- ESTILOS DE LA BARRA DE NAVEGACION (HEADER) --- */
+.barra-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--fondo-cabecera);
+  padding: 10px 20px;
+  color: var(--texto-claro);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: var(--altura-cabecera);
+}
+
+.barra-navegacion-izquierda {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-imagen {
+  height: 40px;
+  margin-right: 15px;
+}
+
+.barra-navegacion-central {
+  margin-left: 0;
+}
+
+.barra-navegacion-central ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.barra-navegacion-central ul li {
+  margin-right: 5px;
+}
+
+.barra-navegacion-central ul li .enlace-navegacion {
+  text-decoration: none;
+  background-color: var(--fondo-boton);
+  color: var(--color-texto-botones-nav);
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+}
+
+.barra-navegacion-central ul li .enlace-navegacion.activo {
+  background-color: var(--fondo-tarjeta);
+  color: var(--color-texto-activo-nav);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.barra-navegacion-central ul li .enlace-navegacion:not(.activo):hover {
+  background-color: var(--fondo-boton-hover);
+  transform: translateY(-1px);
+}
+
+.barra-navegacion-central ul li .enlace-navegacion.activo:hover {
+  transform: translateY(-1px);
+}
+
+.barra-navegacion-derecha {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Indicar que es clickeable */
+}
+
+.informacion-usuario {
+  text-align: right;
+  margin-right: 15px;
+}
+
+.informacion-usuario .nombre-usuario {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.informacion-usuario .rol-usuario,
+.informacion-usuario .detalle-usuario {
+  font-size: 0.85em;
+  color: #b0c4de;
+}
+
+.avatar-usuario img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px var(--fondo-cabecera);
+}
+
+/* --- ESTILOS DEL CONTENIDO PRINCIPAL Y CENTRADO DE TARJETAS --- */
+.contenido-principal-estudiantes {
+  flex-grow: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  justify-content: flex-start; /* Alinear arriba para escritorio */
+  width: 100%;
+}
+
+.mensaje-bienvenida {
+  font-size: var(--tamano-fuente-bienvenida);
+  margin-bottom: 30px;
+  color: var(--texto-claro);
+  text-align: center;
+}
+
+.mensaje-bienvenida span {
+  font-weight: bold;
+  color: var(--texto-resaltado);
+}
+
+.contenedor-foto-perfil {
+    width: var(--tamano-foto-perfil);
+    height: var(--tamano-foto-perfil);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 3px solid var(--rojo-primario);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.contenedor-foto-perfil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.contenedor-tarjetas {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.tarjeta {
+  background-color: var(--fondo-tarjeta);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 0 5px #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tarjeta img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+.boton {
+  background-color: var(--fondo-boton);
+  color: var(--texto-claro);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: inset -3px -3px 5px rgba(255,255,255,0.2),
+              inset 3px 3px 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background-color: var(--fondo-boton-hover);
+}
+
+.flecha {
+  font-size: 1.2rem;
+}
+
+/* Estilos específicos del modal (mantener si se usan, adaptar a español si aplica) */
+.contenido-modal {
+    background-color: #333;
+    border: 1px solid #444;
+}
+
+.encabezado-modal {
+    border-bottom: 1px solid #444;
+}
+
+.pie-modal {
+    border-top: 1px solid #444;
+}
+
+.titulo-modal {
+    color: #f0f0f0;
+}
+
+/* Estilos para el contenido del perfil */
+.mostrar-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 30px #000000;
+}
+
+.icono-perfil-defecto {
+    font-size: 120px;
+    color: #A32F2A;
+}
+
+.nombre-usuario {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
