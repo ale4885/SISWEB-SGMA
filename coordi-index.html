@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SGMA</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="imgs/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/coordi-index.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <div class="logo">
+                <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logo-img">
+            </div>
+            <nav class="navbar-center">
+                <ul>
+                    <li><a href="coordi-index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="1er-año.html" class="nav-link">Notas</a></li>
+                    <li><a href="reportes.html" class="nav-link">Reportes</a></li>
+                    <li><a href="admin.html" class="nav-link">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right zona-perfil-clicable">
+            <div class="info-usuario">
+                <span class="nombre-usuario" id="nombreUsuario">FERNANDO JAVIER</span>
+                <span class="rol-usuario">Segundo año</span>
+                <span class="detalle-usuario">Desarrollo de Software</span>
+            </div>
+            <div class="avatar-usuario">
+                <img src="placeholder-avatar.png" alt="Avatar">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="seccion-contenido">
+            <div id="seccion-bienvenida" class="seccion-tipo-tarjeta">
+                <h2 id="mensajeBienvenida">Bienvenido al SGMA</h2>
+                <p>Tu plataforma de gestión vehicular.</p>
+            </div>
+
+            <div class="contenedor-tarjetas-tablero">
+                <div class="tarjeta-tablero">
+                    <i class="fas fa-car icono-tarjeta"></i>
+                    <div class="info-tarjeta">
+                        <p class="etiqueta-tarjeta">Vehículos Registrados</p>
+                        <h3 class="valor-tarjeta" id="conteoVehiculosRegistrados">--</h3>
+                    </div>
+                </div>
+                <div class="tarjeta-tablero">
+                    <i class="fas fa-user-graduate icono-tarjeta"></i>
+                    <div class="info-tarjeta">
+                        <p class="etiqueta-tarjeta">Alumnos Registrados</p>
+                        <h3 class="valor-tarjeta" id="conteoAlumnosRegistrados">--</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seccion-modulos-en-proceso seccion-tipo-tarjeta">
+                <h2>Módulos de Trabajo</h2>
+                <div class="botones-filtro">
+                    <button class="boton-filtro active" data-filter="all">Todos</button>
+                    <button class="boton-filtro" data-filter="in-process">En Proceso</button>
+                    <button class="boton-filtro" data-filter="finished">Finalizados</button>
+                    <button class="boton-filtro" data-filter="not-started">No Iniciados</button>
+                </div>
+                <div class="lista-modulos">
+                    <div class="elemento-modulo in-process" data-status="in-process">
+                        <span class="titulo-modulo">Módulo 1: Revisión de Frenos</span>
+                        <span class="estado-modulo estado-en-proceso">En Proceso</span>
+                    </div>
+                    <div class="elemento-modulo finished" data-status="finished">
+                        <span class="titulo-modulo">Módulo 2: Cambio de Aceite</span>
+                        <span class="estado-modulo estado-finalizado">Finalizado</span>
+                    </div>
+                    <div class="elemento-modulo not-started" data-status="not-started">
+                        <span class="titulo-modulo">Módulo 3: Diagnóstico Eléctrico</span>
+                        <span class="estado-modulo estado-no-iniciado">No Iniciado</span>
+                    </div>
+                    <div class="elemento-modulo in-process" data-status="in-process">
+                        <span class="titulo-modulo">Módulo 4: Suspensión y Dirección</span>
+                        <span class="estado-modulo estado-en-proceso">En Proceso</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/coordi-index.js"></script>
+</body>
+</html>

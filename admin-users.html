@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administración de Usuarios</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin-users.css" />
+</head>
+
+<body>
+  <header class="barra-navegacion">
+    <div class="barra-navegacion-izquierda">
+      <div class="logo">
+        <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logo-imagen">
+      </div>
+      <nav class="barra-navegacion-centro">
+        <ul>
+          <li><a href="admin.html" class="enlace-navegacion">Administración</a></li>
+          <li><a href="#" class="enlace-navegacion">Reportes</a></li>
+          <li><a href="#" class="enlace-navegacion">Historial</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="barra-navegacion-derecha">
+      <div class="info-usuario">
+        <span class="nombre-usuario">FERNANDO JAVIER</span>
+        <span class="rol-usuario">Segundo año</span>
+        <span class="detalle-usuario">Desarrollo de Software</span>
+      </div>
+      <div class="avatar-usuario">
+        <img src="placeholder-avatar.png" alt="Avatar">
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor-principal">
+    <h1>CRUD de Usuarios</h1>
+
+    <form id="formulario-usuario" class="formulario-usuario">
+      <div class="grupo-formulario">
+        <label for="nombreCompleto">Nombre Completo:</label>
+        <input type="text" id="nombreCompleto" required />
+      </div>
+      <div class="grupo-formulario">
+        <label for="correo">Email:</label>
+        <input type="email" id="correo" required />
+      </div>
+      <div class="grupo-formulario">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" required />
+      </div>
+      <div class="grupo-formulario seleccion-contenedor">
+        <label for="idRol">Rol:</label>
+        <select id="idRol" required>
+        </select>
+      </div>
+      <div class="grupo-formulario">
+        <label for="fotoPerfil-archivo">Foto de Perfil:</label>
+        <input type="file" id="fotoPerfil-archivo" accept="image/*" class="entrada-foto" />
+      </div>
+      <div class="contenedor-previsualizacion-foto">
+        <img id="previsualizacion-foto-perfil" class="previsualizacion-foto" alt="Previsualización de Foto de Perfil" />
+      </div>
+
+      <input type="hidden" id="url-foto-perfil" />
+      <input type="hidden" id="idUsuario" />
+
+      <button type="submit" id="btn-enviar" class="botones">Agregar Usuario</button>
+      <button type="button" id="btn-cancelar" class="botones secundario" hidden>Cancelar</button>
+    </form>
+
+    <hr class="separador-seccion" />
+
+    <div class="tabla-responsiva">
+      <table>
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Nombre Completo</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-tabla-usuarios">
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="contenedor-principal pie-pagina">
+    <p>&copy; 2025 Instituto Técnico Ricaldone</p>
+  </footer>
+
+  <script src="js/admin-users.js"></script>
+</body>
+
+</html>
