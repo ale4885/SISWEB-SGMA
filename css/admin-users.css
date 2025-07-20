@@ -60,6 +60,30 @@ body {
   width: 100%;
 }
 
+.boton-volver {
+    color: var(--texto-claro);
+    text-decoration: none;
+    padding: 0.6em 1em;
+    background-color: var(--fondo-boton-volver);
+    border-radius: 8px;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.boton-volver:hover {
+    background-color: var(--fondo-boton-volver);
+}
+
+.boton-volver i {
+    font-size: 1em;
+}
+
+
 .barra-navegacion-izquierda {
   display: flex;
   align-items: center;
