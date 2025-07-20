@@ -37,17 +37,30 @@
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--color-fondo); /* Changed to match the content area */
     color: var(--color-texto-claro);
-    height: 100vh;
+    height: 100vh; /* Ensure body takes full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 0;
-    width: 100%; /* Asegura que el body tome todo el ancho */
+    width: 100%;
 }
 
+.contenedor-aplicacion {
+    background-color: var(--color-fondo);
+    width: 100%;
+    max-width: 1024px;
+    height: auto;
+    min-height: 120vh; /* Adjust as needed to ensure enough height */
+    /* margin: 40px auto; */ /* Comment out or remove this line */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */ /* Comment out or remove this line */
+    /* border-radius: 10px; */ /* Comment out or remove this line */
+}
 /* Estilos para el nuevo navbar */
 .navbar {
     display: flex;
@@ -145,21 +158,6 @@ body {
     box-shadow: 0 0 0 2px var(--navbar-fondo);
 }
 
-/* Fin estilos navbar */
-
-.contenedor-aplicacion {
-    background-color: var(--color-fondo);
-    width: 100%;
-    max-width: 1024px;
-    height: auto;
-    min-height: 120;
-    margin: 40px auto;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para resaltar en la pantalla de computadora */
-    border-radius: 10px; /* Bordes ligeramente redondeados */
-}
 
 .contenido-principal-registro {
     flex-grow: 1;
