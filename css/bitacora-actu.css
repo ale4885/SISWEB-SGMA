@@ -44,7 +44,6 @@ html, body {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-top: 20px;
 }
 
 .barra-navegacion {
@@ -161,7 +160,6 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: var(--espaciado-xl);
-    margin: var(--espaciado-xl) auto;
 }
 
 .cabecera-aplicacion {
