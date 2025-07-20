@@ -30,15 +30,23 @@
     --color-fondo-casilla-hover: #555;
     --color-fondo-casilla-activa: #4CAF50;
     --color-borde-casilla-activa: #4CAF50;
-    --color-barra-navegacion: #2c3e50;
-    --sombra-barra-navegacion: rgba(0, 0, 0, 0.2);
+
+    /* Variables de la barra de navegación (Header) - Unificadas con perfil.css */
+    --fondo-barra-navegacion: #2c3e50;
+    --color-texto-barra-navegacion: white;
     --fondo-boton-navegacion: #e74c3c;
     --color-texto-boton-navegacion: white;
-    --fondo-boton-navegacion-activo: white;
-    --color-texto-boton-navegacion-activo: #2c3e50;
-    --sombra-boton-navegacion-activo: rgba(0, 0, 0, 0.15);
+    --fondo-boton-activo-navegacion: white; /* Renombrado para consistencia */
+    --color-texto-boton-activo-navegacion: #2c3e50; /* Renombrado para consistencia */
+    --sombra-barra-navegacion: rgba(0, 0, 0, 0.2);
+    --sombra-boton-activo: rgba(0, 0, 0, 0.15); /* Renombrado para consistencia */
     --fondo-boton-navegacion-hover: #c0392b;
-    --color-info-usuario: #b0c4de;
+    --color-texto-secundario-usuario: #b0c4de; /* Renombrado para consistencia */
+
+    /* Variables para Avatar - Añadidas desde perfil.css */
+    --color-borde-avatar: white;
+    --borde-avatar: 2px solid var(--color-borde-avatar);
+    --sombra-avatar: 0 0 0 2px var(--fondo-barra-navegacion);
 }
 
 body {
@@ -59,11 +67,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-barra-navegacion);
+    background-color: var(--fondo-barra-navegacion);
     padding: 10px 20px;
-    color: var(--texto-claro);
-    box-shadow: 0 2px 5px var(--sombra-barra-navegacion);
+    color: var(--color-texto-barra-navegacion);
+    box-shadow: var(--sombra-barra-navegacion);
     width: 100%;
+    box-sizing: border-box;
 }
 
 .barra-navegacion-izquierda {
@@ -99,19 +108,17 @@ body {
     padding: 8px 15px;
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    display: block;
 }
 
 .barra-navegacion-centro ul li .enlace-navegacion.activo {
-    background-color: var(--fondo-boton-navegacion-activo);
-    color: var(--color-texto-boton-navegacion-activo);
-    box-shadow: 0 2px 5px var(--sombra-boton-navegacion-activo);
+    background-color: var(--fondo-boton-activo-navegacion);
+    color: var(--color-texto-boton-activo-navegacion);
+    box-shadow: var(--sombra-boton-activo);
 }
 
 .barra-navegacion-centro ul li .enlace-navegacion:not(.activo):hover {
-    background-color: var(--fondo-boton-navegacion-hover);
+    background-color: #c0392b;
     transform: translateY(-1px);
 }
 
@@ -119,41 +126,43 @@ body {
     transform: translateY(-1px);
 }
 
-.barra-navegacion-centro .icono-navegacion {
-    font-size: 1.2em;
-}
-
 .barra-navegacion-derecha {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    color: var(--texto-claro);
 }
 
-.info-usuario {
+.barra-navegacion-derecha .info-usuario-enlace {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.barra-navegacion-derecha .info-usuario {
     text-align: right;
     margin-right: 15px;
 }
 
-.info-usuario .nombre-usuario {
+.barra-navegacion-derecha .info-usuario .nombre-usuario {
     display: block;
     font-weight: bold;
     font-size: 1.1em;
+    color: var(--color-texto-barra-navegacion);
 }
 
-.info-usuario .rol-usuario,
-.info-usuario .detalle-usuario {
+.barra-navegacion-derecha .info-usuario .rol-usuario,
+.barra-navegacion-derecha .info-usuario .detalle-usuario {
     font-size: 0.85em;
-    color: var(--color-info-usuario);
+    color: var(--color-texto-secundario-usuario);
 }
 
-.avatar-usuario img {
+.barra-navegacion-derecha .avatar-usuario img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 2px solid var(--texto-claro);
+    border: var(--borde-avatar);
     object-fit: cover;
-    box-shadow: 0 0 0 2px var(--color-barra-navegacion);
+    box-shadow: var(--sombra-avatar);
 }
 
 
