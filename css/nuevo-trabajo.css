@@ -6,7 +6,7 @@
     --texto-secundario: #B0B0B0;
     --texto-fuerte: #E0E0E0;
     --azul-acento: #42A5F5;
-    --boton-primario: #66BB6A;
+    --boton-primario: #851c1c;
     --radio-borde-principal: 20px;
     --radio-borde-tarjeta: 16px;
     --radio-borde-entrada: 10px;
@@ -258,6 +258,8 @@ input[type="checkbox"]:checked::before {
 }
 
 .boton-asignar {
+    text-align: center; /* Centra el texto horizontalmente dentro del elemento */
+    text-decoration: none; /* Elimina cualquier subrayado (común en enlaces <a>) */
     width: 100%;
     padding: var(--espaciado-l) var(--espaciado-xl);
     border: none;
@@ -275,7 +277,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .boton-asignar:hover {
-    background-color: #5cb85c;
+    background-color: #ad1414;
     transform: translateY(-2px);
 }
 
