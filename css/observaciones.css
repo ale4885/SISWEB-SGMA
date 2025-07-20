@@ -6,7 +6,7 @@
     --texto-claro: #FFFFFF;
     --texto-secundario: #B0B0B0;
     --texto-fuerte: #E0E0E0;
-    --azul-acento: #42A5F5;
+    --azul-acento: #971515;
     --verde-acento: #6DD53D;
     --rojo-acento: #E57373;
 
@@ -85,6 +85,28 @@ body {
     gap: var(--espaciado-xs); /* Espacio entre el icono y el texto */
     flex-shrink: 0; /* Evita que el botón se encoja */
     z-index: 10; /* Asegura que esté por encima del título si hay superposición */
+}
+
+.boton-acciones {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--espaciado-l);
+    width: 100%;
+}
+
+.boton-principal {
+    background-color: var(--azul-acento);
+    color: var(--texto-claro);
+    padding: var(--espaciado-m) var(--espaciado-xl);
+    border: none;
+    border-radius: var(--radio-borde-boton);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-principal:hover {
+    background-color: #741414; /* Un azul más oscuro al pasar el cursor */
 }
 
 .back-button:hover {
