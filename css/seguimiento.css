@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -329,7 +330,7 @@ body {
     color: var(--texto-claro);
     font-size: 0.9em;
     font-weight: bold;
-    text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
 .info-tiempo-progreso {
@@ -346,7 +347,8 @@ body {
     margin-top: 1.5em;
 }
 
-.item-tarea i, span{
+.item-tarea i,
+span {
     padding: 15px;
 }
 
@@ -442,14 +444,35 @@ footer {
     }
 
     .contenido-principal-seguimiento {
-        padding: 2em;
-        gap: 2em;
+        flex-grow: 1;
+        padding: 1.5em;
+        display: flex;
+        /* Make it a flex container */
+        flex-direction: column;
+        /* Keep column direction for smaller screens */
+        gap: 1.5em;
+        align-items: center;
+        /* Center items horizontally for column layout */
     }
 
-    .tarjeta-info-vehiculo,
-    .seccion-actualizaciones {
-        padding: 1.8em;
+   @media (min-width: 768px) {
+    .contenido-principal-seguimiento {
+        flex-direction: row; /* Arrange items in a row */
+        justify-content: center; /* Center the items horizontally */
+        align-items: flex-start; /* Align items to the start of the cross-axis (top) */
+        gap: 2em; /* Increase gap between the two sections */
     }
+
+    .tarjeta-info-vehiculo {
+        width: 60%; /* Adjust width for the vehicle info card */
+        margin: 0; /* Remove auto margin when in row layout */
+    }
+
+    .seccion-actualizaciones {
+        width: 35%; /* Adjust width for the updates section */
+        margin: 0; /* Remove auto margin when in row layout */
+    }
+}
 
     .contenedor-detalles-vehiculo {
         flex-direction: row;
@@ -519,5 +542,24 @@ footer {
     footer {
         font-size: 0.85em;
         padding: 1.2em;
+    }
+}
+.contenedor-aplicacion {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    background-color: var(--oscuro-principal);
+    box-shadow: 0 0 15px var(--sombra-tarjeta);
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+
+@media (min-width: 768px) {
+    .contenedor-aplicacion {
+        min-height: 100vh; 
+        max-width: 100%; 
+        margin: 0; 
+        border-radius: 0;
     }
 }
