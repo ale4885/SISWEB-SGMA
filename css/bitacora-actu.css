@@ -478,7 +478,7 @@ input[type="checkbox"]:checked::before {
     transform: translateY(-2px);
 }
 
-/* Responsive adjustments for modal content */
+
 @media (max-width: 600px) {
     .modal-content {
         width: 95%;
@@ -486,7 +486,7 @@ input[type="checkbox"]:checked::before {
     }
 
     .modal-body .card.vehicle-info {
-        flex-direction: column; /* Stack info vertically on small screens */
+        flex-direction: column; 
         align-items: center;
         text-align: center;
     }
@@ -497,11 +497,11 @@ input[type="checkbox"]:checked::before {
     }
 
     .modal-body .contact-section {
-        align-items: center; /* Center contact section on small screens */
+        align-items: center; 
     }
 
     .modal-body .footer-actions {
-        flex-direction: column; /* Stack buttons vertically on small screens */
+        flex-direction: column; 
         gap: var(--espaciado-m);
     }
 }

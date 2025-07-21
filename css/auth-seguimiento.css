@@ -51,76 +51,76 @@ body {
 
 
 .encabezado-seguimiento {
-    background-color: var(--oscuro-secundario);
-    padding: 1em 1.5em;
-    display: flex; /* Ensure it's a flex container */
-    justify-content: flex-start; /* Align items to the start (left) */
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: none; /* Keep this if you want to hide the header on smaller screens */
+  background-color: var(--oscuro-secundario);
+  padding: 1em 1.5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
 }
 
 .encabezado-seguimiento h1 {
-    font-size: 1.4em;
-    color: var(--texto-claro);
-    margin: 0; /* Remove auto margin to allow flexbox to position */
-    flex-grow: 1; /* Allow the h1 to take up available space */
-    text-align: center; /* Center the text within its available space */
+  font-size: 1.4em;
+  color: var(--texto-claro);
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .boton-volver {
-    background-color: transparent; /* Make background transparent */
-    color: white; /* Set color to white */
-    padding: 0; /* Remove padding if you only want the arrow */
-    border-radius: 0; /* Remove border-radius */
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5em; /* Keep gap if you have text, otherwise remove */
-    transition: background-color 0.3s ease;
-    font-size: 1.5em; /* Increase font size for the arrow */
-    order: -1; /* Place it first in the flex order */
-    margin-right: 15px; /* Add some space to the right of the arrow */
+  background-color: transparent;
+  color: white;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  transition: background-color 0.3s ease;
+  font-size: 1.5em;
+  order: -1;
+  margin-right: 15px;
 }
 
 .boton-volver:hover {
-    background-color: transparent; /* Keep background transparent on hover */
-    color: #ccc; /* Slightly dim the white on hover */
+  background-color: transparent;
+  color: #ccc;
 }
 
 .boton-volver i {
-    font-size: 1em; /* Keep icon size relative to parent font size */
-    color: white; /* Ensure the icon itself is white */
+  font-size: 1em;
+  color: white;
 }
 
-/* Adjust for larger screens as well */
+
 @media (min-width: 768px) {
-    .encabezado-seguimiento {
-        display: flex; /* Ensure it's visible on larger screens */
-        padding: 1.5em 2em;
-        justify-content: flex-start; /* Keep left alignment */
-    }
+  .encabezado-seguimiento {
+    display: flex;
+    padding: 1.5em 2em;
+    justify-content: flex-start;
+  }
 
-    .encabezado-seguimiento h1 {
-        font-size: 1.6em;
-        margin-left: 0; /* Remove specific margin if flex positioning it */
-        flex-grow: 1;
-        text-align: center;
-    }
+  .encabezado-seguimiento h1 {
+    font-size: 1.6em;
+    margin-left: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
 
-    .boton-volver {
-        font-size: 1.8em; /* Adjust font size for larger screens */
-        padding: 0;
-        margin-right: 20px; /* Adjust margin for larger screens */
-    }
+  .boton-volver {
+    font-size: 1.8em;
+    padding: 0;
+    margin-right: 20px;
+  }
 
-    .boton-volver i {
-        font-size: 1em;
-        color: white;
-    }
+  .boton-volver i {
+    font-size: 1em;
+    color: white;
+  }
 }
 
 .barra-navegacion-izquierda {

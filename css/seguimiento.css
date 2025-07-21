@@ -83,18 +83,18 @@ body {
 }
 
 .boton-volver i {
-    font-size: 0.9em; /* Decreased font size for the icon */
+    font-size: 0.9em; 
 }
 
-/* Also adjust the media query for larger screens if necessary */
+
 @media (min-width: 768px) {
     .boton-volver {
-        font-size: 0.9em; /* Slightly larger for desktop, but still smaller than original */
-        padding: 0.5em 1em; /* Adjusted padding for desktop */
+        font-size: 0.9em; 
+        padding: 0.5em 1em; 
     }
 
     .boton-volver i {
-        font-size: 1em; /* Adjusted icon size for desktop */
+        font-size: 1em; 
     }
 }
 
@@ -483,30 +483,27 @@ footer {
         flex-grow: 1;
         padding: 1.5em;
         display: flex;
-        /* Make it a flex container */
         flex-direction: column;
-        /* Keep column direction for smaller screens */
         gap: 1.5em;
         align-items: center;
-        /* Center items horizontally for column layout */
     }
 
    @media (min-width: 768px) {
     .contenido-principal-seguimiento {
-        flex-direction: row; /* Arrange items in a row */
-        justify-content: center; /* Center the items horizontally */
-        align-items: flex-start; /* Align items to the start of the cross-axis (top) */
-        gap: 2em; /* Increase gap between the two sections */
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: flex-start; 
+        gap: 2em; 
     }
 
     .tarjeta-info-vehiculo {
-        width: 60%; /* Adjust width for the vehicle info card */
-        margin: 0; /* Remove auto margin when in row layout */
+        width: 60%; 
+        margin: 0; 
     }
 
     .seccion-actualizaciones {
-        width: 35%; /* Adjust width for the updates section */
-        margin: 0; /* Remove auto margin when in row layout */
+        width: 35%;
+        margin: 0; 
     }
 }
 

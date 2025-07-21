@@ -15,18 +15,18 @@
   --fondo-boton-volver-hover: #555;
   --tamano-fuente-bienvenida: 1.3rem;
   --tamano-foto-perfil: 100px;
-  --altura-cabecera: 60px; /* This will be affected by padding and content */
+  --altura-cabecera: 60px; 
   --rojo-primario: #A32F2A;
-  --color-texto-botones-nav: white; /* This will be overridden by --texto-claro */
-  --color-texto-activo-nav: #2c3e50; /* This will be overridden by --texto-claro */
+  --color-texto-botones-nav: white; 
+  --color-texto-activo-nav: #2c3e50; 
 
-  /* New variables from coordi-index.css */
+ 
   --fondo-encabezado: #2c3e50;
   --fondo-barra-lateral: #2D2D2D;
   --fondo-contenido-principal: #1E1E1E;
-  /* --fondo-tarjeta: #2D2D2D; (already defined with white, check if you want to change it globally) */
+  
 
-  /* --texto-claro: #FFFFFF; (already defined) */
+
   --texto-secundario: #B0B0B0;
   --texto-fuerte: #E0E0E0;
 
@@ -69,16 +69,16 @@ body {
 .contenedor-app-pantalla-completa {
   background-color: var(--fondo-app);
   width: 100%;
-  max-width: 960px; /* Ancho ajustado para escritorio */
+  max-width: 960px;
   flex-grow: 1;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alinear arriba en escritorio */
+  justify-content: flex-start; 
   align-items: center;
-  margin: 20px auto; /* Centrar y dar margen vertical */
+  margin: 20px auto; 
   position: relative;
-  padding-bottom: 20px; /* Espacio inferior */
+  padding-bottom: 20px; 
   box-sizing: border-box;
   border-radius: 20px;
   height: calc(100vh - var(--altura-cabecera) - 40px); /* Ajustar altura */
@@ -100,15 +100,15 @@ body {
     align-items: center;
 }
 
-.logotipo { /* Changed from .logo to .logotipo */
+.logotipo { 
     margin-right: var(--espaciado-xl);
 }
 
-.logotipo-imagen { /* Changed from .logo-imagen to .logotipo-imagen */
-    height: 50px; /* Tamaño del logo */
+.logotipo-imagen { 
+    height: 50px; 
 }
 
-.barra-navegacion-centro ul { /* Changed from .barra-navegacion-central to .barra-navegacion-centro */
+.barra-navegacion-centro ul { 
     list-style: none;
     margin: 0;
     padding: 0;
@@ -116,7 +116,7 @@ body {
     gap: var(--espaciado-l);
 }
 
-.barra-navegacion-centro a { /* Changed from .barra-navegacion-central ul li .enlace-navegacion to .barra-navegacion-centro a */
+.barra-navegacion-centro a { 
     text-decoration: none;
     color: var(--texto-claro);
     font-weight: 500;
@@ -125,17 +125,17 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.barra-navegacion-centro a:hover { /* Changed from .barra-navegacion-central ul li .enlace-navegacion:not(.activo):hover to .barra-navegacion-centro a:hover */
+.barra-navegacion-centro a:hover { 
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.barra-navegacion-centro .enlace-navegacion.activo { /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo to .barra-navegacion-centro .enlace-navegacion.activo */
+.barra-navegacion-centro .enlace-navegacion.activo { 
     background-color: var(--acento-rojo);
     color: var(--texto-claro);
     font-weight: bold;
 }
 
-.barra-navegacion-centro .enlace-navegacion.activo:hover { /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo:hover to .barra-navegacion-centro .enlace-navegacion.activo:hover */
+.barra-navegacion-centro .enlace-navegacion.activo:hover { 
     background-color: var(--acento-rojo-oscuro);
 }
 
@@ -151,19 +151,18 @@ body {
     transform: translateY(-2px);
 }
 
-.info-usuario { /* Changed from .informacion-usuario to .info-usuario */
+.info-usuario { 
     text-align: right;
     margin-right: var(--espaciado-m);
 }
 
-.info-usuario .nombre-usuario { /* Changed from .informacion-usuario .nombre-usuario to .info-usuario .nombre-usuario */
-    display: block;
+.info-usuario .nombre-usuario { 
     font-weight: bold;
     font-size: 1.1em;
 }
 
-.info-usuario .rol-usuario, /* Changed from .informacion-usuario .rol-usuario to .info-usuario .rol-usuario */
-.info-usuario .detalle-usuario { /* Changed from .informacion-usuario .detalle-usuario to .info-usuario .detalle-usuario */
+.info-usuario .rol-usuario, 
+.info-usuario .detalle-usuario { 
     font-size: 0.85em;
     color: var(--texto-secundario);
 }

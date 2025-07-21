@@ -37,9 +37,9 @@
 }
 
 body {
-    background-color: var(--color-fondo); /* Changed to match the content area */
+    background-color: var(--color-fondo); 
     color: var(--color-texto-claro);
-    height: 100vh; /* Ensure body takes full viewport height */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -53,13 +53,11 @@ body {
     width: 100%;
     max-width: 1024px;
     height: auto;
-    min-height: 120vh; /* Adjust as needed to ensure enough height */
-    /* margin: 40px auto; */ /* Comment out or remove this line */
+    min-height: 120vh; 
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); */ /* Comment out or remove this line */
-    /* border-radius: 10px; */ /* Comment out or remove this line */
+    
 }
 /* Estilos para el nuevo navbar */
 .navbar {
@@ -164,26 +162,26 @@ body {
     align-items: center;
     flex-shrink: 0;
     display: flex;
-    align-items: center; /* Vertically align items in the header */
-    padding: 20px; /* Add some padding to the header */
+    align-items: center; 
+    padding: 20px; 
     width: 100%;
 }
 
 .boton-volver {
-margin-right: auto; /* Pushes the button to the left */
-    color: var(--color-texto-claro); /* Corrected variable name */
+margin-right: auto; 
+    color: var(--color-texto-claro); 
     text-decoration: none;
     padding: 0.6em 1em;
-    background-color: var(--fondo-boton-regresar); /* Corrected variable name */
+    background-color: var(--fondo-boton-regresar); 
     border-radius: 8px;
-    font-size: 1.5em; /* Adjusted font size for better appearance */
+    font-size: 1.5em;
     transition: background-color 0.2s ease;
     display: flex;
-    align-items: center; /* Vertically align the icon and text if any */
-    justify-content: center; /* Horizontally center content if any */
-    width: 50px; /* Set a fixed width for the button to make it a circle/square */
-    height: 50px; /* Set a fixed height for the button */
-    border-radius: 50%; /* Make it circular */
+    align-items: center; 
+    justify-content: center; 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 

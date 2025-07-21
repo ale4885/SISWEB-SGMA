@@ -44,6 +44,15 @@
     --color-texto-secundario-usuario: #b0c4de;
     --borde-avatar: 2px solid var(--color-borde-avatar);
     --sombra-avatar: 0 0 0 2px var(--fondo-barra-navegacion);
+
+    --fondo-encabezado: #2c3e50;
+    --fondo-barra-lateral: #2D2D2D;
+    --fondo-contenido-principal: #1E1E1E;
+
+    --radio-borde-navbar-boton: 30px;
+    --radio-borde-avatar: 50%;
+
+    --acento-rojo: #e74c3c;
 }
 
 body {
@@ -64,10 +73,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--fondo-barra-navegacion);
-    padding: 10px 20px;
-    color: var(--color-texto-barra-navegacion);
-    box-shadow: var(--sombra-barra-navegacion);
+    background-color: var(--fondo-encabezado);
+    padding: var(--espaciado-s) var(--espaciado-l);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--color-borde-navbar);
     width: 100%;
     box-sizing: border-box;
 }
@@ -77,13 +86,14 @@ body {
     align-items: center;
 }
 
-.barra-navegacion-izquierda .logo-imagen {
-    height: 40px;
-    margin-right: 15px;
+.logotipo {
+    margin-right: var(--espaciado-xl);
 }
 
-.barra-navegacion-centro {
-    margin-left: 0;
+.logotipo-imagen {
+   
+    height: 50px;
+
 }
 
 .barra-navegacion-centro ul {
@@ -91,92 +101,130 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    gap: var(--espaciado-l);
 }
 
-.barra-navegacion-centro ul li {
-    margin-right: 5px;
-}
-
-.barra-navegacion-centro ul li .enlace-navegacion {
+.barra-navegacion-centro a {
+   
     text-decoration: none;
-    background-color: var(--fondo-boton-navegacion);
-    color: var(--color-texto-boton-navegacion);
+    color: var(--texto-claro);
+    font-weight: 500;
+    padding: var(--espaciado-s) var(--espaciado-m);
+    border-radius: var(--radio-borde-navbar-boton);
+    transition: background-color 0.3s ease;
+}
+
+.barra-navegacion-centro a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.barra-navegacion-centro .enlace-navegacion.activo {
+    background-color: var(--acento-rojo);
+    color: var(--texto-claro);
     font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: block;
 }
 
-.barra-navegacion-centro ul li .enlace-navegacion.activo {
-    background-color: var(--fondo-boton-activo-navegacion);
-    color: var(--color-texto-boton-activo-navegacion);
-    box-shadow: var(--sombra-boton-activo);
-}
-
-.barra-navegacion-centro ul li .enlace-navegacion:not(.activo):hover {
-    background-color: #c0392b;
-    transform: translateY(-1px);
-}
-
-.barra-navegacion-centro ul li .enlace-navegacion.activo:hover {
-    transform: translateY(-1px);
+.barra-navegacion-centro .enlace-navegacion.activo:hover {
+    background-color: var(--acento-rojo);
 }
 
 .barra-navegacion-derecha {
     display: flex;
     align-items: center;
-}
-
-.barra-navegacion-derecha .info-usuario-enlace {
-    display: flex;
-    align-items: center;
     text-decoration: none;
-    color: inherit;
+    color: var(--texto-claro);
+    transition: transform 0.2s ease;
 }
 
-.barra-navegacion-derecha .info-usuario {
+.barra-navegacion-derecha:hover {
+    transform: translateY(-2px);
+}
+
+.info-usuario {
+    
     text-align: right;
-    margin-right: 15px;
+    margin-right: var(--espaciado-m);
 }
 
-.barra-navegacion-derecha .info-usuario .nombre-usuario {
+.info-usuario .nombre-usuario {
+   
     display: block;
     font-weight: bold;
     font-size: 1.1em;
-    color: var(--color-texto-barra-navegacion);
 }
 
-.barra-navegacion-derecha .info-usuario .rol-usuario,
-.barra-navegacion-derecha .info-usuario .detalle-usuario {
+.info-usuario .rol-usuario,
+.info-usuario .detalle-usuario {
     font-size: 0.85em;
-    color: var(--color-texto-secundario-usuario);
+    color: var(--texto-secundario);
 }
 
-.barra-navegacion-derecha .avatar-usuario img {
+.avatar-usuario img {
     width: 45px;
     height: 45px;
-    border-radius: 50%;
-    border: var(--borde-avatar);
+    border-radius: var(--radio-borde-avatar);
+    border: 2px solid var(--texto-claro);
     object-fit: cover;
-    box-shadow: var(--sombra-avatar);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--fondo-encabezado);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    border-radius: var(--radio-borde-pequeno);
+    top: calc(100% + var(--espaciado-xs));
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--texto-claro);
+    padding: var(--espaciado-s) var(--espaciado-m);
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-radius: var(--radio-borde-pequeno);
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 .contenido-pagina {
     width: 100%;
-    max-width: 1200px; /* Aumentado el ancho máximo para acomodar dos columnas */
-    margin: var(--espaciado-xl) auto; /* Margen superior e inferior para separar del header/footer */
+    max-width: 1200px;
+    /* Aumentado el ancho máximo para acomodar dos columnas */
+    margin: var(--espaciado-xl) auto;
+    /* Margen superior e inferior para separar del header/footer */
     padding: 0 var(--espaciado-xl);
     box-sizing: border-box;
-    display: grid; /* Usar Grid para las columnas */
-    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
-    gap: var(--espaciado-xl); /* Espacio entre las columnas */
-    align-items: start; /* Alinea los elementos al inicio de su celda */
+    display: grid;
+    /* Usar Grid para las columnas */
+    grid-template-columns: 1fr 1fr;
+    /* Dos columnas de igual ancho */
+    gap: var(--espaciado-xl);
+    /* Espacio entre las columnas */
+    align-items: start;
+    /* Alinea los elementos al inicio de su celda */
 }
 
 /* Las secciones se comportarán como las tarjetas dentro del grid */
 .seccion {
-    margin-bottom: 0; /* Elimina el margen inferior ya que el gap del grid lo maneja */
+    margin-bottom: 0;
+    /* Elimina el margen inferior ya que el gap del grid lo maneja */
     background-color: var(--fondo-tarjeta);
     border-radius: var(--radio-borde-tarjeta);
     box-shadow: var(--sombra-predeterminada);

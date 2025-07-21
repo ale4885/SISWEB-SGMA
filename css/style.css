@@ -26,24 +26,24 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px; /* Base padding suitable for desktop */
+    padding: 20px; 
 }
 
 .contenedor-inicio-sesion {
     background: rgba(40, 40, 40, 0.959);
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.123);
-    padding: 30px; /* Adjusted padding for desktop */
+    padding: 30px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 500px; /* Keep a reasonable max-width for the form container */
+    max-width: 500px; 
 }
 
 .titulo-pagina {
     color: var(--text-color-light);
-    font-size: 2.2rem; /* Adjusted for desktop */
+    font-size: 2.2rem; 
     margin-bottom: 30px;
 }
 
@@ -56,21 +56,21 @@ body {
 }
 
 .logo {
-    width: 140px; /* Adjusted logo size for desktop */
+    width: 140px; 
     height: auto;
     margin-bottom: 15px;
 }
 
 .nombre-sistema {
     color: var(--text-color-light);
-    font-size: 1.7rem; /* Adjusted for desktop */
+    font-size: 1.7rem; 
     margin-bottom: 10px;
     line-height: 1.2;
 }
 
 .descripcion-formulario {
     color: var(--link-color);
-    font-size: 1rem; /* Adjusted for desktop */
+    font-size: 1rem; 
 }
 
 .seccion-formulario {
@@ -89,7 +89,7 @@ body {
 .grupo-campo label {
     display: block;
     color: var(--text-color-light);
-    font-size: 1rem; /* Adjusted for desktop */
+    font-size: 1rem; 
     margin-bottom: 5px;
 }
 
@@ -100,14 +100,14 @@ body {
 
 .grupo-campo input {
     width: 100%;
-    padding: 15px 20px; /* Adjusted padding for desktop */
+    padding: 15px 20px; 
     background-color: var(--light-gray);
     border: none;
     border-radius: 5px;
     color: var(--text-color-dark);
-    font-size: 1.1rem; /* Adjusted for desktop */
+    font-size: 1.1rem; 
     outline: none;
-    padding-right: 40px; /* Make space for the icon */
+    padding-right: 40px; 
 }
 
 .grupo-campo input::placeholder {
@@ -116,28 +116,28 @@ body {
 
 .toggle-password {
     position: absolute;
-    right: 20px; /* Adjusted position for desktop */
+    right: 20px; 
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: var(--text-color-dark);
-    font-size: 1.1rem; /* Adjusted for desktop */
+    font-size: 1.1rem; 
 }
 
 .enlace-recuperar-contrasena {
     color: var(--link-color);
     text-decoration: none;
-    font-size: 1rem; /* Adjusted for desktop */
+    font-size: 1rem; 
     margin-bottom: 30px;
     align-self: center;
 }
 
 .boton-base {
     width: 100%;
-    padding: 18px; /* Adjusted padding for desktop */
+    padding: 18px; 
     border: none;
     border-radius: 25px;
-    font-size: 1.2rem; /* Adjusted for desktop */
+    font-size: 1.2rem; 
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 15px;
@@ -164,7 +164,7 @@ body {
 
 .texto-registro {
     color: var(--text-color-light);
-    font-size: 1rem; /* Adjusted for desktop */
+    font-size: 1rem; 
     margin-top: 15px;
     text-align: center;
 }
@@ -180,7 +180,7 @@ body {
     color: #e09b2e;
 }
 
-/* Media Queries for tablets (if you still want them, otherwise remove this block) */
+
 @media (min-width: 577px) and (max-width: 1024px) {
     body {
         padding: 30px;

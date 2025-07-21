@@ -265,9 +265,9 @@ textarea::placeholder {
     color: #888;
 }
 
-/* Removed .boton-volver since navigation bar is global now */
-.cabecera-aplicacion { /* Remove if not needed anymore, as the nav is global */
-    display: none; /* Hiding this as the navigation handles the back link now */
+
+.cabecera-aplicacion { 
+    display: none; 
 }
 
 

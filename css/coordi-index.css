@@ -32,7 +32,7 @@
     --espaciado-l: 20px;
     --espaciado-xl: 30px;
 
-    --acento-primario: #A32F2A; /* For specific button in coordi-index */
+    --acento-primario: #A32F2A; 
     --acento-primario-hover: #c03d38;
 }
 
@@ -153,7 +153,7 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     z-index: 1;
     border-radius: var(--radio-borde-pequeno);
-    top: calc(100% + var(--espaciado-xs)); /* Position below the Admin link */
+    top: calc(100% + var(--espaciado-xs)); 
     left: 0;
 }
 
@@ -174,7 +174,7 @@ body {
     display: block;
 }
 
-/* Rest of coordi-index.css */
+
 .contenido-principal-coordi {
     display: flex;
     flex-direction: column;
