@@ -82,11 +82,8 @@ p {
     align-items: center;
     background-color: var(--fondo-encabezado);
     padding: var(--espaciado-s) var(--espaciado-l);
-    color: var(--texto-claro);
-    box-shadow: var(--sombra-navbar);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--color-borde-navbar);
 }
 
 .barra-navegacion-izquierda {
@@ -94,9 +91,12 @@ p {
     align-items: center;
 }
 
+.logotipo {
+    margin-right: var(--espaciado-xl);
+}
+
 .logotipo-imagen {
-    height: 40px;
-    margin-right: var(--espaciado-m);
+    height: 50px;
 }
 
 .barra-navegacion-centro ul {
@@ -104,42 +104,42 @@ p {
     margin: 0;
     padding: 0;
     display: flex;
+    gap: var(--espaciado-l);
 }
 
-.barra-navegacion-centro ul li {
-    margin-right: var(--espaciado-xs);
-}
-
-.barra-navegacion-centro ul li .enlace-navegacion {
+.barra-navegacion-centro a {
     text-decoration: none;
+    color: var(--texto-claro);
+    font-weight: 500;
+    padding: var(--espaciado-s) var(--espaciado-m);
+    border-radius: var(--radio-borde-navbar-boton);
+    transition: background-color 0.3s ease;
+}
+
+.barra-navegacion-centro a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.barra-navegacion-centro .enlace-navegacion.activo {
     background-color: var(--acento-rojo);
     color: var(--texto-claro);
     font-weight: bold;
-    padding: 8px 15px;
-    border-radius: var(--radio-borde-navbar-boton);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: block;
 }
 
-.barra-navegacion-centro ul li .enlace-navegacion.activo {
-    background-color: var(--texto-claro);
-    color: var(--fondo-encabezado);
-    box-shadow: var(--sombra-boton-activo);
-}
-
-.barra-navegacion-centro ul li .enlace-navegacion:not(.activo):hover {
+.barra-navegacion-centro .enlace-navegacion.activo:hover {
     background-color: var(--acento-rojo-oscuro);
-    transform: translateY(-1px);
-}
-
-.barra-navegacion-centro ul li .enlace-navegacion.activo:hover {
-    transform: translateY(-1px);
 }
 
 .barra-navegacion-derecha {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    text-decoration: none;
+    color: var(--texto-claro);
+    transition: transform 0.2s ease;
+}
+
+.barra-navegacion-derecha:hover {
+    transform: translateY(-2px);
 }
 
 .info-usuario {
@@ -156,7 +156,7 @@ p {
 .info-usuario .rol-usuario,
 .info-usuario .detalle-usuario {
     font-size: 0.85em;
-    color: #b0c4de;
+    color: var(--texto-secundario);
 }
 
 .avatar-usuario img {
@@ -165,7 +165,7 @@ p {
     border-radius: var(--radio-borde-avatar);
     border: 2px solid var(--texto-claro);
     object-fit: cover;
-    box-shadow: var(--sombra-avatar);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .panel-sistema {
@@ -187,7 +187,6 @@ p {
 .barra-lateral {
     background-color: var(--fondo-tarjeta);
     border-radius: 0;
-    padding: var(--espaciado-l);
     box-shadow: var(--sombra-barra-lateral);
     width: 100%;
     box-sizing: border-box;
@@ -199,9 +198,6 @@ p {
     top: 0;
     align-self: start;
     overflow-y: auto;
-    max-height: calc(100vh - 70px);
-    border-top-left-radius: var(--radio-borde-principal);
-    border-bottom-left-radius: var(--radio-borde-principal);
 }
 
 .titulo-barra-lateral {
@@ -242,7 +238,7 @@ p {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: var(--acento-azul);
+    background-color: var(--acento-rojo);
     border-radius: var(--radio-borde-avatar);
     margin-right: var(--espaciado-m);
     color: var(--texto-claro);
@@ -274,6 +270,7 @@ p {
 }
 
 .contenido-principal {
+    height: 100vh;
     padding: var(--espaciado-xl);
     background-color: var(--fondo-contenido-principal);
     display: grid;
@@ -285,7 +282,6 @@ p {
 }
 
 .tarjeta {
-    margin-top: 10px;
     background-color: var(--fondo-tarjeta);
     border-radius: var(--radio-borde-tarjeta);
     padding: var(--espaciado-l);
@@ -491,7 +487,6 @@ small {
     z-index: 1000;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--espaciado-xxl) var(--espaciado-l);
@@ -509,6 +504,7 @@ small {
     overflow-y: auto;
     position: relative;
     color: var(--texto-claro);
+    border: 1px solid #ffffff;
 }
 
 .boton-cerrar {
@@ -597,46 +593,6 @@ small {
     transform: translateY(-2px);
 }
 
-.modal-clase {
-    display: none;
-    position: fixed;
-    z-index: 1050;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-}
-
-.cerrar {
-    color: #ffffff;
-    background-color: #000;
-    position: absolute;
-    top: 15px;
-    right: 16px;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    border-radius: 15%;
-}
-
-.contenido-modal {
-    background-color: #000000;
-    border: 1px solid #ffffff;
-    margin: auto;
-    padding: var(--espaciado-l);
-    border-radius: var(--radio-borde-entrada);
-    max-width: 80%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    color: var(--texto-claro);
-}
-
 .visualizacion-perfil {
     display: flex;
     flex-direction: column;
@@ -664,4 +620,59 @@ small {
     font-weight: bold;
     color: var(--texto-claro);
     margin: 0;
+}
+
+.seccion-registro-vehiculos {
+    grid-column: 1 / -1; 
+    margin-top: var(--espaciado-xl);
+}
+
+.controles-filtro {
+    display: flex;
+    gap: var(--espaciado-m);
+    margin-bottom: var(--espaciado-l);
+}
+
+.input-busqueda, .filtro-anio {
+    flex-grow: 1;
+}
+
+.tabla-registros {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--espaciado-m);
+}
+
+.tabla-registros th, .tabla-registros td {
+    padding: var(--espaciado-s) var(--espaciado-m);
+    border: 1px solid var(--color-borde-oscuro);
+    text-align: left;
+    color: var(--texto-claro);
+}
+
+.tabla-registros th {
+    background-color: var(--acento-rojo-oscuro);
+    font-weight: bold;
+}
+
+.tabla-registros tr:nth-child(even) {
+    background-color: #262626;
+}
+
+.tabla-registros tr:hover {
+    background-color: #3A3A3A;
+}
+
+.boton-ver-detalles {
+    background-color: var(--acento-rojo);
+    color: var(--texto-claro);
+    padding: var(--espaciado-xs) var(--espaciado-s);
+    border-radius: var(--radio-borde-pequeno);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.boton-ver-detalles:hover {
+    background-color: #520f06;
 }

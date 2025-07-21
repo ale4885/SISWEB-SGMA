@@ -38,42 +38,105 @@
     <div class="panel-sistema">
         <div class="disposicion-principal">
             <aside class="barra-lateral">
-                <h2 class="titulo-barra-lateral">Registros pendientes por aceptar</h2>
+                <h2 class="titulo-barra-lateral">Pendientes de Revision</h2>
                 <div class="lista-registros">
                     <div class="item-registro">
-                        <div class="icono-marcador"><i class="fas fa-car"></i></div>
-                        <div class="detalles-registro">
-                            <span class="nombre-vehiculo">Toyota Corolla 2015</span>
-                            <span class="descripcion-servicio">Cambio de Bujias.</span>
+                        <div class="icono-marcador">
+                            <i class="fas fa-car"></i>
                         </div>
-                        <div class="mas-opciones"><i class="fas fa-ellipsis-v" id="botonAbrirModal"></i></div>
+                        <div class="detalles-registro">
+                            <span class="nombre-vehiculo">P894-562</span>
+                            <span class="descripcion-servicio">Revisión de inyectores</span>
+                        </div>
+                        <div class="mas-opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
+
                     <div class="item-registro">
-                        <div class="icono-marcador"><i class="fas fa-car"></i></div>
-                        <div class="detalles-registro">
-                            <span class="nombre-vehiculo">Kia Picanto 2018</span>
-                            <span class="descripcion-servicio">Cambio de aceite al motor.</span>
+                        <div class="icono-marcador">
+                            <i class="fas fa-car"></i>
                         </div>
-                        <div class="mas-opciones"><i class="fas fa-ellipsis-v" id="botonAbrirModal"></i></div>
+                        <div class="detalles-registro">
+                            <span class="nombre-vehiculo">P894-562</span>
+                            <span class="descripcion-servicio">Revisión de inyectores</span>
+                        </div>
+                        <div class="mas-opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
+
                     <div class="item-registro">
-                        <div class="icono-marcador"><i class="fas fa-car"></i></div>
-                        <div class="detalles-registro">
-                            <span class="nombre-vehiculo">Toyota Yaris 2021</span>
-                            <span class="descripcion-servicio">Cambio de suspension.</span>
+                        <div class="icono-marcador">
+                            <i class="fas fa-car"></i>
                         </div>
-                        <div class="mas-opciones"><i class="fas fa-ellipsis-v" id="botonAbrirModal"></i></div>
+                        <div class="detalles-registro">
+                            <span class="nombre-vehiculo">P894-562</span>
+                            <span class="descripcion-servicio">Revisión de inyectores</span>
+                        </div>
+                        <div class="mas-opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
+
                     <div class="item-registro">
-                        <div class="icono-marcador"><i class="fas fa-car"></i></div>
-                        <div class="detalles-registro">
-                            <span class="nombre-vehiculo">Nissan Rogue 2015</span>
-                            <span class="descripcion-servicio">Cambio de radiador y bujias.</span>
+                        <div class="icono-marcador">
+                            <i class="fas fa-car"></i>
                         </div>
-                        <div class="mas-opciones"><i class="fas fa-ellipsis-v" id="botonAbrirModal"></i></div>
+                        <div class="detalles-registro">
+                            <span class="nombre-vehiculo">P894-562</span>
+                            <span class="descripcion-servicio">Revisión de inyectores</span>
+                        </div>
+                        <div class="mas-opciones">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
                 </div>
             </aside>
+
+            <main class="contenido-principal">
+                <section class="tarjeta seccion-registro-vehiculos">
+                    <h2>Registro de Vehículos</h2>
+                    <div class="controles-filtro">
+                        <input type="text" id="buscarRegistro" class="input-busqueda" placeholder="Buscar por placa, marca o modelo...">
+                        <div class="contenedor-seleccion filtro-anio">
+                            <select id="filtroAnio">
+                                <option value="all">Todos</option>
+                                <option value="1er">Primer Año</option>
+                                <option value="2do">Segundo Año</option>
+                                <option value="3er">Tercer Año</option>
+                            </select>
+                        </div>
+                    </div>
+                    <table class="tabla-registros">
+                        <thead>
+                            <tr>
+                                <th>Placa</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Año</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>P894-562</td>
+                                <td>Toyota</td>
+                                <td>Corolla</td>
+                                <td>2025</td>
+                                <td><button type="button" class="boton-ver-detalles">Ver Detalles</button></td>
+                            </tr>
+                            <tr>
+                                <td>P123-456</td>
+                                <td>Honda</td>
+                                <td>Civic</td>
+                                <td>2024</td>
+                                <td><button type="button" class="boton-ver-detalles">Ver Detalles</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
 
             <div id="modalVehiculo" class="modal">
                 <div class="contenido-modal">
@@ -246,23 +309,6 @@
                             </form>
                         </section>
                     </main>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-clase desvanecer" id="modalPerfil" tabindex="-1" aria-labelledby="etiquetaModalPerfil" aria-hidden="true">
-        <div class="dialogo-modal desplazamiento-modal">
-            <div class="contenido-modal fondo-oscuro texto-claro">
-                <div class="encabezado-modal">
-                    <h5 class="titulo-modal" id="etiquetaModalPerfil">Tu Perfil</h5>
-                    <button type="button" class="cerrar texto-claro" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="cuerpo-modal">
-                    <div id="contenido-perfil">
-                    </div>
                 </div>
             </div>
         </div>

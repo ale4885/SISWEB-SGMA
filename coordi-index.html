@@ -12,64 +12,66 @@
     <link rel="stylesheet" href="css/coordi-index.css" />
 </head>
 <body>
-    <header class="navbar">
-        <div class="navbar-left">
-            <div class="logo">
-                <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logo-img">
+    <header class="barra-navegacion">
+        <div class="barra-navegacion-izquierda">
+            <div class="logotipo">
+                <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
             </div>
-            <nav class="navbar-center">
+            <nav class="barra-navegacion-centro">
                 <ul>
-                    <li><a href="coordi-index.html#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="1er-año.html" class="nav-link">Notas</a></li>
-                    <li><a href="reportes.html" class="nav-link">Reportes</a></li>
-                    <li><a href="admin.html" class="nav-link">Admin</a></li>
+                    <li><a href="coordi-index.html" class="enlace-navegacion activo">Inicio</a></li>
+                    <li><a href="primer-año.html" class="enlace-navegacion">Primer Año</a></li>
+                    <li><a href="reportes.html" class="enlace-navegacion">Reportes</a></li>
+                    <li><a href="admin.html" class="enlace-navegacion">Admin</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="navbar-right zona-perfil-clicable">
+        <a href="perfil-coord.html" class="barra-navegacion-derecha">
             <div class="info-usuario">
-                <span class="nombre-usuario" id="nombreUsuario">FERNANDO JAVIER</span>
+                <span class="nombre-usuario">FERNANDO JAVIER</span>
                 <span class="rol-usuario">Segundo año</span>
                 <span class="detalle-usuario">Desarrollo de Software</span>
             </div>
             <div class="avatar-usuario">
                 <img src="placeholder-avatar.png" alt="Avatar">
             </div>
-        </div>
+        </a>
     </header>
 
-    <main>
-        <section id="inicio" class="seccion-contenido">
-            <div id="seccion-bienvenida" class="seccion-tipo-tarjeta">
-                <h2 id="mensajeBienvenida">Bienvenido al SGMA</h2>
-                <p>Tu plataforma de gestión vehicular.</p>
+    <main class="contenido-principal-coordi">
+        <section class="tarjeta-principal">
+            <div class="header-tarjeta">
+                <h2>Estado General del Taller</h2>
             </div>
-
-            <div class="contenedor-tarjetas-tablero">
-                <div class="tarjeta-tablero">
-                    <i class="fas fa-car icono-tarjeta"></i>
-                    <div class="info-tarjeta">
-                        <p class="etiqueta-tarjeta">Vehículos Registrados</p>
-                        <h3 class="valor-tarjeta" id="conteoVehiculosRegistrados">--</h3>
+            <div class="contenido-tarjeta">
+                <div class="resumen-estado">
+                    <div class="caja-estado">
+                        <span class="cantidad">12</span>
+                        <span class="etiqueta">Vehículos Activos</span>
                     </div>
-                </div>
-                <div class="tarjeta-tablero">
-                    <i class="fas fa-user-graduate icono-tarjeta"></i>
-                    <div class="info-tarjeta">
-                        <p class="etiqueta-tarjeta">Alumnos Registrados</p>
-                        <h3 class="valor-tarjeta" id="conteoAlumnosRegistrados">--</h3>
+                    <div class="caja-estado">
+                        <span class="cantidad">5</span>
+                        <span class="etiqueta">En Reparación</span>
+                    </div>
+                    <div class="caja-estado">
+                        <span class="cantidad">3</span>
+                        <span class="etiqueta">En Espera</span>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="seccion-modulos-en-proceso seccion-tipo-tarjeta">
-                <h2>Módulos de Trabajo</h2>
-                <div class="botones-filtro">
-                    <button class="boton-filtro active" data-filter="all">Todos</button>
+        <section class="tarjeta-principal">
+            <div class="header-tarjeta">
+                <h2>Módulos y Progreso</h2>
+                <div class="filtros-modulos">
+                    <button class="boton-filtro" data-filter="all">Todos</button>
                     <button class="boton-filtro" data-filter="in-process">En Proceso</button>
                     <button class="boton-filtro" data-filter="finished">Finalizados</button>
                     <button class="boton-filtro" data-filter="not-started">No Iniciados</button>
                 </div>
+            </div>
+            <div class="contenido-tarjeta">
                 <div class="lista-modulos">
                     <div class="elemento-modulo in-process" data-status="in-process">
                         <span class="titulo-modulo">Módulo 1: Revisión de Frenos</span>
