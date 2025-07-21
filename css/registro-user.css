@@ -162,25 +162,38 @@ body {
     margin-bottom: 6px;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-shrink: 0;
+    display: flex;
+    align-items: center; /* Vertically align items in the header */
+    padding: 20px; /* Add some padding to the header */
+    width: 100%;
 }
 
 .boton-volver {
-    color: var(--texto-claro);
+margin-right: auto; /* Pushes the button to the left */
+    color: var(--color-texto-claro); /* Corrected variable name */
     text-decoration: none;
     padding: 0.6em 1em;
-    background-color: var(--fondo-boton-volver);
+    background-color: var(--fondo-boton-regresar); /* Corrected variable name */
     border-radius: 8px;
-    font-size: 0.85em;
+    font-size: 1.5em; /* Adjusted font size for better appearance */
     transition: background-color 0.2s ease;
     display: flex;
-    align-items: flex-start;
-    gap: 0.5em;
-    flex-shrink: 0;
-    z-index: 10;
+    align-items: center; /* Vertically align the icon and text if any */
+    justify-content: center; /* Horizontally center content if any */
+    width: 50px; /* Set a fixed width for the button to make it a circle/square */
+    height: 50px; /* Set a fixed height for the button */
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.boton-volver i {
+    font-size: 1em; 
+}
+
+.boton-volver:hover {
+    background-color: var(--hover-boton-regresar); 
+}
 
 
 .contenido-principal-registro {

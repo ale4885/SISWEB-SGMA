@@ -64,16 +64,18 @@ body {
 }
 
 .boton-volver {
-    background-color: var(--fondo-boton-volver);
     color: var(--texto-claro);
-    padding: 0.4em 0.8em; 
-    border-radius: 20px;
     text-decoration: none;
-    display: flex;
+    padding: 0.6em 1em;
+    background-color: var(--fondo-boton-volver);
+    border-radius: 8px;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+    display: flex; /* Para alinear el icono y el texto */
     align-items: center;
-    gap: 0.5em;
-    transition: background-color 0.3s ease;
-    font-size: 0.8em; /* Decreased font size for the text */
+    gap: 0.5em; /* Espacio entre el icono y el texto */
+    flex-shrink: 0; /* Evita que el botón se encoja */
+    z-index: 10;/* Decreased font size for the text */
 }
 
 .boton-volver:hover {
