@@ -158,6 +158,30 @@ body {
     box-shadow: 0 0 0 2px var(--navbar-fondo);
 }
 
+.cabecera-aplicacion {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.boton-volver {
+    color: var(--texto-claro);
+    text-decoration: none;
+    padding: 0.6em 1em;
+    background-color: var(--fondo-boton-volver);
+    border-radius: 8px;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5em;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+
 
 .contenido-principal-registro {
     flex-grow: 1;
