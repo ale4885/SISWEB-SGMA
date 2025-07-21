@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Gestión de Vehículos</title>
+    <title>Registros</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="imgs/favicon/site.webmanifest" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/primer-año.css">
 </head>
+
 <body>
     <header class="barra-navegacion">
         <div class="barra-navegacion-izquierda">
@@ -19,18 +25,26 @@
                     <li><a href="coordi-index.html" class="enlace-navegacion">Inicio</a></li>
                     <li><a href="1er-año.html" class="enlace-navegacion activo">Primer Año</a></li>
                     <li><a href="reportes.html" class="enlace-navegacion">Reportes</a></li>
-                    <li><a href="admin.html" class="enlace-navegacion">Admin</a></li>
+                    <li class="dropdown">
+                        <a href="" class="enlace-navegacion">Admin <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="admin-users.html">Gestionar Usuarios</a>
+                            <a href="admin-modules.html">Gestionar Módulos</a>
+                        </div>
+                    </li>
+                    <li><a href="perfil-coord.html" class="enlace-navegacion">Mi perfil</a></li>
+                    <li><a href="index.html" class="enlace-navegacion">Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </div>
         <div class="barra-navegacion-derecha" id="activadorIconoPerfil">
             <div class="info-usuario">
-                <span class="nombre-usuario" id="nombreUsuario"></span>
-                <span class="rol-usuario" id="rolUsuario"></span>
-                <span class="detalle-usuario" id="detalleUsuario"></span>
+                <span class="nombre-usuario">FERNANDO JAVIER</span>
+                <span class="rol-usuario">Coordinador</span>
+                <span class="detalle-usuario">Mantenimiento Automotriz</span>
             </div>
             <div class="avatar-usuario">
-                <img src="placeholder-avatar.png" alt="Avatar" id="imagenAvatar">
+                <img src="imgs/defaul-user.webp" alt="Avatar">
             </div>
         </div>
     </header>
@@ -98,7 +112,8 @@
                 <section class="tarjeta seccion-registro-vehiculos">
                     <h2>Registro de Vehículos</h2>
                     <div class="controles-filtro">
-                        <input type="text" id="buscarRegistro" class="input-busqueda" placeholder="Buscar por placa, marca o modelo...">
+                        <input type="text" id="buscarRegistro" class="input-busqueda"
+                            placeholder="Buscar por placa, marca o modelo...">
                         <div class="contenedor-seleccion filtro-anio">
                             <select id="filtroAnio">
                                 <option value="all">Todos</option>
@@ -201,7 +216,8 @@
                                     <label>Nivel de atención:</label>
                                     <div class="grupo-casillas">
                                         <label class="contenedor-casilla">1er Año
-                                            <input type="checkbox" name="nivelAtencion" value="1er_anio" checked disabled>
+                                            <input type="checkbox" name="nivelAtencion" value="1er_anio" checked
+                                                disabled>
                                             <span class="marca-verificacion"></span>
                                         </label>
                                         <label class="contenedor-casilla">2do Año
@@ -216,11 +232,13 @@
                                 </div>
                                 <div class="grupo-formulario">
                                     <label for="instructorResponsable">Instructor responsable</label>
-                                    <input type="text" id="instructorResponsable" value="José Eduardo Escalante Escobar" readonly>
+                                    <input type="text" id="instructorResponsable" value="José Eduardo Escalante Escobar"
+                                        readonly>
                                 </div>
                                 <div class="grupo-formulario">
                                     <label for="estudianteAsignado">Estudiante asignado</label>
-                                    <input type="text" id="estudianteAsignado" value="Cesar Gerardo Montoya Parras" readonly>
+                                    <input type="text" id="estudianteAsignado" value="Cesar Gerardo Montoya Parras"
+                                        readonly>
                                 </div>
                                 <div class="grupo-formulario">
                                     <label for="carnet">Carnet</label>
@@ -249,7 +267,8 @@
                                     <label>Tipo de operación:</label>
                                     <div class="grupo-casillas">
                                         <label class="contenedor-casilla">Preventivo
-                                            <input type="checkbox" name="tipoOperacion" value="preventivo" checked disabled>
+                                            <input type="checkbox" name="tipoOperacion" value="preventivo" checked
+                                                disabled>
                                             <span class="marca-verificacion"></span>
                                         </label>
                                         <label class="contenedor-casilla">Correctivo
@@ -278,22 +297,41 @@
                         <section class="tarjeta seccion-terminos-condiciones">
                             <h2>Términos y Condiciones del Servicio</h2>
                             <div class="contenido-terminos">
-                                <p>Las actividades y servicios del taller de Mantenimiento Automotriz están orientadas a la formación y prácticas técnicas de los estudiantes en los diferentes niveles académicos de la especialidad. Por tal motivo se establecen los siguientes términos y condiciones a considerar al momento de solicitar un servicio para su vehículo:</p>
-                                <p>1. La autorización de órdenes de trabajo queda bajo criterio del docente asignado a cada nivel formativo, considerando que dicha solicitud debe ser afín a los módulos formativos en proceso.</p>
-                                <p>2. Únicamente serán autorizadas órdenes de trabajo menores (máximo 2 horas) y medianas (máximo 8 horas).</p>
-                                <p>3. Al finalizar el proceso de Mantenimiento y reparación respectivo, el vehículo debe ser retirado del taller de forma inmediata. por ningún motivo se permite la permanencia de éste después de efectuado el proceso.</p>
-                                <p>4. Es terminantemente prohibida la permanencia de vehículos por un periodo mayor jornada formativa. Exceptuando proyectos de exposición y módulos que conllevan procesos de trabajo complejos.</p>
-                                <p>5. La institución no realiza cobros por servicios de reparación/mantenimiento, por lo cual no se permite realizar pagos a estudiantes ni instructores en concepto de servicios o compra de materiales y repuestos.</p>
-                                <p>6. Es obligación del propietario del vehículo proporcionar el material/repuestos necesarios para la ejecución del proceso a realizar en su vehículo según diagnóstico.</p>
-                                <p>7. Por tratarse de un proceso de mantenimiento/reparación con fines formativos para los estudiantes, la institución no responderá de ninguna consecuencia y no se hace responsable por daños, golpes, pérdidas o fallas en el vehículo en el ingreso al taller, durante y después de efectuado el proceso en el vehículo.</p>
+                                <p>Las actividades y servicios del taller de Mantenimiento Automotriz están orientadas a
+                                    la formación y prácticas técnicas de los estudiantes en los diferentes niveles
+                                    académicos de la especialidad. Por tal motivo se establecen los siguientes términos
+                                    y condiciones a considerar al momento de solicitar un servicio para su vehículo:</p>
+                                <p>1. La autorización de órdenes de trabajo queda bajo criterio del docente asignado a
+                                    cada nivel formativo, considerando que dicha solicitud debe ser afín a los módulos
+                                    formativos en proceso.</p>
+                                <p>2. Únicamente serán autorizadas órdenes de trabajo menores (máximo 2 horas) y
+                                    medianas (máximo 8 horas).</p>
+                                <p>3. Al finalizar el proceso de Mantenimiento y reparación respectivo, el vehículo debe
+                                    ser retirado del taller de forma inmediata. por ningún motivo se permite la
+                                    permanencia de éste después de efectuado el proceso.</p>
+                                <p>4. Es terminantemente prohibida la permanencia de vehículos por un periodo mayor
+                                    jornada formativa. Exceptuando proyectos de exposición y módulos que conllevan
+                                    procesos de trabajo complejos.</p>
+                                <p>5. La institución no realiza cobros por servicios de reparación/mantenimiento, por lo
+                                    cual no se permite realizar pagos a estudiantes ni instructores en concepto de
+                                    servicios o compra de materiales y repuestos.</p>
+                                <p>6. Es obligación del propietario del vehículo proporcionar el material/repuestos
+                                    necesarios para la ejecución del proceso a realizar en su vehículo según
+                                    diagnóstico.</p>
+                                <p>7. Por tratarse de un proceso de mantenimiento/reparación con fines formativos para
+                                    los estudiantes, la institución no responderá de ninguna consecuencia y no se hace
+                                    responsable por daños, golpes, pérdidas o fallas en el vehículo en el ingreso al
+                                    taller, durante y después de efectuado el proceso en el vehículo.</p>
                             </div>
                             <form>
                                 <div class="grupo-formulario">
                                     <label for="nombrePropietario">Nombre del propietario del Vehículo</label>
-                                    <input type="text" id="nombrePropietario" value="Eduardo José Gálvez Benítez" readonly>
+                                    <input type="text" id="nombrePropietario" value="Eduardo José Gálvez Benítez"
+                                        readonly>
                                 </div>
                                 <div class="grupo-formulario">
-                                    <label class="contenedor-casilla-terminos">He leído y acepto los términos y condiciones del servicio.
+                                    <label class="contenedor-casilla-terminos">He leído y acepto los términos y
+                                        condiciones del servicio.
                                         <input type="checkbox" id="aceptarTerminos" checked disabled>
                                         <span class="marca-verificacion-terminos"></span>
                                     </label>
@@ -315,4 +353,5 @@
     </div>
     <script src="js/primer-año.js"></script>
 </body>
+
 </html>

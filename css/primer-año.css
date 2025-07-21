@@ -168,6 +168,40 @@ p {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--fondo-encabezado);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+    border-radius: var(--radio-borde-pequeno);
+    top: calc(100% + var(--espaciado-xs)); /* Position below the Admin link */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--texto-claro);
+    padding: var(--espaciado-s) var(--espaciado-m);
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-radius: var(--radio-borde-pequeno);
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .panel-sistema {
     display: flex;
     flex-direction: column;

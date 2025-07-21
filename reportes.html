@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reportes</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="imgs/favicon/site.webmanifest" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/reportes.css">
 </head>
@@ -12,30 +16,38 @@
 <body>
 
   <header class="barra-navegacion">
-        <div class="barra-navegacion-izquierda">
-            <div class="logotipo">
-                <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
+    <div class="barra-navegacion-izquierda">
+      <div class="logotipo">
+        <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
+      </div>
+      <nav class="barra-navegacion-centro">
+        <ul>
+          <li><a href="coordi-index.html" class="enlace-navegacion">Inicio</a></li>
+          <li><a href="primer-año.html" class="enlace-navegacion">Primer Año</a></li>
+          <li><a href="reportes.html" class="enlace-navegacion activo">Reportes</a></li>
+          <li class="dropdown">
+            <a href="" class="enlace-navegacion">Admin <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown-content">
+              <a href="admin-users.html">Gestionar Usuarios</a>
+              <a href="admin-modules.html">Gestionar Módulos</a>
             </div>
-            <nav class="barra-navegacion-centro">
-                <ul>
-                    <li><a href="coordi-index.html" class="enlace-navegacion">Inicio</a></li>
-                    <li><a href="primer-año.html" class="enlace-navegacion">Primer Año</a></li>
-                    <li><a href="reportes.html" class="enlace-navegacion activo">Reportes</a></li>
-                    <li><a href="admin.html" class="enlace-navegacion">Admin</a></li>
-                </ul>
-            </nav>
-        </div>
-        <a href="perfil-coord.html" class="barra-navegacion-derecha">
-            <div class="info-usuario">
-                <span class="nombre-usuario">FERNANDO JAVIER</span>
-                <span class="rol-usuario">Segundo año</span>
-                <span class="detalle-usuario">Desarrollo de Software</span>
-            </div>
-            <div class="avatar-usuario">
-                <img src="placeholder-avatar.png" alt="Avatar">
-            </div>
-        </a>
-    </header>
+          </li>
+          <li><a href="perfil-coord.html" class="enlace-navegacion">Mi perfil</a></li>
+          <li><a href="index.html" class="enlace-navegacion">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+    <a href="perfil-coord.html" class="barra-navegacion-derecha">
+      <div class="info-usuario">
+        <span class="nombre-usuario">FERNANDO JAVIER</span>
+        <span class="rol-usuario">Coordinador</span>
+        <span class="detalle-usuario">Mantenimiento Automotriz</span>
+      </div>
+      <div class="avatar-usuario">
+        <img src="imgs/defaul-user.webp" alt="Avatar">
+      </div>
+    </a>
+  </header>
 
   <main class="contenido-principal">
     <div class="contenedor-grafico">
