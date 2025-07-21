@@ -75,6 +75,7 @@ body {
     align-items: center;
 }
 
+<<<<<<< Updated upstream
 .logotipo {
     /* Changed from .logo to .logotipo */
     margin-right: var(--espaciado-xl);
@@ -88,6 +89,17 @@ body {
 
 .barra-navegacion-centro ul {
     /* Changed from .barra-navegacion-central to .barra-navegacion-centro */
+=======
+.logotipo { 
+    margin-right: var(--espaciado-xl);
+}
+
+.logotipo-imagen { 
+    height: 50px; /* Tamaño del logo */
+}
+
+.barra-navegacion-centro ul { 
+>>>>>>> Stashed changes
     list-style: none;
     margin: 0;
     padding: 0;
@@ -95,8 +107,12 @@ body {
     gap: var(--espaciado-l);
 }
 
+<<<<<<< Updated upstream
 .barra-navegacion-centro a {
     /* Changed from .barra-navegacion-central ul li .enlace-navegacion to .barra-navegacion-centro a */
+=======
+.barra-navegacion-centro a { 
+>>>>>>> Stashed changes
     text-decoration: none;
     color: var(--texto-claro);
     font-weight: 500;
@@ -105,6 +121,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
+<<<<<<< Updated upstream
 .barra-navegacion-centro a:hover {
     /* Changed from .barra-navegacion-central ul li .enlace-navegacion:not(.activo):hover to .barra-navegacion-centro a:hover */
     background-color: rgba(255, 255, 255, 0.1);
@@ -112,13 +129,24 @@ body {
 
 .barra-navegacion-centro .enlace-navegacion.activo {
     /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo to .barra-navegacion-centro .enlace-navegacion.activo */
+=======
+.barra-navegacion-centro a:hover { 
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.barra-navegacion-centro .enlace-navegacion.activo { 
+>>>>>>> Stashed changes
     background-color: var(--acento-rojo);
     color: var(--texto-claro);
     font-weight: bold;
 }
 
+<<<<<<< Updated upstream
 .barra-navegacion-centro .enlace-navegacion.activo:hover {
     /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo:hover to .barra-navegacion-centro .enlace-navegacion.activo:hover */
+=======
+.barra-navegacion-centro .enlace-navegacion.activo:hover { 
+>>>>>>> Stashed changes
     background-color: var(--acento-rojo-oscuro);
 }
 
@@ -134,23 +162,36 @@ body {
     transform: translateY(-2px);
 }
 
+<<<<<<< Updated upstream
 .info-usuario {
     /* Changed from .informacion-usuario to .info-usuario */
+=======
+.info-usuario { 
+>>>>>>> Stashed changes
     text-align: right;
     margin-right: var(--espaciado-m);
 }
 
+<<<<<<< Updated upstream
 .info-usuario .nombre-usuario {
     /* Changed from .informacion-usuario .nombre-usuario to .info-usuario .nombre-usuario */
+=======
+.info-usuario .nombre-usuario { 
+>>>>>>> Stashed changes
     display: block;
     font-weight: bold;
     font-size: 1.1em;
 }
 
+<<<<<<< Updated upstream
 .info-usuario .rol-usuario,
 /* Changed from .informacion-usuario .rol-usuario to .info-usuario .rol-usuario */
 .info-usuario .detalle-usuario {
     /* Changed from .informacion-usuario .detalle-usuario to .info-usuario .detalle-usuario */
+=======
+.info-usuario .rol-usuario, 
+.info-usuario .detalle-usuario { 
+>>>>>>> Stashed changes
     font-size: 0.85em;
     color: var(--texto-secundario);
 }
