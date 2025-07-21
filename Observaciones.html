@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/observaciones.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -35,19 +36,19 @@
             </div>
 
             <div class="boton-acciones">
-                <a href="bitacora-actu.html"  class="boton-principal" style="text-decoration: none;">Enviar</a>
+                <button type="button" id="enviarObservacion" class="boton-principal">Enviar</button>
             </div>
 
         </div>
 
         <div class="tarjeta tarjeta-observaciones">
             <h2>Observaciones</h2>
-            <textarea class="area-texto-observaciones"></textarea>
+            <textarea id="areaTextoObservaciones" class="area-texto-observaciones" placeholder="Escribe tus observaciones aquí..."></textarea>
         </div>
-
-
-
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/observaciones.js"></script>
 </body>
 
 </html>
