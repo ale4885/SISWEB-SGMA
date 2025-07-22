@@ -6,38 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inicio</title>
   <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
-    <link rel="manifest" href="imgs/favicon/site.webmanifest" />
+  <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="imgs/favicon/site.webmanifest" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="css/estudiante.css" />
 </head>
 
 <body>
-  
-   <header class="barra-navegacion">
+
+  <header class="barra-navegacion">
     <div class="barra-navegacion-izquierda">
-        <div class="logotipo">
-            <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
-        </div>
-        <nav class="barra-navegacion-centro">
-            <ul>
-                <li><a href="estudiante.html" class="enlace-navegacion activo">Inicio</a></li>
-                <li><a href="mis-trabajos.html" class="enlace-navegacion">Mis trabajos</a></li>
-                <li><a href="registro-auto.html" class="enlace-navegacion">Registrar Vehículo</a></li>
-                <li><a href="perfil.html" class="enlace-navegacion">Mi perfil</a></li>
-                <li><a href="index.html" class="enlace-navegacion">Cerrar Sesión</a></li>
-            </ul>
-        </nav>
+      <div class="logotipo">
+        <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="barra-navegacion-centro">
+        <ul>
+          <li><a href="estudiante.html" class="enlace-navegacion activo">Inicio</a></li>
+          <li><a href="mis-trabajos.html" class="enlace-navegacion">Mis trabajos</a></li>
+          <li><a href="registro-auto.html" class="enlace-navegacion">Registrar Vehículo</a></li>
+          <li><a href="perfil.html" class="enlace-navegacion">Mi perfil</a></li>
+          <li><a href="index.html" class="enlace-navegacion">Cerrar Sesión</a></li>
+        </ul>
+      </nav>
     </div>
-    <a href="perfil.html" class="barra-navegacion-derecha" id="perfilUsuarioNav"> <div class="info-usuario"> <span class="nombre-usuario" id="nombreUsuarioHeader"></span>
-            <span class="rol-usuario" id="rolUsuarioHeader"></span>
-            <span class="detalle-usuario" id="detalleUsuarioHeader"></span>
-        </div>
-        <div class="avatar-usuario">
-            <img src="imgs/defaul-user.webp" alt="Avatar" id="avatarUsuarioHeader"> </div>
+    <a href="perfil.html" class="barra-navegacion-derecha" id="perfilUsuarioNav">
+      <div class="info-usuario">
+        <span class="nombre-usuario" id="nombreUsuarioHeader"></span>
+        <span class="rol-usuario" id="rolUsuarioHeader"></span>
+        <span class="detalle-usuario" id="detalleUsuarioHeader"></span>
+      </div>
+      <div class="avatar-usuario">
+        <img src="imgs/defaul-user.webp" alt="Avatar" id="avatarUsuarioHeader">
+      </div>
     </a>
-</header>
+  </header>
 
   <div class="contenedor-app-pantalla-completa">
     <main class="contenido-principal-estudiantes">

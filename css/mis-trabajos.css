@@ -1,8 +1,10 @@
-/* mis-trabajos.css */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 
 :root {
-    /* Colores */
-    --fondo-app: #1E1E1E; /* Changed from --fondo-oscuro */
+    --fondo-app: #1E1E1E;
     --fondo-tarjeta: #2D2D2D;
     --texto-claro: #FFFFFF;
     --texto-secundario: #B0B0B0;
@@ -15,32 +17,27 @@
     --acento-rojo: #e74c3c;
     --acento-rojo-oscuro: #c0392b;
 
-    /* Fondos */
-    --fondo-cabecera: #2c3e50; /* Harmonized from estudiante.css */
+    --fondo-cabecera: #2c3e50;
     --fondo-encabezado: #2c3e50;
     --fondo-boton-volver: #444;
     --hover-boton-volver: #555;
 
-    /* Bordes y Radios */
     --radio-borde-tarjeta: 16px;
     --radio-borde-estado: 20px;
     --radio-borde-pequeno: 8px;
     --radio-borde-avatar: 50%;
-    --radio-borde-navbar-boton: 8px; /* Harmonized from estudiante.css */
+    --radio-borde-navbar-boton: 8px;
     --color-borde-navbar: #ffffff;
 
-    /* Espaciado */
     --espaciado-xs: 5px;
-    --espaciado-s: 10px; /* Harmonized from estudiante.css */
-    --espaciado-m: 15px; /* Harmonized from estudiante.css */
-    --espaciado-l: 20px; /* Harmonized from estudiante.css */
-    --espaciado-xl: 30px; /* Harmonized from estudiante.css */
+    --espaciado-s: 10px;
+    --espaciado-m: 15px;
+    --espaciado-l: 20px;
+    --espaciado-xl: 30px;
 
-    /* Nuevas variables para la barra de navegacion (eliminar redundantes) */
-    --altura-cabecera: 60px; /* ADDED, Harmonized from estudiante.css */
+    --altura-cabecera: 60px;
 }
 
-/* Base global styles */
 html, body {
     margin: 0;
     padding: 0;
@@ -56,7 +53,6 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Estilos de la barra de navegación (Navbar) */
 .barra-navegacion {
     display: flex;
     justify-content: space-between;
@@ -67,6 +63,8 @@ html, body {
     border-bottom: 1px solid var(--color-borde-navbar);
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
 }
 
 .barra-navegacion-izquierda {
@@ -97,6 +95,7 @@ html, body {
     padding: var(--espaciado-s) var(--espaciado-m);
     border-radius: var(--radio-borde-navbar-boton);
     transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 .barra-navegacion-centro a:hover {
@@ -185,7 +184,6 @@ html, body {
     display: block;
 }
 
-/* Estilos del encabezado de la aplicación (Header) */
 .cabecera-app {
     background-color: var(--fondo-cabecera);
     padding: var(--espaciado-m) var(--espaciado-xl);
@@ -228,7 +226,6 @@ html, body {
     font-size: 1em;
 }
 
-/* Estilos del contenido principal */
 .contenido-principal-mis-trabajos {
     flex-grow: 1;
     overflow-y: auto;
@@ -240,7 +237,6 @@ html, body {
     margin: 0 auto;
 }
 
-/* Estilos de la lista de trabajos (grid/flex container) */
 .lista-trabajos {
     display: flex;
     flex-wrap: wrap;
@@ -249,7 +245,6 @@ html, body {
     padding-bottom: var(--espaciado-xl);
 }
 
-/* Estilos de la tarjeta de trabajo (card) */
 .tarjeta-trabajo {
     background-color: var(--fondo-tarjeta);
     border-radius: var(--radio-borde-tarjeta);
@@ -389,7 +384,6 @@ html, body {
     fill: #308ce0;
 }
 
-/* Estilos de los modales (Modal) */
 .contenido-modal {
     background-color: #333;
     border: 1px solid #444;
@@ -407,7 +401,6 @@ html, body {
     color: #f0f0f0;
 }
 
-/* Estilos del perfil de visualización (Profile View) */
 .perfil-visualizacion {
     display: flex;
     flex-direction: column;
@@ -430,11 +423,267 @@ html, body {
     color: var(--rojo-principal);
 }
 
-/* This .nombre-usuario is specific to the profile view,
-   distinguished from the one in .info-usuario */
 .perfil-visualizacion .nombre-usuario {
     font-size: 1.8em;
     font-weight: bold;
     color: #ffffff;
     margin: 0;
+}
+
+@media (max-width: 767px) {
+    .barra-navegacion {
+        padding: var(--espaciado-s) var(--espaciado-m);
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logotipo {
+        margin-right: 0;
+        order: 2;
+    }
+
+    .logotipo-imagen {
+        height: 40px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        order: 1;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--texto-claro);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle:checked + .hamburger-menu span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle:checked + .hamburger-menu span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .hamburger-menu span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .barra-navegacion-centro {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--fondo-encabezado);
+        transition: max-height 0.3s ease-out;
+        flex-direction: column;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+    }
+
+    .menu-toggle:checked ~ .barra-navegacion-centro {
+        max-height: 300px;
+    }
+
+    .barra-navegacion-centro ul {
+        flex-direction: column;
+        width: 100%;
+        padding: var(--espaciado-s) 0;
+        border-top: none;
+    }
+
+    .barra-navegacion-centro ul li {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .barra-navegacion-centro a {
+        padding: var(--espaciado-m) var(--espaciado-l);
+        width: 100%;
+        display: block;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .barra-navegacion-derecha {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .info-usuario {
+        display: none;
+    }
+
+    .avatar-usuario img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contenido-principal-mis-trabajos {
+        padding: var(--espaciado-m);
+    }
+
+    .lista-trabajos {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espaciado-l);
+    }
+
+    .tarjeta-trabajo {
+        width: 90%;
+        max-width: 350px;
+        min-width: unset;
+    }
+
+    .imagen-tarjeta {
+        height: 180px;
+    }
+
+    .detalles-tarjeta {
+        padding: var(--espaciado-m);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .barra-navegacion {
+        padding: var(--espaciado-m) var(--espaciado-xl);
+    }
+
+    .logotipo-imagen {
+        height: 45px;
+    }
+
+    .barra-navegacion-centro ul {
+        gap: var(--espaciado-m);
+    }
+
+    .barra-navegacion-centro a {
+        font-size: 0.95em;
+        padding: var(--espaciado-s) var(--espaciado-m);
+    }
+
+    .barra-navegacion-derecha {
+        margin-left: var(--espaciado-l);
+    }
+
+    .info-usuario .nombre-usuario {
+        font-size: 1em;
+    }
+
+    .info-usuario .rol-usuario,
+    .info-usuario .detalle-usuario {
+        font-size: 0.8em;
+    }
+
+    .avatar-usuario img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-toggle,
+    .hamburger-menu {
+        display: none;
+    }
+
+    .contenido-principal-mis-trabajos {
+        padding: var(--espaciado-xl);
+    }
+
+    .lista-trabajos {
+        gap: var(--espaciado-l);
+    }
+
+    .tarjeta-trabajo {
+        flex: 1 1 calc(50% - var(--espaciado-l) / 2);
+        max-width: calc(50% - var(--espaciado-l) / 2);
+        min-width: unset;
+    }
+
+    .imagen-tarjeta {
+        height: 190px;
+    }
+
+    .detalles-tarjeta {
+        padding: var(--espaciado-l);
+    }
+}
+
+@media (min-width: 1025px) {
+    .barra-navegacion {
+        padding: var(--espaciado-m) var(--espaciado-xl);
+    }
+
+    .logotipo-imagen {
+        height: 50px;
+    }
+
+    .barra-navegacion-centro ul {
+        gap: var(--espaciado-l);
+    }
+
+    .barra-navegacion-centro a {
+        font-size: 1em;
+        padding: var(--espaciado-s) var(--espaciado-m);
+    }
+
+    .barra-navegacion-derecha {
+        margin-left: var(--espaciado-xl);
+    }
+
+    .info-usuario .nombre-usuario {
+        font-size: 1.1em;
+    }
+
+    .info-usuario .rol-usuario,
+    .info-usuario .detalle-usuario {
+        font-size: 0.85em;
+    }
+
+    .avatar-usuario img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .menu-toggle,
+    .hamburger-menu {
+        display: none;
+    }
+
+    .contenido-principal-mis-trabajos {
+        padding: var(--espaciado-xl);
+    }
+
+    .lista-trabajos {
+        gap: var(--espaciado-xl);
+    }
+
+    .tarjeta-trabajo {
+        flex: 1 1 calc(33.333% - (var(--espaciado-xl) * 2 / 3));
+        max-width: calc(33.333% - (var(--espaciado-xl) * 2 / 3));
+    }
+
+    .imagen-tarjeta {
+        height: 200px;
+    }
+
+    .detalles-tarjeta {
+        padding: var(--espaciado-l);
+    }
 }

@@ -5,16 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmarNuevaContrasenaInput = document.getElementById('confirmarNuevaContrasena');
     const mensajeContrasena = document.getElementById('mensajeContrasena');
 
-    // Dummy data for user information (replace with actual data fetching)
     const userData = {
         nombreCompleto: "Juan Pérez",
         email: "juan.perez@example.com",
         rol: "Estudiante",
-        // This would ideally come from a secure backend
-        currentPassword: "password123" 
+        currentPassword: "password123"
     };
 
-    // Populate user profile data
     document.getElementById('nombreUsuarioHeader').textContent = userData.nombreCompleto;
     document.getElementById('rolUsuarioHeader').textContent = userData.rol;
     document.getElementById('detalleUsuarioHeader').textContent = userData.email;
@@ -23,13 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('rolUsuario').textContent = userData.rol;
 
     formularioCambioContrasena.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         const contrasenaActual = contrasenaActualInput.value;
         const nuevaContrasena = nuevaContrasenaInput.value;
         const confirmarNuevaContrasena = confirmarNuevaContrasenaInput.value;
 
-        // Clear previous messages
         mensajeContrasena.style.display = 'none';
         mensajeContrasena.className = 'mensaje-alerta';
         mensajeContrasena.textContent = '';
@@ -54,13 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // If all validations pass
         mostrarAlertaExito('Contraseña actualizada exitosamente.');
         
-        // In a real application, you would send this data to a server
         console.log('Contraseña actualizada con éxito para el usuario:', userData.email);
 
-        // Reset the form
         formularioCambioContrasena.reset();
     });
 
@@ -75,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 content: 'swal-custom-content',
                 confirmButton: 'swal-custom-confirm-button'
             },
-            buttonsStyling: false, // Important for custom button styles
+            buttonsStyling: false,
             confirmButtonText: 'Aceptar'
         });
     }
@@ -86,5 +79,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function mostrarAlertaExito(mensaje) {
         mostrarAlerta(mensaje, 'success');
+    }
+
+    const formularioActualizarPerfil = document.getElementById('formularioActualizarPerfil');
+    const nombreCompletoInput = document.getElementById('nombreCompleto');
+    const correoElectronicoInput = document.getElementById('correoElectronico');
+
+    nombreCompletoInput.value = userData.nombreCompleto;
+    correoElectronicoInput.value = userData.email;
+
+    formularioActualizarPerfil.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const nuevoNombre = nombreCompletoInput.value;
+        const nuevoCorreo = correoElectronicoInput.value;
+
+        if (nuevoNombre === '' || nuevoCorreo === '') {
+            mostrarAlertaError('Nombre y correo electrónico son obligatorios.');
+            return;
+        }
+
+        if (!isValidEmail(nuevoCorreo)) {
+            mostrarAlertaError('Por favor, ingresa un correo electrónico válido.');
+            return;
+        }
+
+        userData.nombreCompleto = nuevoNombre;
+        userData.email = nuevoCorreo;
+
+        document.getElementById('nombreUsuarioHeader').textContent = userData.nombreCompleto;
+        document.getElementById('detalleUsuarioHeader').textContent = userData.email;
+        document.getElementById('nombreCompletoUsuario').textContent = userData.nombreCompleto;
+        document.getElementById('correoUsuario').textContent = userData.email;
+
+        mostrarAlertaExito('Información de perfil actualizada exitosamente.');
+        console.log('Información de perfil actualizada para:', userData.email);
+    });
+
+    function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     }
 });

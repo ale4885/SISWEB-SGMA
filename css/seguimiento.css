@@ -29,8 +29,6 @@ body {
     --relleno-barra-progreso: #A32F2A;
     --color-pista-scroll: #333;
     --color-pulgar-scroll: #888;
-
-    /* Nuevas variables para el navbar */
     --navbar-fondo: #2c3e50;
     --navbar-texto: white;
     --navbar-boton-fondo: #e74c3c;
@@ -71,11 +69,11 @@ body {
     border-radius: 8px;
     font-size: 0.85em;
     transition: background-color 0.2s ease;
-    display: flex; /* Para alinear el icono y el texto */
+    display: flex;
     align-items: center;
-    gap: 0.5em; /* Espacio entre el icono y el texto */
-    flex-shrink: 0; /* Evita que el botón se encoja */
-    z-index: 10;/* Decreased font size for the text */
+    gap: 0.5em;
+    flex-shrink: 0;
+    z-index: 10;
 }
 
 .boton-volver:hover {
@@ -83,21 +81,19 @@ body {
 }
 
 .boton-volver i {
-    font-size: 0.9em; 
+    font-size: 0.9em;
 }
-
 
 @media (min-width: 768px) {
     .boton-volver {
-        font-size: 0.9em; 
-        padding: 0.5em 1em; 
+        font-size: 0.9em;
+        padding: 0.5em 1em;
     }
 
     .boton-volver i {
-        font-size: 1em; 
+        font-size: 1em;
     }
 }
-
 
 .navbar {
     display: flex;
@@ -457,12 +453,191 @@ footer {
     width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
+    .tarjeta-info-vehiculo {
+        width: 100%;
+        padding: 1em;
+        margin: 10px auto;
+    }
+
+    .contenedor-detalles-vehiculo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.8em;
+    }
+
+    .envoltorio-imagen-vehiculo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 0.5em;
+    }
+
+    .texto-info-vehiculo h2 {
+        font-size: 1.4em;
+    }
+
+    .texto-info-vehiculo p,
+    .estado-ajuste,
+    .info-contacto span,
+    .boton-contacto {
+        font-size: 0.9em;
+    }
+
+    .info-contacto {
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 0.8em;
+    }
+
+    .boton-contacto {
+        width: 80%;
+        max-width: 200px;
+        font-size: 0.9em;
+        padding: 0.5em 1em;
+    }
+
+    .seccion-progreso {
+        margin-top: 1em;
+    }
+
+    .contenedor-barra-progreso {
+        height: 12px;
+    }
+
+    #porcentajeProgreso,
+    .info-tiempo-progreso {
+        font-size: 0.8em;
+    }
+
+    .cuadricula-tareas-reparacion {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+
+    .item-tarea {
+        font-size: 0.9em;
+        padding: 0.8em 1em;
+    }
+
+    .seccion-actualizaciones {
+        width: 100%;
+        padding: 1em;
+        margin: 10px auto;
+    }
+
+    .seccion-actualizaciones h2 {
+        font-size: 1.3em;
+        margin-bottom: 0.8em;
+    }
+
+    .seccion-actualizaciones ul li {
+        font-size: 0.85em;
+        padding: 0.7em 0.9em;
+    }
+
+    footer {
+        font-size: 0.75em;
+        padding: 0.8em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tarjeta-info-vehiculo {
+        width: 95%;
+        padding: 1.2em;
+    }
+
+    .contenedor-detalles-vehiculo {
+        gap: 1.2em;
+    }
+
+    .envoltorio-imagen-vehiculo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .texto-info-vehiculo h2 {
+        font-size: 1.7em;
+    }
+
+    .texto-info-vehiculo p,
+    .estado-ajuste,
+    .info-contacto span,
+    .boton-contacto {
+        font-size: 1em;
+    }
+
+    .info-contacto {
+        gap: 0.6em;
+    }
+
+    .boton-contacto {
+        padding: 0.6em 1.1em;
+    }
+
+    .contenedor-barra-progreso {
+        height: 18px;
+    }
+
+    #porcentajeProgreso,
+    .info-tiempo-progreso {
+        font-size: 0.95em;
+    }
+
+    .cuadricula-tareas-reparacion {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.2em;
+    }
+
+    .item-tarea {
+        font-size: 0.98em;
+        padding: 1em 1.2em;
+    }
+
+    .seccion-actualizaciones {
+        width: 95%;
+        padding: 1.2em;
+    }
+
+    .seccion-actualizaciones h2 {
+        font-size: 1.4em;
+    }
+
+    .seccion-actualizaciones ul li {
+        font-size: 0.9em;
+        padding: 0.8em 1em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 1025px) {
     .contenedor-aplicacion {
+        min-height: 100vh;
         max-width: 100%;
-        min-height: 85vh;
+        margin: 0;
         border-radius: 0;
-        margin: 0px auto;
+    }
+
+    .contenido-principal-seguimiento {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2em;
+        padding: 2em;
+    }
+
+    .tarjeta-info-vehiculo {
+        width: 60%;
+        margin: 0;
+    }
+
+    .seccion-actualizaciones {
+        width: 35%;
+        margin: 0;
     }
 
     .encabezado-seguimiento {
@@ -478,34 +653,6 @@ footer {
         font-size: 1em;
         padding: 0.7em 1.2em;
     }
-
-    .contenido-principal-seguimiento {
-        flex-grow: 1;
-        padding: 1.5em;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
-        align-items: center;
-    }
-
-   @media (min-width: 768px) {
-    .contenido-principal-seguimiento {
-        flex-direction: row; 
-        justify-content: center; 
-        align-items: flex-start; 
-        gap: 2em; 
-    }
-
-    .tarjeta-info-vehiculo {
-        width: 60%; 
-        margin: 0; 
-    }
-
-    .seccion-actualizaciones {
-        width: 35%;
-        margin: 0; 
-    }
-}
 
     .contenedor-detalles-vehiculo {
         flex-direction: row;
@@ -575,24 +722,5 @@ footer {
     footer {
         font-size: 0.85em;
         padding: 1.2em;
-    }
-}
-.contenedor-aplicacion {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-    background-color: var(--oscuro-principal);
-    box-shadow: 0 0 15px var(--sombra-tarjeta);
-    max-width: 100%;
-    margin: 0;
-    border-radius: 0;
-}
-
-@media (min-width: 768px) {
-    .contenedor-aplicacion {
-        min-height: 100vh; 
-        max-width: 100%; 
-        margin: 0; 
-        border-radius: 0;
     }
 }

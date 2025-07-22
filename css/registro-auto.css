@@ -11,14 +11,11 @@
     --radio-borde-tarjeta: 16px;
     --radio-borde-entrada: 10px;
     --radio-borde-boton: 30px;
-
-    /* Espaciado armonizado con estudiante.css para la navegación */
     --espaciado-xs: 5px;
     --espaciado-s: 10px;
     --espaciado-m: 15px;
     --espaciado-l: 20px;
     --espaciado-xl: 30px;
-
     --fondo-boton-volver: #444;
     --rojo-primario: #881F1E;
     --fondo-cuerpo: #2c2c2c;
@@ -33,36 +30,28 @@
     --color-fondo-casilla-hover: #555;
     --color-fondo-casilla-activa: #4CAF50;
     --color-borde-casilla-activa: #4CAF50;
-
-    /* Variables de la barra de navegación (Header) - Unificadas con estudiante.css */
-    --fondo-cabecera: #2c3e50; /* Alineado con fondo-encabezado */
-    --fondo-encabezado: #2c3e50; /* Fondo de la barra de navegación */
-    --color-texto-barra-navegacion: white; /* Texto general en la barra de navegación */
-    --fondo-boton-navegacion: #e74c3c; /* Fondo para botones de navegación, como "Cerrar Sesión" */
-    --color-texto-boton-navegacion: white; /* Color de texto para los botones de navegación */
-    --fondo-boton-activo-navegacion: white; /* Fondo para el enlace de navegación activo */
-    --color-texto-boton-activo-navegacion: #2c3e50; /* Color de texto para el enlace de navegación activo */
-    --sombra-barra-navegacion: rgba(0, 0, 0, 0.2); /* Sombra de la barra de navegación */
-    --sombra-boton-activo: rgba(0, 0, 0, 0.15); /* Sombra para el botón activo */
-    --fondo-boton-navegacion-hover: #c0392b; /* Fondo al pasar el ratón por los botones de navegación */
-    --color-texto-secundario-usuario: #b0c4de; /* Color de texto secundario en información del usuario */
-    --acento-rojo: #e74c3c; /* Color de acento para elementos rojos, como el enlace activo del nav */
-    --acento-rojo-oscuro: #c0392b; /* Variante oscura del acento rojo para estados hover */
-    --color-borde-navbar: #ffffff; /* Borde inferior de la barra de navegación */
-    --altura-cabecera: 60px; /* Altura de la sección de la cabecera/nav */
-    --hover-boton-volver: #555; /* Hover para el botón de volver si se usa en el nav */
-
-    /* Variables para Avatar - Añadidas y armonizadas con estudiante.css */
-    --color-borde-avatar: white; /* Borde del avatar */
-    --borde-avatar: 2px solid var(--color-borde-avatar); /* Estilo de borde completo del avatar */
-    --sombra-avatar: 0 0 0 2px var(--fondo-barra-navegacion); /* Sombra alrededor del avatar */
-    --radio-borde-avatar: 50%; /* Radio de borde para el avatar (redondo) */
-
-    /* Variables para bordes y radios de navegación armonizadas */
-    --radio-borde-pequeno: 8px; /* Radio de borde para elementos pequeños, como dropdowns */
-    --radio-borde-navbar-boton: 8px; /* Radio de borde para los botones/enlaces dentro del nav */
-
-
+    --fondo-cabecera: #2c3e50;
+    --fondo-encabezado: #2c3e50;
+    --color-texto-barra-navegacion: white;
+    --fondo-boton-navegacion: #e74c3c;
+    --color-texto-boton-navegacion: white;
+    --fondo-boton-activo-navegacion: white;
+    --color-texto-boton-activo-navegacion: #2c3e50;
+    --sombra-barra-navegacion: rgba(0, 0, 0, 0.2);
+    --sombra-boton-activo: rgba(0, 0, 0, 0.15);
+    --fondo-boton-navegacion-hover: #c0392b;
+    --color-texto-secundario-usuario: #b0c4de;
+    --acento-rojo: #e74c3c;
+    --acento-rojo-oscuro: #c0392b;
+    --color-borde-navbar: #ffffff;
+    --altura-cabecera: 60px;
+    --hover-boton-volver: #555;
+    --color-borde-avatar: white;
+    --borde-avatar: 2px solid var(--color-borde-avatar);
+    --sombra-avatar: 0 0 0 2px var(--fondo-barra-navegacion);
+    --radio-borde-avatar: 50%;
+    --radio-borde-pequeno: 8px;
+    --radio-borde-navbar-boton: 8px;
     --fondo-barra-lateral: #2D2D2D;
     --fondo-contenido-principal: #1E1E1E;
 }
@@ -91,6 +80,8 @@ body {
     border-bottom: 1px solid var(--color-borde-navbar);
     width: 100%;
     box-sizing: border-box;
+    flex-wrap: wrap;
+    position: relative; /* Added for proper positioning of hamburger menu */
 }
 
 .barra-navegacion-izquierda {
@@ -175,38 +166,12 @@ body {
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
+.hamburguesa {
     display: none;
-    position: absolute;
-    background-color: var(--fondo-encabezado);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-    z-index: 1;
-    border-radius: var(--radio-borde-pequeno);
-    top: calc(100% + var(--espaciado-xs));
-    left: 0;
-}
-
-.dropdown-content a {
+    font-size: 1.8em;
     color: var(--texto-claro);
-    padding: var(--espaciado-s) var(--espaciado-m);
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    border-radius: var(--radio-borde-pequeno);
-}
-
-.dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above other content */
 }
 
 .contenedor {
@@ -217,8 +182,6 @@ body {
     padding: 30px 20px;
     box-sizing: border-box;
 }
-
-
 
 .seccion {
     margin-bottom: 40px;
@@ -283,7 +246,7 @@ input[type="tel"]::placeholder {
 small {
     display: block;
     margin-top: 5px;
-    color: var(--color-texto-pequeño);
+    color: var(--color-texto-pequeno);
     font-size: 0.9em;
 }
 
@@ -291,10 +254,12 @@ small {
     display: flex;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .entrada-con-casilla input[type="text"] {
     flex-grow: 1;
+    min-width: 150px;
 }
 
 .entrada-con-casilla input[type="checkbox"],
@@ -522,7 +487,6 @@ small {
     background-color: var(--rojo-primario);
 }
 
-/* SweetAlert2 Custom Styles */
 .swal-custom-popup {
     background-color: var(--fondo-tarjeta) !important;
     color: var(--texto-claro) !important;
@@ -549,4 +513,142 @@ small {
 
 .swal-custom-confirm-button:hover {
     background-color: #ad1414 !important;
+}
+
+@media (max-width: 768px) {
+    .barra-navegacion {
+        padding: var(--espaciado-s) var(--espaciado-m);
+        flex-wrap: wrap;
+        justify-content: space-between; /* Adjusted to keep logo and hamburger separate */
+        position: relative;
+    }
+
+    .barra-navegacion-izquierda {
+        width: auto; /* Allow content to dictate width */
+        justify-content: flex-start;
+    }
+
+    .logotipo {
+        margin-right: 0;
+    }
+
+    .barra-navegacion-centro {
+        display: none;
+        position: absolute; /* Position absolutely to act as overlay */
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--fondo-encabezado);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        padding: var(--espaciado-m) 0;
+        border-radius: var(--radio-borde-pequeno);
+        z-index: 1000; /* Ensure it's above page content */
+    }
+
+    .barra-navegacion-centro.activo {
+        display: flex;
+    }
+
+    .barra-navegacion-centro ul {
+        flex-direction: column;
+        gap: var(--espaciado-xs);
+    }
+
+    .barra-navegacion-centro ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .barra-navegacion-centro a {
+        padding: var(--espaciado-s) var(--espaciado-l);
+        width: calc(100% - (2 * var(--espaciado-l)));
+        display: block;
+    }
+
+    .barra-navegacion-derecha {
+        display: none;
+    }
+
+    .hamburguesa {
+        display: block;
+        position: static; /* Use static positioning so it flows with flexbox */
+        margin-left: auto; /* Push to the right */
+    }
+
+    .contenedor {
+        margin: var(--espaciado-l) auto;
+        padding: var(--espaciado-l);
+    }
+
+    .titulo-seccion {
+        font-size: 1.8em;
+    }
+
+    .entrada-con-casilla {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .entrada-con-casilla input[type="text"] {
+        width: 100%;
+    }
+
+    .grupo-casilla {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contenedor-casilla {
+        width: 100%;
+    }
+
+    .contenido-terminos {
+        padding: 15px;
+    }
+
+    .botones {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .barra-navegacion {
+        padding: var(--espaciado-s) var(--espaciado-xs);
+    }
+
+    .logotipo-imagen {
+        height: 40px;
+    }
+
+    .hamburguesa {
+        right: var(--espaciado-s);
+        top: var(--espaciado-s);
+    }
+
+    .contenedor {
+        padding: var(--espaciado-m);
+    }
+
+    .titulo-seccion {
+        font-size: 1.5em;
+    }
+
+    label {
+        font-size: 1em;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    select {
+        padding: 12px 10px;
+        font-size: 1em;
+    }
+
+    small {
+        font-size: 0.8em;
+    }
 }

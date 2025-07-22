@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const aceptarTerminosCasilla = document.getElementById('aceptarTerminos');
     const botonEnviarSolicitud = document.getElementById('boton-enviar-solicitud');
 
-    // Inputs del formulario de vehículo
     const formRegistroVehiculo = document.getElementById('form-registro-vehiculo');
     const marcaInput = document.getElementById('marca');
     const modeloInput = document.getElementById('modelo');
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorInput = document.getElementById('color');
     const tarjetaCirculacionInput = document.getElementById('tarjetaCirculacion');
 
-    // Inputs del formulario de detalles de orden
     const instructorResponsableInput = document.getElementById('instructorResponsable');
     const estudianteAsignadoInput = document.getElementById('estudianteAsignado');
     const carnetInput = document.getElementById('carnet');
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const tipoOperacionCorrectivo = document.getElementById('tipoOperacionCorrectivo');
     const tiempoEstimadoInput = document.getElementById('tiempoEstimado');
 
-    // Inputs del formulario de términos y condiciones
     const dueñoVehiculoInput = document.getElementById('dueñoVehiculo');
     const duiDueñoInput = document.getElementById('duiDueño');
     const telDueñoInput = document.getElementById('telDueño');
@@ -68,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
             entradaPoliza.disabled = true;
             entradaPoliza.value = '';
             entradaPoliza.placeholder = 'No aplica';
-            entradaPoliza.classList.remove('is-invalid'); // Eliminar cualquier estado de validación
+            entradaPoliza.classList.remove('is-invalid');
             entradaPlaca.disabled = true;
             entradaPlaca.value = '';
             entradaPlaca.placeholder = 'No aplica';
-            entradaPlaca.classList.remove('is-invalid'); // Eliminar cualquier estado de validación
+            entradaPlaca.classList.remove('is-invalid');
         } else {
             entradaPoliza.disabled = false;
             entradaPoliza.placeholder = 'N° de póliza';
@@ -82,13 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
         actualizarEstadoBotonEnviar();
     }
 
-    // Función genérica para mostrar error de validación
     function mostrarError(element, message) {
         element.classList.add('is-invalid');
-        let errorDiv = element.nextElementSibling; // Asume que small es el siguiente
+        let errorDiv = element.nextElementSibling;
         if (errorDiv && errorDiv.tagName === 'SMALL') {
             errorDiv.textContent = message;
-            errorDiv.style.color = '#e74c3c'; // Rojo para errores
+            errorDiv.style.color = '#e74c3c';
         } else {
             errorDiv = document.createElement('small');
             errorDiv.textContent = message;
@@ -97,19 +93,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Función genérica para limpiar error de validación
     function limpiarError(element) {
         element.classList.remove('is-invalid');
         let errorDiv = element.nextElementSibling;
         if (errorDiv && errorDiv.tagName === 'SMALL') {
-            // Restaurar el mensaje original o dejarlo vacío
             const originalSmallText = element.getAttribute('data-original-small-text');
             errorDiv.textContent = originalSmallText || '';
-            errorDiv.style.color = 'var(--color-texto-pequeño)'; // Color original
+            errorDiv.style.color = 'var(--color-texto-pequeno)';
         }
     }
 
-    // Guardar el texto original de small para restaurar
     document.querySelectorAll('.grupo-formulario small').forEach(smallElement => {
         const input = smallElement.previousElementSibling;
         if (input) {
@@ -164,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function validarFormularioCompleto() {
         let isValid = true;
 
-        // Sección Datos del vehículo
         if (!validarCampo(entradaPlaca, /^P\d{3}-\d{3}$/, 'Formato de placa inválido (Ej: P123-456).')) isValid = false;
         if (!casillaPoliza.checked) {
             if (!validarCampo(entradaPoliza, /^P\d{3}-\d{3}$/, 'Formato de póliza inválido (Ej: P123-456).')) isValid = false;
@@ -175,16 +167,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!validarCampo(colorInput, /^[a-zA-Z\s]+$/, 'El color no puede estar vacío y solo debe contener letras.')) isValid = false;
         if (!validarCampo(tarjetaCirculacionInput, /^\d\/\d{8}$/, 'Formato de tarjeta de circulación inválido (Ej: 0/12345678).')) isValid = false;
 
-        // Sección Detalles orden de trabajo
         if (!validarCampo(instructorResponsableInput, /^[a-zA-Z\s]+$/, 'El nombre del instructor es obligatorio.')) isValid = false;
         if (!validarCampo(estudianteAsignadoInput, /^[a-zA-Z\s]+$/, 'El nombre del estudiante es obligatorio.')) isValid = false;
         if (!validarCampo(carnetInput, /^\d{8}$/, 'Formato de carnet inválido (8 dígitos numéricos).')) isValid = false;
         if (!validarSelect(operacionesEfectuarSelect, 'Debes seleccionar una operación a efectuar.')) isValid = false;
         if (!validarSelect(moduloRespuestaSelect, 'Debes seleccionar un módulo de respuesta.')) isValid = false;
         
-        // Validar al menos una casilla de tipo de operación marcada
         if (!tipoOperacionPreventivo.checked && !tipoOperacionCorrectivo.checked) {
-            // No hay un elemento small directo para estas casillas, así que podríamos mostrar un error general o usar SweetAlert
             Swal.fire({
                 icon: 'warning',
                 title: 'Validación Incompleta',
@@ -201,12 +190,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!validarCampo(tiempoEstimadoInput, /^\d{2}:\d{2}$/, 'Formato de tiempo estimado inválido (Ej: 02:30).')) isValid = false;
 
-        // Sección Términos y Condiciones
         if (!validarCampo(dueñoVehiculoInput, /^[a-zA-Z\s]+$/, 'El nombre del propietario es obligatorio.')) isValid = false;
         if (!validarCampo(duiDueñoInput, /^\d{7}-\d{1}$/, 'Formato de DUI inválido (Ej: 0000000-0).')) isValid = false;
         if (!validarCampo(telDueñoInput, /^\d{4}-\d{4}$/, 'Formato de teléfono inválido (Ej: 0000-0000).')) isValid = false;
 
-        // Validar aceptación de términos
         if (!aceptarTerminosCasilla.checked) {
             Swal.fire({
                 icon: 'warning',
@@ -222,13 +209,11 @@ document.addEventListener('DOMContentLoaded', function () {
             isValid = false;
         }
 
-        // Validar fotos al final
         if (!validarFotos()) isValid = false;
 
         return isValid;
     }
 
-    // Añadir event listeners para validación en tiempo real (al perder el foco)
     entradaPlaca.addEventListener('blur', () => validarCampo(entradaPlaca, /^P\d{3}-\d{3}$/, 'Formato de placa inválido (Ej: P123-456).'));
     entradaPoliza.addEventListener('blur', () => {
         if (!casillaPoliza.checked) validarCampo(entradaPoliza, /^P\d{3}-\d{3}$/, 'Formato de póliza inválido (Ej: P123-456).');
@@ -252,21 +237,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function actualizarEstadoBotonEnviar() {
-        // El botón ahora se habilita solo si el checkbox de términos está marcado y las fotos están subidas.
-        // La validación completa del formulario se hará al hacer clic en el botón.
         if (aceptarTerminosCasilla.checked && estanTodasLasFotosTomadas()) {
             botonEnviarSolicitud.disabled = false;
-            botonEnviarSolicitud.style.backgroundColor = 'var(--rojo-primario)'; // Usar la variable CSS
+            botonEnviarSolicitud.style.backgroundColor = 'var(--rojo-primario)';
             botonEnviarSolicitud.style.cursor = 'pointer';
         } else {
             botonEnviarSolicitud.disabled = true;
-            botonEnviarSolicitud.style.backgroundColor = '#555555'; // Un color gris para deshabilitado
+            botonEnviarSolicitud.style.backgroundColor = '#555555';
             botonEnviarSolicitud.style.cursor = 'not-allowed';
         }
     }
 
     botonEnviarSolicitud.addEventListener('click', function (evento) {
-        evento.preventDefault(); // Evitar el envío por defecto del formulario
+        evento.preventDefault();
 
         if (validarFormularioCompleto()) {
             Swal.fire({
@@ -280,15 +263,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     confirmButton: 'swal-custom-confirm-button'
                 }
             }).then(() => {
-                // Opcional: Resetear el formulario o redirigir
                 document.getElementById('form-registro-vehiculo').reset();
                 document.getElementById('form-terminos').reset();
                 entradasFoto.forEach(item => {
                     item.vistaPrevia.src = '#';
                     item.vistaPrevia.style.display = 'none';
                 });
-                actualizarEstadosPolizaYPlaca(); // Resetear el estado de los campos de placa y póliza
-                actualizarEstadoBotonEnviar(); // Actualizar el estado del botón después del reseteo
+                actualizarEstadosPolizaYPlaca();
+                actualizarEstadoBotonEnviar();
             });
         } else {
             Swal.fire({
@@ -308,7 +290,82 @@ document.addEventListener('DOMContentLoaded', function () {
     casillaPoliza.addEventListener('change', actualizarEstadosPolizaYPlaca);
     aceptarTerminosCasilla.addEventListener('change', actualizarEstadoBotonEnviar);
 
-    // Inicializar el estado del botón y los campos al cargar la página
     actualizarEstadosPolizaYPlaca();
     actualizarEstadoBotonEnviar();
+
+    const menuHamburguesa = document.getElementById('menuHamburguesa');
+    const barraNavegacionCentro = document.getElementById('barraNavegacionCentro');
+
+    if (menuHamburguesa) {
+        menuHamburguesa.addEventListener('click', () => {
+            barraNavegacionCentro.classList.toggle('activo');
+        });
+    }
+
+    const fotos = ['foto1', 'foto2', 'foto3', 'foto4'];
+    fotos.forEach((fotoId, index) => {
+        const input = document.getElementById(fotoId);
+        const preview = document.getElementById(`vista-previa-${index + 1}`);
+
+        if (input) {
+            input.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.src = '#';
+                    preview.style.display = 'none';
+                }
+            });
+        }
+    });
+
+    if (casillaPoliza && inputPoliza) {
+        casillaPoliza.addEventListener('change', () => {
+            if (casillaPoliza.checked) {
+                inputPoliza.value = 'N/A';
+                inputPoliza.disabled = true;
+            } else {
+                inputPoliza.value = '';
+                inputPoliza.disabled = false;
+            }
+        });
+    }
+
+    if (botonEnviarSolicitud) {
+        botonEnviarSolicitud.addEventListener('click', () => {
+            const aceptarTerminos = document.getElementById('aceptarTerminos');
+            if (!aceptarTerminos.checked) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Términos no aceptados',
+                    text: 'Debe aceptar los términos y condiciones para enviar la solicitud.',
+                    customClass: {
+                        popup: 'swal-custom-popup',
+                        title: 'swal-custom-title',
+                        content: 'swal-custom-content',
+                        confirmButton: 'swal-custom-confirm-button'
+                    }
+                });
+                return;
+            }
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Solicitud Enviada',
+                text: 'Su solicitud ha sido enviada exitosamente.',
+                customClass: {
+                    popup: 'swal-custom-popup',
+                    title: 'swal-custom-title',
+                    content: 'swal-custom-content',
+                    confirmButton: 'swal-custom-confirm-button'
+                }
+            });
+        });
+    }
 });
