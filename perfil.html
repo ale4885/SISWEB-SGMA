@@ -22,19 +22,18 @@
             <div class="logotipo">
                 <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
             </div>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
             <nav class="barra-navegacion-centro">
                 <ul>
-                    <li><a href="estudiante.html" class="activo">Inicio</a></li>
-                    <li><a href="registro-auto.html">Registrar Vehículo</a></li>
-                    <li><a href="mis-trabajos.html">Mis Trabajos</a></li>
+                    <li><a href="estudiante.html" class="enlace-navegacion">Inicio</a></li>
+                    <li><a href="mis-trabajos.html" class="enlace-navegacion">Mis trabajos</a></li>
+                    <li><a href="registro-auto.html" class="enlace-navegacion">Registrar Vehículo</a></li>
+                    <li><a href="perfil.html" class="enlace-navegacion activo">Mi perfil</a></li>
+                    <li><a href="index.html" class="enlace-navegacion">Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </div>
         <a href="perfil.html" class="barra-navegacion-derecha" id="perfilUsuarioNav">
-            <div class="info-usuario">
-                <span class="nombre-usuario" id="nombreUsuarioHeader"></span>
+            <div class="info-usuario"> <span class="nombre-usuario" id="nombreUsuarioHeader"></span>
                 <span class="rol-usuario" id="rolUsuarioHeader"></span>
                 <span class="detalle-usuario" id="detalleUsuarioHeader"></span>
             </div>
@@ -44,60 +43,50 @@
         </a>
     </header>
 
-    <div class="contenedor-principal">
-        <section class="tarjeta-perfil">
-            <h1 class="titulo-seccion">Mi Perfil</h1>
-            <div class="informacion-basica">
-                <div class="avatar-grande">
-                    <img src="imgs/defaul-user.webp" alt="Avatar de Usuario" id="avatarUsuario">
-                    <input type="file" id="subirAvatar" accept="image/*" style="display: none;">
-                    <button class="boton-cambiar-avatar" onclick="document.getElementById('subirAvatar').click();">
-                        Cambiar Avatar
-                    </button>
+
+    <div class="contenido-pagina">
+        <section id="datos-usuario" class="seccion">
+            <div class="tarjeta-info-perfil">
+                <div class="perfil-visualizacion">
+                    <img id="fotoPerfil" class="foto-perfil"
+                        src="https://placehold.co/120x120/333333/FFFFFF?text=Sin+Foto" alt="Foto de Perfil">
+                    <p class="nombre-usuario-perfil" id="nombreCompletoUsuario">Cargando...</p>
                 </div>
-                <div class="detalles-usuario">
-                    <p><strong>Nombre Completo:</strong> <span id="nombreCompletoUsuario"></span></p>
-                    <p><strong>Correo Electrónico:</strong> <span id="correoUsuario"></span></p>
-                    <p><strong>Rol:</strong> <span id="rolUsuario"></span></p>
+                <div class="elemento-info-perfil">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email: <span id="correoUsuario">Cargando...</span></p>
+                </div>
+                <div class="elemento-info-perfil">
+                    <i class="fas fa-user-tag"></i>
+                    <p>Rol: <span id="rolUsuario">Cargando...</span></p>
                 </div>
             </div>
         </section>
 
-        <section class="formulario-seccion">
-            <h2 class="titulo-seccion">Actualizar Información Personal</h2>
-            <form id="formularioActualizarPerfil">
-                <div class="grupo-formulario">
-                    <label for="nombreCompleto">Nombre Completo</label>
-                    <input type="text" id="nombreCompleto" placeholder="Tu nombre completo" required>
-                </div>
-                <div class="grupo-formulario">
-                    <label for="correoElectronico">Correo Electrónico</label>
-                    <input type="email" id="correoElectronico" placeholder="tu.correo@example.com" required>
-                </div>
-                <button type="submit" class="boton-actualizar-perfil">Actualizar Perfil</button>
-            </form>
-        </section>
+        <hr class="separador-seccion">
 
-        <section class="formulario-seccion">
-            <h2 class="titulo-seccion">Cambiar Contraseña</h2>
-            <form id="formularioCambioContrasena">
-                <div class="grupo-formulario">
-                    <label for="contrasenaActual">Contraseña Actual</label>
-                    <input type="password" id="contrasenaActual" placeholder="Ingresa tu contraseña actual"
-                        required>
-                </div>
-                <div class="grupo-formulario">
-                    <label for="nuevaContrasena">Nueva Contraseña</label>
-                    <input type="password" id="nuevaContrasena" placeholder="Ingresa tu nueva contraseña" required>
-                </div>
-                <div class="grupo-formulario">
-                    <label for="confirmarNuevaContrasena">Confirmar Nueva Contraseña</label>
-                    <input type="password" id="confirmarNuevaContrasena" placeholder="Confirma tu nueva contraseña"
-                        required>
-                </div>
-                <button type="submit" class="boton-actualizar-contrasena">Actualizar Contraseña</button>
-                <div id="mensajeContrasena" class="mensaje-alerta"></div>
-            </form>
+        <section id="cambiar-contrasena" class="seccion">
+            <div class="seccion-cambiar-contrasena">
+                <h2>Cambiar Contraseña</h2>
+                <form id="formularioCambioContrasena">
+                    <div class="grupo-formulario">
+                        <label for="contrasenaActual">Contraseña Actual</label>
+                        <input type="password" id="contrasenaActual" placeholder="Ingresa tu contraseña actual"
+                            required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="nuevaContrasena">Nueva Contraseña</label>
+                        <input type="password" id="nuevaContrasena" placeholder="Ingresa tu nueva contraseña" required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="confirmarNuevaContrasena">Confirmar Nueva Contraseña</label>
+                        <input type="password" id="confirmarNuevaContrasena" placeholder="Confirma tu nueva contraseña"
+                            required>
+                    </div>
+                    <button type="submit" class="boton-actualizar-contrasena">Actualizar Contraseña</button>
+                    <div id="mensajeContrasena" class="mensaje-alerta"></div>
+                </form>
+            </div>
         </section>
 
     </div>
