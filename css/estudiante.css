@@ -20,13 +20,10 @@
   --color-texto-botones-nav: white; 
   --color-texto-activo-nav: #2c3e50; 
 
- 
   --fondo-encabezado: #2c3e50;
   --fondo-barra-lateral: #2D2D2D;
   --fondo-contenido-principal: #1E1E1E;
   
-
-
   --texto-secundario: #B0B0B0;
   --texto-fuerte: #E0E0E0;
 
@@ -81,10 +78,9 @@ body {
   padding-bottom: 20px; 
   box-sizing: border-box;
   border-radius: 20px;
-  height: calc(100vh - var(--altura-cabecera) - 40px); /* Ajustar altura */
+  height: calc(100vh - var(--altura-cabecera) - 40px);
 }
 
-/* Estilos de la barra de navegación */
 .barra-navegacion {
     display: flex;
     justify-content: space-between;
@@ -92,7 +88,7 @@ body {
     background-color: var(--fondo-encabezado);
     padding: var(--espaciado-s) var(--espaciado-l);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid var(--color-borde-navbar); /* Bordes blancos */
+    border-bottom: 1px solid var(--color-borde-navbar);
 }
 
 .barra-navegacion-izquierda {
@@ -123,6 +119,7 @@ body {
     padding: var(--espaciado-s) var(--espaciado-m);
     border-radius: var(--radio-borde-navbar-boton);
     transition: background-color 0.3s ease;
+    white-space: nowrap; /* Added: Prevent text from wrapping */
 }
 
 .barra-navegacion-centro a:hover { 
@@ -210,7 +207,6 @@ body {
     display: block;
 }
 
-/* --- ESTILOS DEL CONTENIDO PRINCIPAL Y CENTRADO DE TARJETAS --- */
 .contenido-principal-estudiantes {
   flex-grow: 1;
   overflow-y: auto;
@@ -219,7 +215,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  justify-content: flex-start; /* Alinear arriba para escritorio */
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -246,13 +242,13 @@ body {
 
 .contenedor-tarjetas {
     width: 100%;
-    max-width: 700px; /* Ajusta el ancho máximo para permitir dos columnas */
+    max-width: 700px;
     display: flex;
-    flex-direction: row; /* Cambiado a fila */
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 25px;
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    align-items: flex-start; /* Alinea las tarjetas en la parte superior */
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .tarjeta {
@@ -263,9 +259,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(50% - 12.5px); /* Calcula el ancho para dos columnas con espacio */
-  max-width: 325px; /* Establece un ancho máximo para cada tarjeta */
-  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  width: calc(50% - 12.5px);
+  max-width: 325px;
+  box-sizing: border-box;
 }
 
 .tarjeta img {
@@ -299,7 +295,6 @@ body {
   font-size: 1.2rem;
 }
 
-/* Estilos específicos del modal (mantener si se usan, adaptar a español si aplica) */
 .contenido-modal {
     background-color: #333;
     border: 1px solid #444;
@@ -317,7 +312,6 @@ body {
     color: #f0f0f0;
 }
 
-/* Estilos para el contenido del perfil */
 .mostrar-perfil {
     display: flex;
     flex-direction: column;

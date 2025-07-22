@@ -23,26 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     return; // Stop execution if validation fails
                 }
 
-                // More complex validation (example: plate format P000-000 or DUI format)
-                const placaRegex = /^[A-Z]\d{3}-\d{3}$/; // Example: P123-456
-                const duiRegex = /^\d{8}-\d{1}$/; // Example: 12345678-9
 
-                if (!placaRegex.test(placa) && !duiRegex.test(placa) && isNaN(placa)) {
-                    Swal.fire({
-                        title: 'Formato Inválido',
-                        text: 'El formato de entrada no es válido. Por favor, usa el formato P000-000 para placas, 00000000-0 para DUI, o solo números para tarjeta de circulación.',
-                        icon: 'error',
-                        customClass: {
-                            popup: 'swal-custom-popup',
-                            title: 'swal-custom-title',
-                            content: 'swal-custom-content',
-                            confirmButton: 'swal-custom-confirm-button'
-                        }
-                    });
-                    return; // Stop execution if validation fails
-                }
-
-                // If all validations pass, redirect
+            
                 window.location.href = `seguimiento.html?placa=${encodeURIComponent(placa)}`;
             } else {
                 Swal.fire({
