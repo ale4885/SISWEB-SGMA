@@ -27,6 +27,17 @@
     --navbar-boton-activo-fondo: white;
     --navbar-boton-activo-texto: #2c3e50;
     --navbar-texto-info-usuario: #b0c4de;
+
+    /* Variables para SweetAlert personalizado */
+    --fondo-tarjeta: #3a3a3a; /* Similar to --fondo-encabezado */
+    --texto-claro: #FFFFFF; /* Matches --color-texto-claro */
+    --texto-fuerte: #FBB03B; /* Using --color-enlace for stronger titles */
+    --texto-secundario: #D9D9D9; /* Similar to --gris-claro */
+    --boton-primario: #A32F2A; /* Matches --rojo-principal */
+    --radio-borde-principal: 8px; /* Matches input/button border-radius */
+    --radio-borde-boton: 30px; /* Matches button border-radius */
+    --espaciado-s: 10px;
+    --espaciado-l: 20px;
 }
 
 * {
@@ -372,6 +383,36 @@ margin-right: auto;
     border: 3px solid var(--rojo-principal);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+/* Custom SweetAlert styles */
+.swal-custom-popup {
+    background-color: var(--fondo-tarjeta) !important;
+    color: var(--texto-claro) !important;
+    border-radius: var(--radio-borde-principal) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+.swal-custom-title {
+    color: var(--texto-fuerte) !important;
+    font-weight: 700 !important;
+}
+
+.swal-custom-content {
+    color: var(--texto-secundario) !important;
+}
+
+.swal-custom-confirm-button {
+    background-color: var(--boton-primario) !important;
+    color: white !important;
+    border-radius: var(--radio-borde-boton) !important;
+    font-size: 1.1em !important;
+    padding: var(--espaciado-s) var(--espaciado-l) !important;
+}
+
+.swal-custom-confirm-button:hover {
+    background-color: #8a2a26 !important; /* Darker red on hover, matches your existing hover */
+}
+
 
 /* Media Query para pantallas grandes */
 @media (min-width: 768px) {

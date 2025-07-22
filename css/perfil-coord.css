@@ -280,7 +280,7 @@ body {
     width: 100%;
     padding: var(--padding-input-vertical);
     border: var(--grosor-borde-fino) solid var(--color-variante-oscura);
-    border-radius: var(--radio-borde-input);
+    border-radius: var(--radio-borde-entrada); /* Corrected from --radio-borde-input */
     background-color: var(--color-variante-oscura);
     color: var(--texto-claro);
     font-size: 1em;
@@ -325,4 +325,34 @@ body {
 .mensaje-alerta.error {
     background-color: rgba(239, 83, 80, 0.2);
     color: var(--acento-rojo);
+}
+
+
+/* SweetAlert Custom Styles */
+.swal-custom-popup {
+    background-color: var(--fondo-tarjeta) !important;
+    color: var(--texto-claro) !important;
+    border-radius: var(--radio-borde-principal) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+.swal-custom-title {
+    color: var(--texto-fuerte) !important;
+    font-weight: 700 !important;
+}
+
+.swal-custom-content {
+    color: var(--texto-secundario) !important;
+}
+
+.swal-custom-confirm-button {
+    background-color: var(--color-boton-primario) !important; /* Uses your existing primary button color */
+    color: white !important;
+    border-radius: var(--radio-borde-boton) !important;
+    font-size: 1.1em !important;
+    padding: var(--espaciado-s) var(--espaciado-l) !important;
+}
+
+.swal-custom-confirm-button:hover {
+    background-color: var(--acento-rojo-oscuro) !important; /* Darker red on hover, matches your existing hover */
 }

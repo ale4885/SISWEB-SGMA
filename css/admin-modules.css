@@ -369,3 +369,32 @@ table button:last-of-type {
 table button:last-of-type:hover {
     background-color: var(--color-hover-boton-eliminar);
 }
+
+/* SweetAlert2 Custom Styles */
+.swal-custom-popup {
+    background-color: var(--color-fondo-tarjeta) !important;
+    color: var(--color-texto-claro) !important;
+    border-radius: var(--radio-borde-principal) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+.swal-custom-title {
+    color: var(--color-texto-fuerte) !important;
+    font-weight: 700 !important;
+}
+
+.swal-custom-content {
+    color: var(--color-texto-secundario) !important;
+}
+
+.swal-custom-confirm-button {
+    background-color: var(--color-boton-primario) !important;
+    color: white !important;
+    border-radius: var(--radio-borde-boton) !important;
+    font-size: 1.1em !important;
+    padding: var(--espaciado-s) var(--espaciado-l) !important;
+}
+
+.swal-custom-confirm-button:hover {
+    background-color: #ad1414 !important;
+}

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -47,7 +48,7 @@
     <div class="contenedor">
         <h1 class="titulo-seccion">Datos del vehículo</h1>
         <section id="datos-vehiculo" class="seccion">
-            <form>
+            <form id="form-registro-vehiculo">
                 <div class="grupo-formulario">
                     <label for="placa">Placa</label>
                     <input class="mi-entrada" type="text" id="placa" placeholder="N° de placa">
@@ -58,7 +59,10 @@
                     <label for="poliza">Póliza</label>
                     <div class="entrada-con-casilla">
                         <input class="mi-entrada" type="text" id="poliza" placeholder="N° de póliza">
-                        <input type="checkbox" id="casilla-poliza">
+                        <label class="contenedor-casilla">No aplica
+                            <input type="checkbox" id="casilla-poliza">
+                            <span class="marca-verificacion"></span>
+                        </label>
                     </div>
                     <small>Formato: P123-456</small>
                 </div>
@@ -79,6 +83,7 @@
                     <label for="tipo">Tipo</label>
                     <div class="envoltorio-seleccion">
                         <select id="tipo">
+                            <option value="">Selecciona el tipo</option>
                             <option value="sedan">Sedan</option>
                             <option value="suv">SUV</option>
                             <option value="camioneta">Camioneta</option>
@@ -142,24 +147,24 @@
                     <div class="envoltorio-seleccion">
                         <select id="moduloRespuesta">
                             <option value="">Selecciona</option>
-                            <option value="">Seguridad e Higiene Ocupacional</option>
-                            <option value="">Mantenimiento Preventivo y Correctivo de Motores</option>
-                            <option value="">Sistema de Suspensión y Dirección</option>
-                            <option value="">Sistema de Frenos</option>
-                            <option value="">Sistema Eléctrico Automotriz</option>
+                            <option value="seguridad">Seguridad e Higiene Ocupacional</option>
+                            <option value="mantenimiento">Mantenimiento Preventivo y Correctivo de Motores</option>
+                            <option value="suspension">Sistema de Suspensión y Dirección</option>
+                            <option value="frenos">Sistema de Frenos</option>
+                            <option value="electrico">Sistema Eléctrico Automotriz</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="grupo-formulario">
-                    <label>Operaciones a efectuar:</label>
+                    <label>Tipo de Operación:</label>
                     <div class="grupo-casilla">
                         <label class="contenedor-casilla">Preventivo
-                            <input class="mi-entrada" type="checkbox" name="tipoOperacion" value="preventivo">
+                            <input class="mi-entrada" type="checkbox" name="tipoOperacion" value="preventivo" id="tipoOperacionPreventivo">
                             <span class="marca-verificacion"></span>
                         </label>
                         <label class="contenedor-casilla">Correctivo
-                            <input class="mi-entrada" type="checkbox" name="tipoOperacion" value="correctivo">
+                            <input class="mi-entrada" type="checkbox" name="tipoOperacion" value="correctivo" id="tipoOperacionCorrectivo">
                             <span class="marca-verificacion"></span>
                         </label>
                     </div>
@@ -168,6 +173,7 @@
                 <div class="grupo-formulario">
                     <label for="tiempoEstimado">Tiempo estimado del proceso:</label>
                     <input class="mi-entrada" type="text" id="tiempoEstimado" placeholder="00:00">
+                    <small>Formato: HH:MM (Ej: 02:30 para 2 horas y 30 minutos)</small>
                 </div>
             </form>
         </section>
@@ -242,7 +248,7 @@
                     daños, golpes, pérdidas o fallas en el vehículo en el ingreso al taller, durante y después de
                     efectuado el proceso en el vehículo.</p>
             </div>
-            <form>
+            <form id="form-terminos">
 
                 <div class="grupo-formulario">
                     <label for="dueñoVehiculo">Nombre del propietario del vehículo</label>
@@ -250,7 +256,7 @@
                 </div>
                 <div class="grupo-formulario">
                     <label for="duiDueño">Documento unico de identidad</label>
-                    <input class="mi-entrada" type="number" id="duiDueño" placeholder="0000000-0">
+                    <input class="mi-entrada" type="text" id="duiDueño" placeholder="0000000-0">
                 </div>
                 <div class="grupo-formulario">
                     <label for="telDueño">Teléfono del propietario del vehículo</label>
@@ -273,6 +279,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script src="js/registro-auto.js"></script>
 
 </body>

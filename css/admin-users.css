@@ -57,6 +57,9 @@
   --color-borde-navbar: #ffffff;
 
   --radio-borde-navbar-boton: 8px;
+
+  /* Added for SweetAlert styling */
+  --boton-primario: #66BB6A; /* Example primary button color, adjust if you have a specific one */
 }
 
 body {
@@ -421,4 +424,33 @@ table button:last-of-type {
 
 table button:last-of-type:hover {
   background-color: var(--color-fondo-boton-eliminar-hover);
+}
+
+/* SweetAlert Custom Styles */
+.swal-custom-popup {
+  background-color: var(--fondo-tarjeta) !important;
+  color: var(--texto-claro) !important;
+  border-radius: var(--radio-borde-principal) !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+.swal-custom-title {
+  color: var(--texto-fuerte) !important;
+  font-weight: 700 !important;
+}
+
+.swal-custom-content {
+  color: var(--texto-secundario) !important;
+}
+
+.swal-custom-confirm-button {
+  background-color: var(--boton-primario) !important;
+  color: white !important;
+  border-radius: var(--radio-borde-boton) !important;
+  font-size: 1.1em !important;
+  padding: var(--espaciado-s) var(--espaciado-l) !important;
+}
+
+.swal-custom-confirm-button:hover {
+  background-color: #ad1414 !important;
 }

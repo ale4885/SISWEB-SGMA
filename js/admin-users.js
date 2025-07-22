@@ -32,7 +32,17 @@ async function cargarRoles() {
     });
   } catch (error) {
     console.error('Error al cargar los roles:', error);
-    alert('No se pudieron cargar los roles. Intenta de nuevo más tarde.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'No se pudieron cargar los roles. Intenta de nuevo más tarde.',
+      customClass: {
+        popup: 'swal-custom-popup',
+        title: 'swal-custom-title',
+        content: 'swal-custom-content',
+        confirmButton: 'swal-custom-confirm-button'
+      }
+    });
   }
 }
 
@@ -48,7 +58,17 @@ async function cargarUsuarios() {
     cargarTabla(data);
   } catch (error) {
     console.error('Error al cargar los usuarios:', error);
-    alert('No se pudieron cargar los usuarios. Intenta de nuevo más tarde.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'No se pudieron cargar los usuarios. Intenta de nuevo más tarde.',
+      customClass: {
+        popup: 'swal-custom-popup',
+        title: 'swal-custom-title',
+        content: 'swal-custom-content',
+        confirmButton: 'swal-custom-confirm-button'
+      }
+    });
   }
 }
 
@@ -76,19 +96,63 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function borrarUsuario(id) {
-  const confirmacion = confirm('¿Eliminar este usuario?');
+  const result = await Swal.fire({
+    title: '¿Estás seguro?',
+    text: "¡No podrás revertir esto!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar',
+    customClass: {
+      popup: 'swal-custom-popup',
+      title: 'swal-custom-title',
+      content: 'swal-custom-content',
+      confirmButton: 'swal-custom-confirm-button',
+      cancelButton: 'swal-custom-cancel-button' // You might want to define a custom class for cancel button too
+    }
+  });
 
-  if (confirmacion) {
+  if (result.isConfirmed) {
     try {
       await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
       cargarUsuarios();
-      alert("El registro fue eliminado.");
+      Swal.fire({
+        icon: 'success',
+        title: '¡Eliminado!',
+        text: 'El usuario ha sido eliminado.',
+        customClass: {
+          popup: 'swal-custom-popup',
+          title: 'swal-custom-title',
+          content: 'swal-custom-content',
+          confirmButton: 'swal-custom-confirm-button'
+        }
+      });
     } catch (error) {
       console.error('Error al borrar usuario:', error);
-      alert('No se pudo eliminar el usuario. Intenta de nuevo.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo eliminar el usuario. Intenta de nuevo.',
+        customClass: {
+          popup: 'swal-custom-popup',
+          title: 'swal-custom-title',
+          content: 'swal-custom-content',
+          confirmButton: 'swal-custom-confirm-button'
+        }
+      });
     }
   } else {
-    alert("Se canceló la acción.");
+    Swal.fire({
+      icon: 'info',
+      title: 'Cancelado',
+      text: 'La eliminación del usuario ha sido cancelada.',
+      customClass: {
+        popup: 'swal-custom-popup',
+        title: 'swal-custom-title',
+        content: 'swal-custom-content',
+        confirmButton: 'swal-custom-confirm-button'
+      }
+    });
   }
 }
 
@@ -103,14 +167,24 @@ async function cargarParaEditarUsuario(id) {
     idRolEl.value = usuario.tbRoleId;
     urlFotoPerfilEl.value = usuario.fotoPerfil;
     previsualizacionFotoPerfilEl.src = usuario.fotoPerfil || 'https://i.ibb.co/N6fL89pF/yo.jpg';
-    fotoPerfilArchivoEl.value = '';
+    fotoPerfilArchivoEl.value = ''; // Clear file input when editing
     idUsuarioEl.value = usuario.id;
 
     btnEnviar.textContent = 'Actualizar Usuario';
     btnCancelar.hidden = false;
   } catch (error) {
     console.error('Error al cargar usuario para editar:', error);
-    alert('No se pudo cargar la información del usuario para editar.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'No se pudo cargar la información del usuario para editar.',
+      customClass: {
+        popup: 'swal-custom-popup',
+        title: 'swal-custom-title',
+        content: 'swal-custom-content',
+        confirmButton: 'swal-custom-confirm-button'
+      }
+    });
   }
 }
 
@@ -123,6 +197,7 @@ fotoPerfilArchivoEl.addEventListener('change', function() {
     };
     lector.readAsDataURL(archivo);
   } else {
+    // If no file is selected, revert to the current stored URL or default
     previsualizacionFotoPerfilEl.src = urlFotoPerfilEl.value || 'https://i.ibb.co/N6fL89pF/yo.jpg';
   }
 });
@@ -132,8 +207,8 @@ btnCancelar.addEventListener('click', () => {
   idUsuarioEl.value = '';
   btnEnviar.textContent = 'Agregar Usuario';
   btnCancelar.hidden = true;
-  fotoPerfilArchivoEl.value = '';
-  previsualizacionFotoPerfilEl.src = '';
+  fotoPerfilArchivoEl.value = ''; // Clear file input
+  previsualizacionFotoPerfilEl.src = ''; // Clear image preview
 });
 
 async function subirImagen(archivo) {
@@ -149,13 +224,85 @@ async function subirImagen(archivo) {
     }
   } catch (error) {
     console.error('Error al subir imagen:', error);
-    alert('No se pudo subir la imagen. Intenta de nuevo.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Error de Subida',
+      text: 'No se pudo subir la imagen. Intenta de nuevo.',
+      customClass: {
+        popup: 'swal-custom-popup',
+        title: 'swal-custom-title',
+        content: 'swal-custom-content',
+        confirmButton: 'swal-custom-confirm-button'
+      }
+    });
     return null;
   }
 }
 
+// Validation functions
+function validateFullName(name) {
+  if (!name.trim()) {
+    return 'El nombre completo es obligatorio.';
+  }
+  if (name.trim().length < 3) {
+    return 'El nombre completo debe tener al menos 3 caracteres.';
+  }
+  return null;
+}
+
+function validateEmail(email) {
+  if (!email.trim()) {
+    return 'El correo electrónico es obligatorio.';
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return 'Introduce un correo electrónico válido.';
+  }
+  return null;
+}
+
+function validatePassword(password, isEditing) {
+  if (!isEditing && !password.trim()) {
+    return 'La contraseña es obligatoria.';
+  }
+  if (password.trim() && password.trim().length < 6) {
+    return 'La contraseña debe tener al menos 6 caracteres.';
+  }
+  return null;
+}
+
+function validateRole(roleId) {
+  if (!roleId || roleId === '0') { // Assuming '0' might be a default or invalid option
+    return 'Selecciona un rol válido.';
+  }
+  return null;
+}
+
 formulario.addEventListener('submit', async e => {
   e.preventDefault();
+
+  const isEditing = !!idUsuarioEl.value; // True if idUsuarioEl has a value
+
+  // Perform validations
+  const fullNameError = validateFullName(nombreCompletoEl.value);
+  const emailError = validateEmail(correoEl.value);
+  const passwordError = validatePassword(contrasenaEl.value, isEditing);
+  const roleError = validateRole(idRolEl.value);
+
+  if (fullNameError || emailError || passwordError || roleError) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error de Validación',
+      html: [fullNameError, emailError, passwordError, roleError].filter(Boolean).join('<br>'),
+      customClass: {
+        popup: 'swal-custom-popup',
+        title: 'swal-custom-title',
+        content: 'swal-custom-content',
+        confirmButton: 'swal-custom-confirm-button'
+      }
+    });
+    return;
+  }
 
   let urlFoto = urlFotoPerfilEl.value;
   if (fotoPerfilArchivoEl.files.length > 0) {
@@ -163,11 +310,13 @@ formulario.addEventListener('submit', async e => {
     if (nuevaUrlFoto) {
       urlFoto = nuevaUrlFoto;
     } else {
+      // If image upload fails, stop the submission
       return;
     }
   } else if (!urlFoto) {
-    urlFoto = 'https://i.ibb.co/N6fL89pF/yo.jpg';
+    urlFoto = 'https://i.ibb.co/N6fL89pF/yo.jpg'; // Default image if none provided and not editing existing
   }
+
 
   const cargaUtil = {
     fullName: nombreCompletoEl.value,
@@ -178,31 +327,62 @@ formulario.addEventListener('submit', async e => {
   };
 
   try {
-    if (idUsuarioEl.value) {
+    if (isEditing) {
       await fetch(`${API_URL}/${idUsuarioEl.value}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(cargaUtil)
       });
-      alert("Usuario actualizado.");
+      Swal.fire({
+        icon: 'success',
+        title: '¡Actualizado!',
+        text: 'El usuario ha sido actualizado correctamente.',
+        customClass: {
+          popup: 'swal-custom-popup',
+          title: 'swal-custom-title',
+          content: 'swal-custom-content',
+          confirmButton: 'swal-custom-confirm-button'
+        }
+      });
     } else {
       await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(cargaUtil)
       });
-      alert("Usuario agregado.");
+      Swal.fire({
+        icon: 'success',
+        title: '¡Agregado!',
+        text: 'El usuario ha sido agregado correctamente.',
+        customClass: {
+          popup: 'swal-custom-popup',
+          title: 'swal-custom-title',
+          content: 'swal-custom-content',
+          confirmButton: 'swal-custom-confirm-button'
+        }
+      });
     }
   } catch (error) {
     console.error('Error al guardar usuario:', error);
-    alert('No se pudo guardar el usuario. Intenta de nuevo.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'No se pudo guardar el usuario. Intenta de nuevo.',
+      customClass: {
+        popup: 'swal-custom-popup',
+        title: 'swal-custom-title',
+        content: 'swal-custom-content',
+        confirmButton: 'swal-custom-confirm-button'
+      }
+    });
   }
 
   formulario.reset();
+  idUsuarioEl.value = ''; // Clear hidden ID after submission
   btnCancelar.hidden = true;
   btnEnviar.textContent = 'Agregar Usuario';
   fotoPerfilArchivoEl.value = '';
-  previsualizacionFotoPerfilEl.src = '';
+  previsualizacionFotoPerfilEl.src = ''; // Clear image preview
   cargarUsuarios();
 });
 

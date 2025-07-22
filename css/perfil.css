@@ -386,3 +386,32 @@ label {
     color: #721c24;
     border: var(--grosor-borde-fino) solid #f5c6cb;
 }
+
+/* SweetAlert2 Custom Styles */
+.swal-custom-popup {
+    background-color: var(--fondo-tarjeta) !important;
+    color: var(--texto-claro) !important;
+    border-radius: var(--radio-borde-principal) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+}
+
+.swal-custom-title {
+    color: var(--texto-fuerte) !important;
+    font-weight: 700 !important;
+}
+
+.swal-custom-content {
+    color: var(--texto-secundario) !important;
+}
+
+.swal-custom-confirm-button {
+    background-color: var(--boton-primario) !important; /* Uses your existing primary button color */
+    color: white !important;
+    border-radius: var(--radio-borde-boton) !important;
+    font-size: 1.1em !important;
+    padding: var(--espaciado-s) var(--espaciado-l) !important;
+}
+
+.swal-custom-confirm-button:hover {
+    background-color: #ad1414 !important; /* Darker red on hover, matches your existing hover */
+}

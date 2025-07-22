@@ -48,23 +48,42 @@ async function BorrarModulo(id) {
         confirmButtonColor: '#881F1E',
         cancelButtonColor: '#555',
         confirmButtonText: 'Sí, eliminarlo!',
-        cancelButtonText: 'Cancelar'
+        cancelButtonText: 'Cancelar',
+        customClass: {
+            popup: 'swal-custom-popup',
+            title: 'swal-custom-title',
+            htmlContainer: 'swal-custom-content',
+            confirmButton: 'swal-custom-confirm-button',
+            cancelButton: 'swal-custom-cancel-button'
+        }
     });
 
     if (resultado.isConfirmed) {
         modulos = modulos.filter(modulo => modulo.id !== id);
         CargarModulos();
-        Swal.fire(
-            '¡Eliminado!',
-            'El módulo ha sido eliminado.',
-            'success'
-        );
+        Swal.fire({
+            title: '¡Eliminado!',
+            text: 'El módulo ha sido eliminado.',
+            icon: 'success',
+            customClass: {
+                popup: 'swal-custom-popup',
+                title: 'swal-custom-title',
+                htmlContainer: 'swal-custom-content',
+                confirmButton: 'swal-custom-confirm-button'
+            }
+        });
     } else {
-        Swal.fire(
-            'Cancelado',
-            'La acción ha sido cancelada.',
-            'error'
-        );
+        Swal.fire({
+            title: 'Cancelado',
+            text: 'La acción ha sido cancelada.',
+            icon: 'error',
+            customClass: {
+                popup: 'swal-custom-popup',
+                title: 'swal-custom-title',
+                htmlContainer: 'swal-custom-content',
+                confirmButton: 'swal-custom-confirm-button'
+            }
+        });
     }
 }
 
@@ -79,7 +98,17 @@ function CargarParaEditarModulo(id) {
         botonEnviar.textContent = 'Actualizar Módulo';
         botonCancelar.hidden = false;
     } else {
-        Swal.fire('Error', 'Módulo no encontrado para editar.', 'error');
+        Swal.fire({
+            title: 'Error',
+            text: 'Módulo no encontrado para editar.',
+            icon: 'error',
+            customClass: {
+                popup: 'swal-custom-popup',
+                title: 'swal-custom-title',
+                htmlContainer: 'swal-custom-content',
+                confirmButton: 'swal-custom-confirm-button'
+            }
+        });
     }
 }
 
@@ -98,30 +127,105 @@ formulario.addEventListener('submit', async e => {
     const id = idModuloEl.value;
 
     if (!nombre) {
-        Swal.fire('Error', 'El nombre del módulo es obligatorio.', 'error');
+        Swal.fire({
+            title: 'Error',
+            text: 'El nombre del módulo es obligatorio.',
+            icon: 'error',
+            customClass: {
+                popup: 'swal-custom-popup',
+                title: 'swal-custom-title',
+                htmlContainer: 'swal-custom-content',
+                confirmButton: 'swal-custom-confirm-button'
+            }
+        });
+        return;
+    }
+
+    // Basic validation: Check if module name already exists (case-insensitive) for new modules
+    if (!id && modulos.some(modulo => modulo.name.toLowerCase() === nombre.toLowerCase())) {
+        Swal.fire({
+            title: 'Error',
+            text: 'Ya existe un módulo con este nombre. Por favor, elija otro.',
+            icon: 'error',
+            customClass: {
+                popup: 'swal-custom-popup',
+                title: 'swal-custom-title',
+                htmlContainer: 'swal-custom-content',
+                confirmButton: 'swal-custom-confirm-button'
+            }
+        });
         return;
     }
 
     if (id) {
+        // Update existing module
         const indiceModulo = modulos.findIndex(modulo => modulo.id === id);
         if (indiceModulo > -1) {
+            // Check for duplicate name if name is changed for existing module
+            if (modulos[indiceModulo].name.toLowerCase() !== nombre.toLowerCase() && 
+                modulos.some((modulo, index) => index !== indiceModulo && modulo.name.toLowerCase() === nombre.toLowerCase())) {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Ya existe otro módulo con este nombre. Por favor, elija otro.',
+                    icon: 'error',
+                    customClass: {
+                        popup: 'swal-custom-popup',
+                        title: 'swal-custom-title',
+                        htmlContainer: 'swal-custom-content',
+                        confirmButton: 'swal-custom-confirm-button'
+                    }
+                });
+                return;
+            }
+
             modulos[indiceModulo] = {
                 id: id,
                 name: nombre,
                 description: descripcion
             };
-            await Swal.fire('Éxito', 'Módulo actualizado correctamente.', 'success');
+            await Swal.fire({
+                title: 'Éxito',
+                text: 'Módulo actualizado correctamente.',
+                icon: 'success',
+                customClass: {
+                    popup: 'swal-custom-popup',
+                    title: 'swal-custom-title',
+                    htmlContainer: 'swal-custom-content',
+                    confirmButton: 'swal-custom-confirm-button'
+                }
+            });
         } else {
-            await Swal.fire('Error', 'No se pudo encontrar el módulo para actualizar.', 'error');
+            await Swal.fire({
+                title: 'Error',
+                text: 'No se pudo encontrar el módulo para actualizar.',
+                icon: 'error',
+                customClass: {
+                    popup: 'swal-custom-popup',
+                    title: 'swal-custom-title',
+                    htmlContainer: 'swal-custom-content',
+                    confirmButton: 'swal-custom-confirm-button'
+                }
+            });
         }
     } else {
+        // Add new module
         const nuevoModulo = {
             id: 'mod-' + idModuloActual++,
             name: nombre,
             description: descripcion
         };
         modulos.push(nuevoModulo);
-        await Swal.fire('Éxito', 'Módulo agregado correctamente.', 'success');
+        await Swal.fire({
+            title: 'Éxito',
+            text: 'Módulo agregado correctamente.',
+            icon: 'success',
+            customClass: {
+                popup: 'swal-custom-popup',
+                title: 'swal-custom-title',
+                htmlContainer: 'swal-custom-content',
+                confirmButton: 'swal-custom-confirm-button'
+            }
+        });
     }
 
     formulario.reset();
