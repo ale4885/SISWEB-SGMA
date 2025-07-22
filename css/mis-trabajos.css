@@ -21,7 +21,6 @@
     --hover-boton-volver: #555;
 
     /* Nuevas variables para la barra de navegacion */
-    --fondo-encabezado: #2c3e50;
     --color-fondo-barra-navegacion: #2c3e50;
     --color-texto-barra-navegacion: white;
     --color-fondo-enlace-navegacion: #e74c3c;
@@ -29,22 +28,9 @@
     --color-texto-enlace-activo: #2c3e50;
     --color-hover-enlace-navegacion: #c0392b;
     --color-texto-info-usuario: #b0c4de;
-    --color-borde-navbar: #ffffff;
-    --acento-rojo: #e74c3c;
-    --texto-secundario: #B0B0B0;
-
-    --espaciado-xs: 5px;
-    --espaciado-s: 10px;
-    --espaciado-m: 15px;
-    --espaciado-l: 20px;
-    --espaciado-xl: 30px;
-
-    --radio-borde-avatar: 50%;
-  --radio-borde-navbar-boton: 8px;
 }
 
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -66,8 +52,7 @@ body {
     background-color: var(--fondo-encabezado);
     padding: var(--espaciado-s) var(--espaciado-l);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid var(--color-borde-navbar);
-    /* Bordes blancos */
+    border-bottom: 1px solid var(--color-borde-navbar); /* Bordes blancos */
 }
 
 .barra-navegacion-izquierda {
@@ -75,31 +60,15 @@ body {
     align-items: center;
 }
 
-<<<<<<< Updated upstream
-.logotipo {
-    /* Changed from .logo to .logotipo */
+.logotipo { /* Changed from .logo to .logotipo */
     margin-right: var(--espaciado-xl);
 }
 
-.logotipo-imagen {
-    /* Changed from .logo-imagen to .logotipo-imagen */
-    height: 50px;
-    /* Tamaño del logo */
-}
-
-.barra-navegacion-centro ul {
-    /* Changed from .barra-navegacion-central to .barra-navegacion-centro */
-=======
-.logotipo { 
-    margin-right: var(--espaciado-xl);
-}
-
-.logotipo-imagen { 
+.logotipo-imagen { /* Changed from .logo-imagen to .logotipo-imagen */
     height: 50px; /* Tamaño del logo */
 }
 
-.barra-navegacion-centro ul { 
->>>>>>> Stashed changes
+.barra-navegacion-centro ul { /* Changed from .barra-navegacion-central to .barra-navegacion-centro */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -107,12 +76,7 @@ body {
     gap: var(--espaciado-l);
 }
 
-<<<<<<< Updated upstream
-.barra-navegacion-centro a {
-    /* Changed from .barra-navegacion-central ul li .enlace-navegacion to .barra-navegacion-centro a */
-=======
-.barra-navegacion-centro a { 
->>>>>>> Stashed changes
+.barra-navegacion-centro a { /* Changed from .barra-navegacion-central ul li .enlace-navegacion to .barra-navegacion-centro a */
     text-decoration: none;
     color: var(--texto-claro);
     font-weight: 500;
@@ -121,32 +85,17 @@ body {
     transition: background-color 0.3s ease;
 }
 
-<<<<<<< Updated upstream
-.barra-navegacion-centro a:hover {
-    /* Changed from .barra-navegacion-central ul li .enlace-navegacion:not(.activo):hover to .barra-navegacion-centro a:hover */
+.barra-navegacion-centro a:hover { /* Changed from .barra-navegacion-central ul li .enlace-navegacion:not(.activo):hover to .barra-navegacion-centro a:hover */
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.barra-navegacion-centro .enlace-navegacion.activo {
-    /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo to .barra-navegacion-centro .enlace-navegacion.activo */
-=======
-.barra-navegacion-centro a:hover { 
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.barra-navegacion-centro .enlace-navegacion.activo { 
->>>>>>> Stashed changes
+.barra-navegacion-centro .enlace-navegacion.activo { /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo to .barra-navegacion-centro .enlace-navegacion.activo */
     background-color: var(--acento-rojo);
     color: var(--texto-claro);
     font-weight: bold;
 }
 
-<<<<<<< Updated upstream
-.barra-navegacion-centro .enlace-navegacion.activo:hover {
-    /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo:hover to .barra-navegacion-centro .enlace-navegacion.activo:hover */
-=======
-.barra-navegacion-centro .enlace-navegacion.activo:hover { 
->>>>>>> Stashed changes
+.barra-navegacion-centro .enlace-navegacion.activo:hover { /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo:hover to .barra-navegacion-centro .enlace-navegacion.activo:hover */
     background-color: var(--acento-rojo-oscuro);
 }
 
@@ -162,36 +111,19 @@ body {
     transform: translateY(-2px);
 }
 
-<<<<<<< Updated upstream
-.info-usuario {
-    /* Changed from .informacion-usuario to .info-usuario */
-=======
-.info-usuario { 
->>>>>>> Stashed changes
+.info-usuario { /* Changed from .informacion-usuario to .info-usuario */
     text-align: right;
     margin-right: var(--espaciado-m);
 }
 
-<<<<<<< Updated upstream
-.info-usuario .nombre-usuario {
-    /* Changed from .informacion-usuario .nombre-usuario to .info-usuario .nombre-usuario */
-=======
-.info-usuario .nombre-usuario { 
->>>>>>> Stashed changes
+.info-usuario .nombre-usuario { /* Changed from .informacion-usuario .nombre-usuario to .info-usuario .nombre-usuario */
     display: block;
     font-weight: bold;
     font-size: 1.1em;
 }
 
-<<<<<<< Updated upstream
-.info-usuario .rol-usuario,
-/* Changed from .informacion-usuario .rol-usuario to .info-usuario .rol-usuario */
-.info-usuario .detalle-usuario {
-    /* Changed from .informacion-usuario .detalle-usuario to .info-usuario .detalle-usuario */
-=======
-.info-usuario .rol-usuario, 
-.info-usuario .detalle-usuario { 
->>>>>>> Stashed changes
+.info-usuario .rol-usuario, /* Changed from .informacion-usuario .rol-usuario to .info-usuario .rol-usuario */
+.info-usuario .detalle-usuario { /* Changed from .informacion-usuario .detalle-usuario to .info-usuario .detalle-usuario */
     font-size: 0.85em;
     color: var(--texto-secundario);
 }
@@ -215,7 +147,7 @@ body {
     position: absolute;
     background-color: var(--fondo-encabezado);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     z-index: 1;
     border-radius: var(--radio-borde-pequeno);
     top: calc(100% + var(--espaciado-xs));
@@ -390,7 +322,6 @@ body {
     background-color: var(--estado-finalizado);
     color: var(--texto-claro);
 }
-
 .estado.finalizado svg {
     fill: var(--texto-claro);
 }
@@ -399,7 +330,6 @@ body {
     background-color: var(--estado-en-proceso);
     color: var(--fondo-oscuro);
 }
-
 .estado.en-proceso svg {
     fill: var(--fondo-oscuro);
 }
@@ -408,7 +338,6 @@ body {
     background-color: var(--estado-rechazado);
     color: var(--texto-claro);
 }
-
 .estado.rechazado svg {
     fill: var(--texto-claro);
 }
