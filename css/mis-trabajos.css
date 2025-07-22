@@ -1,5 +1,8 @@
+/* mis-trabajos.css */
+
 :root {
-    --fondo-oscuro: #1E1E1E;
+    /* Colores */
+    --fondo-app: #1E1E1E; /* Changed from --fondo-oscuro */
     --fondo-tarjeta: #2D2D2D;
     --texto-claro: #FFFFFF;
     --texto-secundario: #B0B0B0;
@@ -8,43 +11,52 @@
     --estado-finalizado: #66BB6A;
     --estado-en-proceso: #FFC107;
     --estado-rechazado: #EF5350;
-    --radio-borde-tarjeta: 16px;
-    --radio-borde-estado: 20px;
-    --espaciado-xs: 5px;
-    --espaciado-s: 8px;
-    --espaciado-m: 12px;
-    --espaciado-l: 16px;
-    --espaciado-xl: 20px;
     --rojo-principal: #881F1E;
-    --fondo-cabecera: #282828;
+    --acento-rojo: #e74c3c;
+    --acento-rojo-oscuro: #c0392b;
+
+    /* Fondos */
+    --fondo-cabecera: #2c3e50; /* Harmonized from estudiante.css */
+    --fondo-encabezado: #2c3e50;
     --fondo-boton-volver: #444;
     --hover-boton-volver: #555;
 
-    /* Nuevas variables para la barra de navegacion */
-    --color-fondo-barra-navegacion: #2c3e50;
-    --color-texto-barra-navegacion: white;
-    --color-fondo-enlace-navegacion: #e74c3c;
-    --color-fondo-enlace-activo: white;
-    --color-texto-enlace-activo: #2c3e50;
-    --color-hover-enlace-navegacion: #c0392b;
-    --color-texto-info-usuario: #b0c4de;
+    /* Bordes y Radios */
+    --radio-borde-tarjeta: 16px;
+    --radio-borde-estado: 20px;
+    --radio-borde-pequeno: 8px;
+    --radio-borde-avatar: 50%;
+    --radio-borde-navbar-boton: 8px; /* Harmonized from estudiante.css */
+    --color-borde-navbar: #ffffff;
+
+    /* Espaciado */
+    --espaciado-xs: 5px;
+    --espaciado-s: 10px; /* Harmonized from estudiante.css */
+    --espaciado-m: 15px; /* Harmonized from estudiante.css */
+    --espaciado-l: 20px; /* Harmonized from estudiante.css */
+    --espaciado-xl: 30px; /* Harmonized from estudiante.css */
+
+    /* Nuevas variables para la barra de navegacion (eliminar redundantes) */
+    --altura-cabecera: 60px; /* ADDED, Harmonized from estudiante.css */
 }
 
+/* Base global styles */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    background-color: var(--fondo-oscuro);
+    background-color: var(--fondo-app);
     color: var(--texto-claro);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Estilos de la barra de navegación (Navbar) */
 .barra-navegacion {
     display: flex;
     justify-content: space-between;
@@ -52,7 +64,9 @@ html, body {
     background-color: var(--fondo-encabezado);
     padding: var(--espaciado-s) var(--espaciado-l);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid var(--color-borde-navbar); /* Bordes blancos */
+    border-bottom: 1px solid var(--color-borde-navbar);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .barra-navegacion-izquierda {
@@ -60,15 +74,15 @@ html, body {
     align-items: center;
 }
 
-.logotipo { /* Changed from .logo to .logotipo */
+.logotipo {
     margin-right: var(--espaciado-xl);
 }
 
-.logotipo-imagen { /* Changed from .logo-imagen to .logotipo-imagen */
-    height: 50px; /* Tamaño del logo */
+.logotipo-imagen {
+    height: 50px;
 }
 
-.barra-navegacion-centro ul { /* Changed from .barra-navegacion-central to .barra-navegacion-centro */
+.barra-navegacion-centro ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -76,7 +90,7 @@ html, body {
     gap: var(--espaciado-l);
 }
 
-.barra-navegacion-centro a { /* Changed from .barra-navegacion-central ul li .enlace-navegacion to .barra-navegacion-centro a */
+.barra-navegacion-centro a {
     text-decoration: none;
     color: var(--texto-claro);
     font-weight: 500;
@@ -85,17 +99,17 @@ html, body {
     transition: background-color 0.3s ease;
 }
 
-.barra-navegacion-centro a:hover { /* Changed from .barra-navegacion-central ul li .enlace-navegacion:not(.activo):hover to .barra-navegacion-centro a:hover */
+.barra-navegacion-centro a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.barra-navegacion-centro .enlace-navegacion.activo { /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo to .barra-navegacion-centro .enlace-navegacion.activo */
+.barra-navegacion-centro .enlace-navegacion.activo {
     background-color: var(--acento-rojo);
     color: var(--texto-claro);
     font-weight: bold;
 }
 
-.barra-navegacion-centro .enlace-navegacion.activo:hover { /* Changed from .barra-navegacion-central ul li .enlace-navegacion.activo:hover to .barra-navegacion-centro .enlace-navegacion.activo:hover */
+.barra-navegacion-centro .enlace-navegacion.activo:hover {
     background-color: var(--acento-rojo-oscuro);
 }
 
@@ -111,19 +125,19 @@ html, body {
     transform: translateY(-2px);
 }
 
-.info-usuario { /* Changed from .informacion-usuario to .info-usuario */
+.info-usuario {
     text-align: right;
     margin-right: var(--espaciado-m);
 }
 
-.info-usuario .nombre-usuario { /* Changed from .informacion-usuario .nombre-usuario to .info-usuario .nombre-usuario */
+.info-usuario .nombre-usuario {
     display: block;
     font-weight: bold;
     font-size: 1.1em;
 }
 
-.info-usuario .rol-usuario, /* Changed from .informacion-usuario .rol-usuario to .info-usuario .rol-usuario */
-.info-usuario .detalle-usuario { /* Changed from .informacion-usuario .detalle-usuario to .info-usuario .detalle-usuario */
+.info-usuario .rol-usuario,
+.info-usuario .detalle-usuario {
     font-size: 0.85em;
     color: var(--texto-secundario);
 }
@@ -171,6 +185,7 @@ html, body {
     display: block;
 }
 
+/* Estilos del encabezado de la aplicación (Header) */
 .cabecera-app {
     background-color: var(--fondo-cabecera);
     padding: var(--espaciado-m) var(--espaciado-xl);
@@ -213,6 +228,7 @@ html, body {
     font-size: 1em;
 }
 
+/* Estilos del contenido principal */
 .contenido-principal-mis-trabajos {
     flex-grow: 1;
     overflow-y: auto;
@@ -224,6 +240,7 @@ html, body {
     margin: 0 auto;
 }
 
+/* Estilos de la lista de trabajos (grid/flex container) */
 .lista-trabajos {
     display: flex;
     flex-wrap: wrap;
@@ -232,6 +249,7 @@ html, body {
     padding-bottom: var(--espaciado-xl);
 }
 
+/* Estilos de la tarjeta de trabajo (card) */
 .tarjeta-trabajo {
     background-color: var(--fondo-tarjeta);
     border-radius: var(--radio-borde-tarjeta);
@@ -328,10 +346,10 @@ html, body {
 
 .estado.en-proceso {
     background-color: var(--estado-en-proceso);
-    color: var(--fondo-oscuro);
+    color: var(--fondo-app);
 }
 .estado.en-proceso svg {
-    fill: var(--fondo-oscuro);
+    fill: var(--fondo-app);
 }
 
 .estado.rechazado {
@@ -371,6 +389,7 @@ html, body {
     fill: #308ce0;
 }
 
+/* Estilos de los modales (Modal) */
 .contenido-modal {
     background-color: #333;
     border: 1px solid #444;
@@ -388,6 +407,7 @@ html, body {
     color: #f0f0f0;
 }
 
+/* Estilos del perfil de visualización (Profile View) */
 .perfil-visualizacion {
     display: flex;
     flex-direction: column;
@@ -407,10 +427,12 @@ html, body {
 
 .icono-perfil-defecto {
     font-size: 120px;
-    color: #A32F2A;
+    color: var(--rojo-principal);
 }
 
-.nombre-usuario {
+/* This .nombre-usuario is specific to the profile view,
+   distinguished from the one in .info-usuario */
+.perfil-visualizacion .nombre-usuario {
     font-size: 1.8em;
     font-weight: bold;
     color: #ffffff;

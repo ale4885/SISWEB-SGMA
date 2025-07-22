@@ -11,11 +11,14 @@
     --radio-borde-tarjeta: 16px;
     --radio-borde-entrada: 10px;
     --radio-borde-boton: 30px;
+
+    /* Espaciado armonizado con estudiante.css para la navegación */
     --espaciado-xs: 5px;
     --espaciado-s: 10px;
     --espaciado-m: 15px;
     --espaciado-l: 20px;
     --espaciado-xl: 30px;
+
     --fondo-boton-volver: #444;
     --rojo-primario: #881F1E;
     --fondo-cuerpo: #2c2c2c;
@@ -31,35 +34,37 @@
     --color-fondo-casilla-activa: #4CAF50;
     --color-borde-casilla-activa: #4CAF50;
 
-    /* Variables de la barra de navegación (Header) - Unificadas con perfil.css */
-    --fondo-barra-navegacion: #2c3e50;
-    --color-texto-barra-navegacion: white;
-    --fondo-boton-navegacion: #e74c3c;
-    --color-texto-boton-navegacion: white;
-    --fondo-boton-activo-navegacion: white;
-    /* Renombrado para consistencia */
-    --color-texto-boton-activo-navegacion: #2c3e50;
-    /* Renombrado para consistencia */
-    --sombra-barra-navegacion: rgba(0, 0, 0, 0.2);
-    --sombra-boton-activo: rgba(0, 0, 0, 0.15);
-    /* Renombrado para consistencia */
-    --fondo-boton-navegacion-hover: #c0392b;
-    --color-texto-secundario-usuario: #b0c4de;
-    /* Renombrado para consistencia */
+    /* Variables de la barra de navegación (Header) - Unificadas con estudiante.css */
+    --fondo-cabecera: #2c3e50; /* Alineado con fondo-encabezado */
+    --fondo-encabezado: #2c3e50; /* Fondo de la barra de navegación */
+    --color-texto-barra-navegacion: white; /* Texto general en la barra de navegación */
+    --fondo-boton-navegacion: #e74c3c; /* Fondo para botones de navegación, como "Cerrar Sesión" */
+    --color-texto-boton-navegacion: white; /* Color de texto para los botones de navegación */
+    --fondo-boton-activo-navegacion: white; /* Fondo para el enlace de navegación activo */
+    --color-texto-boton-activo-navegacion: #2c3e50; /* Color de texto para el enlace de navegación activo */
+    --sombra-barra-navegacion: rgba(0, 0, 0, 0.2); /* Sombra de la barra de navegación */
+    --sombra-boton-activo: rgba(0, 0, 0, 0.15); /* Sombra para el botón activo */
+    --fondo-boton-navegacion-hover: #c0392b; /* Fondo al pasar el ratón por los botones de navegación */
+    --color-texto-secundario-usuario: #b0c4de; /* Color de texto secundario en información del usuario */
+    --acento-rojo: #e74c3c; /* Color de acento para elementos rojos, como el enlace activo del nav */
+    --acento-rojo-oscuro: #c0392b; /* Variante oscura del acento rojo para estados hover */
+    --color-borde-navbar: #ffffff; /* Borde inferior de la barra de navegación */
+    --altura-cabecera: 60px; /* Altura de la sección de la cabecera/nav */
+    --hover-boton-volver: #555; /* Hover para el botón de volver si se usa en el nav */
 
-    /* Variables para Avatar - Añadidas desde perfil.css */
-    --color-borde-avatar: white;
-    --borde-avatar: 2px solid var(--color-borde-avatar);
-    --sombra-avatar: 0 0 0 2px var(--fondo-barra-navegacion);
+    /* Variables para Avatar - Añadidas y armonizadas con estudiante.css */
+    --color-borde-avatar: white; /* Borde del avatar */
+    --borde-avatar: 2px solid var(--color-borde-avatar); /* Estilo de borde completo del avatar */
+    --sombra-avatar: 0 0 0 2px var(--fondo-barra-navegacion); /* Sombra alrededor del avatar */
+    --radio-borde-avatar: 50%; /* Radio de borde para el avatar (redondo) */
 
-    --fondo-encabezado: #2c3e50;
+    /* Variables para bordes y radios de navegación armonizadas */
+    --radio-borde-pequeno: 8px; /* Radio de borde para elementos pequeños, como dropdowns */
+    --radio-borde-navbar-boton: 8px; /* Radio de borde para los botones/enlaces dentro del nav */
+
+
     --fondo-barra-lateral: #2D2D2D;
     --fondo-contenido-principal: #1E1E1E;
-
-    --radio-borde-navbar-boton: 30px;
-    --radio-borde-avatar: 50%;
-
-    --acento-rojo: #e74c3c;
 }
 
 body {
@@ -99,7 +104,6 @@ body {
 
 .logotipo-imagen {
     height: 50px;
-    
 }
 
 .barra-navegacion-centro ul {
@@ -111,7 +115,6 @@ body {
 }
 
 .barra-navegacion-centro a {
-    
     text-decoration: none;
     color: var(--texto-claro);
     font-weight: 500;
@@ -152,7 +155,6 @@ body {
 }
 
 .info-usuario .nombre-usuario {
-
     display: block;
     font-weight: bold;
     font-size: 1.1em;
@@ -183,7 +185,7 @@ body {
     position: absolute;
     background-color: var(--fondo-encabezado);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     z-index: 1;
     border-radius: var(--radio-borde-pequeno);
     top: calc(100% + var(--espaciado-xs));
@@ -206,7 +208,6 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 
 .contenedor {
     background-color: var(--fondo-cuerpo);

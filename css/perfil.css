@@ -12,13 +12,13 @@
     --radio-borde-input: 10px;
     --radio-borde-boton: 30px;
     --espaciado-xs: 5px;
-    --espaciado-s: 10px;
-    --espaciado-m: 15px;
-    --espaciado-l: 20px;
-    --espaciado-xl: 30px;
+    --espaciado-s: 10px; /* Harmonized from estudiante.css */
+    --espaciado-m: 15px; /* Harmonized from estudiante.css */
+    --espaciado-l: 20px; /* Harmonized from estudiante.css */
+    --espaciado-xl: 30px; /* Harmonized from estudiante.css */
 
     --fondo-boton-volver: #444;
-    --fondo-encabezado: #282828;
+    --fondo-encabezado: #2c3e50; /* Harmonized from estudiante.css */
     --hover-boton-volver: #555;
 
     --color-oscuro-variante: #3a3a3a;
@@ -31,13 +31,13 @@
     --grosor-borde-fino: 1px;
     --padding-input-vertical: 12px;
 
-    /* Nuevas variables para la barra de navegación superior */
+    /* Nuevas variables para la barra de navegación superior (Harmonized from estudiante.css) */
     --fondo-barra-navegacion: #2c3e50;
     --color-texto-barra-navegacion: white;
     --fondo-boton-navegacion: #e74c3c;
     --color-texto-boton-navegacion: white;
-    --fondo-boton-activo-navegacion: white;
-    --color-texto-boton-activo-navegacion: #2c3e50;
+    --fondo-boton-activo-navegacion: white; /* This might need adjustment based on desired active state visual */
+    --color-texto-boton-activo-navegacion: #2c3e50; /* This might need adjustment based on desired active state visual */
     --color-borde-avatar: white;
     --sombra-barra-navegacion: 0 2px 5px rgba(0, 0, 0, 0.2);
     --sombra-boton-activo: 0 2px 5px rgba(0, 0, 0, 0.15);
@@ -45,14 +45,16 @@
     --borde-avatar: 2px solid var(--color-borde-avatar);
     --sombra-avatar: 0 0 0 2px var(--fondo-barra-navegacion);
 
-    --fondo-encabezado: #2c3e50;
+
     --fondo-barra-lateral: #2D2D2D;
     --fondo-contenido-principal: #1E1E1E;
 
-    --radio-borde-navbar-boton: 30px;
-    --radio-borde-avatar: 50%;
+    --radio-borde-navbar-boton: 8px; /* Harmonized from estudiante.css */
+    --radio-borde-avatar: 50%; /* Harmonized from estudiante.css */
 
     --acento-rojo: #e74c3c;
+    --acento-rojo-oscuro: #c0392b; /* Added for hover effect consistency */
+    --color-borde-navbar: #ffffff; /* Added for consistency */
 }
 
 body {
@@ -91,7 +93,7 @@ body {
 }
 
 .logotipo-imagen {
-   
+
     height: 50px;
 
 }
@@ -105,7 +107,7 @@ body {
 }
 
 .barra-navegacion-centro a {
-   
+
     text-decoration: none;
     color: var(--texto-claro);
     font-weight: 500;
@@ -125,7 +127,7 @@ body {
 }
 
 .barra-navegacion-centro .enlace-navegacion.activo:hover {
-    background-color: var(--acento-rojo);
+    background-color: var(--acento-rojo-oscuro); /* Harmonized hover for active state */
 }
 
 .barra-navegacion-derecha {
@@ -141,13 +143,13 @@ body {
 }
 
 .info-usuario {
-    
+
     text-align: right;
     margin-right: var(--espaciado-m);
 }
 
 .info-usuario .nombre-usuario {
-   
+
     display: block;
     font-weight: bold;
     font-size: 1.1em;
