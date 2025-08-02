@@ -16,35 +16,45 @@
 
 <body>
 
-    <header class="barra-navegacion">
-    <div class="barra-navegacion-izquierda">
-        <div class="logotipo">
-            <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="imgs/logo.png" alt="Logo ITR">
         </div>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <nav class="barra-navegacion-centro">
+        <nav class="navegacion-sidebar">
             <ul>
-                <li><a href="estudiante.html" class="enlace-navegacion ">Inicio</a></li>
-                <li><a href="mis-trabajos.html" class="enlace-navegacion activo">Mis trabajos</a></li>
-                <li><a href="registro-auto.html" class="enlace-navegacion">Registrar Vehículo</a></li>
-                <li><a href="perfil.html" class="enlace-navegacion">Mi perfil</a></li>
-                <li><a href="index.html" class="enlace-navegacion">Cerrar Sesión</a></li>
+                <li>
+                    <a href="estudiante.html" class="enlace-sidebar" title="Inicio">
+                        <i class="fas fa-home"></i>
+                        <span class="tooltip">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mis-trabajos.html" class="enlace-sidebar activo" title="Mis trabajos">
+                        <i class="fas fa-tasks"></i>
+                        <span class="tooltip">Mis Trabajos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="registro-auto.html" class="enlace-sidebar" title="Registrar Vehículo">
+                        <i class="fas fa-car"></i>
+                        <span class="tooltip">Registrar Vehículo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="perfil.html" class="enlace-sidebar" title="Mi perfil">
+                        <i class="fas fa-user"></i>
+                        <span class="tooltip">Mi Perfil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="enlace-sidebar" title="Cerrar Sesión">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="tooltip">Cerrar Sesión</span>
+                    </a>
+                </li>
             </ul>
         </nav>
-    </div>
-    <a href="perfil.html" class="barra-navegacion-derecha" id="perfilUsuarioNav"> <div class="info-usuario"> <span class="nombre-usuario" id="nombreUsuarioHeader"></span>
-            <span class="rol-usuario" id="rolUsuarioHeader"></span>
-            <span class="detalle-usuario" id="detalleUsuarioHeader"></span>
-        </div>
-        <div class="avatar-usuario">
-            <img src="imgs/defaul-user.webp" alt="Avatar" id="avatarUsuarioHeader"> </div>
-    </a>
-</header>
+    </aside>
 
     <main class="contenido-principal-mis-trabajos">
         <div class="lista-trabajos">
@@ -131,7 +141,6 @@
             </div>
         </div>
     </main>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
