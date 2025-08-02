@@ -17,39 +17,56 @@
 
 <body>
 
-  <header class="barra-navegacion">
-        <div class="barra-navegacion-izquierda">
-            <div class="logotipo">
-                <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
-            </div>
-            <nav class="barra-navegacion-centro">
-                <ul>
-                    <li><a href="coordi-index.html" class="enlace-navegacion">Inicio</a></li>
-                    <li><a href="primer-año.html" class="enlace-navegacion">Primer Año</a></li>
-                    <li><a href="reportes.html" class="enlace-navegacion">Reportes</a></li>
-                    <li class="dropdown">
-                        <a href="" class="enlace-navegacion">Admin <i class="fas fa-caret-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="admin-users.html" class="enlace-navegacion activo">Gestionar Usuarios</a>
-                            <a href="admin-modules.html">Gestionar Módulos</a>
-                        </div>
-                    </li>
-                    <li><a href="perfil-coord.html" class="enlace-navegacion">Mi perfil</a></li>
-                    <li><a href="index.html" class="enlace-navegacion">Cerrar Sesión</a></li>
-                </ul>
-            </nav>
-        </div>
-        <a href="perfil-coord.html" class="barra-navegacion-derecha">
-            <div class="info-usuario">
-                <span class="nombre-usuario">FERNANDO JAVIER</span>
-                <span class="rol-usuario">Coordinador</span>
-                <span class="detalle-usuario">Mantenimiento Automotriz</span>
-            </div>
-            <div class="avatar-usuario">
-                <img src="imgs/defaul-user.webp" alt="Avatar">
-            </div>
-        </a>
-    </header>
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="imgs/logo.png" alt="Logo ITR">
+    </div>
+    <nav class="navegacion-sidebar">
+      <ul>
+        <li>
+          <a href="coordi-index.html" class="enlace-sidebar" title="Inicio">
+            <i class="fas fa-home"></i>
+            <span class="tooltip">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="primer-año.html" class="enlace-sidebar" title="Primer Año">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="tooltip">Primer Año</span>
+          </a>
+        </li>
+        <li>
+          <a href="reportes.html" class="enlace-sidebar" title="Reportes">
+            <i class="fas fa-chart-bar"></i>
+            <span class="tooltip">Reportes</span>
+          </a>
+        </li>
+        <li class="dropdown-sidebar">
+          <a href="#" class="enlace-sidebar activo dropdown-toggle" title="Administración">
+            <i class="fas fa-cog"></i>
+            <span class="tooltip">Administración</span>
+          </a>
+          <div class="dropdown-content-sidebar">
+            <a href="admin-users.html"><i class="fas fa-users "></i> Gestionar Usuarios</a>
+            <a href="admin-modules.html"><i class="fas fa-puzzle-piece"></i> Gestionar Módulos</a>
+          </div>
+        </li>
+        <li>
+          <a href="perfil-coord.html" class="enlace-sidebar" title="Mi perfil">
+            <i class="fas fa-user"></i>
+            <span class="tooltip">Mi Perfil</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html" class="enlace-sidebar" title="Cerrar Sesión">
+            <i class="fas fa-sign-out-alt"></i>
+            <span class="tooltip">Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
   <main class="contenedor-principal">
     
     <h1>CRUD de Usuarios</h1>
@@ -105,10 +122,6 @@
       </table>
     </div>
   </main>
-
-  <footer class="contenedor-principal pie-pagina">
-    <p>&copy; 2025 Instituto Técnico Ricaldone</p>
-  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/admin-users.js"></script>
