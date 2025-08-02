@@ -102,13 +102,13 @@ function animarElementos() {
 }
 
 function mostrarAyuda() {
-    alert('¡Bienvenido al Sistema de Gestión del Taller Automotriz!\n\n' +
+    alert('¡Bienvenido al Sistema de Gestión del Taller de Mantenimiento Automotriz!\n\n' +
           'Aquí puedes:\n' +
           '• Registrar tus vehículos para mantenimiento\n' +
           '• Revisar el progreso de tus trabajos\n' +
           '• Actualizar tu perfil personal\n' +
-          '• Ver el historial de servicios\n\n' +
-          'Si necesitas ayuda adicional, contacta con el administrador del taller.');
+          '• Ver el historial de tus trabajos\n\n' +
+          'Si necesitas ayuda adicional, contacta con el Animador de la especialidad.');
 }
 
 // Funciones auxiliares para futuras implementaciones
