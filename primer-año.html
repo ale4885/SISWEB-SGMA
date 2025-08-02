@@ -15,342 +15,323 @@
 </head>
 
 <body>
-    <header class="barra-navegacion">
-        <div class="barra-navegacion-izquierda">
-            <div class="logotipo">
-                <img src="imgs/logo-ult.png" alt="Sistema de Gestión Mantenimiento Automotriz" class="logotipo-imagen">
-            </div>
-            <nav class="barra-navegacion-centro">
-                <ul>
-                    <li><a href="coordi-index.html" class="enlace-navegacion">Inicio</a></li>
-                    <li><a href="1er-año.html" class="enlace-navegacion activo">Primer Año</a></li>
-                    <li><a href="reportes.html" class="enlace-navegacion">Reportes</a></li>
-                    <li class="dropdown">
-                        <a href="" class="enlace-navegacion">Admin <i class="fas fa-caret-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="admin-users.html">Gestionar Usuarios</a>
-                            <a href="admin-modules.html">Gestionar Módulos</a>
-                        </div>
-                    </li>
-                    <li><a href="perfil-coord.html" class="enlace-navegacion">Mi perfil</a></li>
-                    <li><a href="index.html" class="enlace-navegacion">Cerrar Sesión</a></li>
-                </ul>
-            </nav>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="imgs/logo.png" alt="Logo ITR">
         </div>
-        <div class="barra-navegacion-derecha" id="activadorIconoPerfil">
-            <div class="info-usuario">
-                <span class="nombre-usuario">FERNANDO JAVIER</span>
-                <span class="rol-usuario">Coordinador</span>
-                <span class="detalle-usuario">Mantenimiento Automotriz</span>
-            </div>
-            <div class="avatar-usuario">
-                <img src="imgs/defaul-user.webp" alt="Avatar">
-            </div>
-        </div>
-    </header>
-
-    <div class="panel-sistema">
-        <div class="disposicion-principal">
-            <aside class="barra-lateral">
-                <h2 class="titulo-barra-lateral">Pendientes de Revision</h2>
-                <div class="lista-registros">
-                    <div class="item-registro">
-                        <div class="icono-marcador">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <div class="detalles-registro">
-                            <span class="nombre-vehiculo">P894-562</span>
-                            <span class="descripcion-servicio">Revisión de inyectores</span>
-                        </div>
-                        <div class="mas-opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </div>
+        <nav class="navegacion-sidebar">
+            <ul>
+                <li>
+                    <a href="coordi-index.html" class="enlace-sidebar" title="Inicio">
+                        <i class="fas fa-home"></i>
+                        <span class="tooltip">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="primer-año.html" class="enlace-sidebar activo" title="Primer Año">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span class="tooltip">Primer Año</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="reportes.html" class="enlace-sidebar" title="Reportes">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="tooltip">Reportes</span>
+                    </a>
+                </li>
+                <li class="dropdown-sidebar">
+                    <a href="#" class="enlace-sidebar dropdown-toggle" title="Administración">
+                        <i class="fas fa-cog"></i>
+                        <span class="tooltip">Administración</span>
+                    </a>
+                    <div class="dropdown-content-sidebar">
+                        <a href="admin-users.html"><i class="fas fa-users"></i> Gestionar Usuarios</a>
+                        <a href="admin-modules.html"><i class="fas fa-puzzle-piece"></i> Gestionar Módulos</a>
                     </div>
+                </li>
+                <li>
+                    <a href="perfil-coord.html" class="enlace-sidebar" title="Mi perfil">
+                        <i class="fas fa-user"></i>
+                        <span class="tooltip">Mi Perfil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="enlace-sidebar" title="Cerrar Sesión">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="tooltip">Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
 
-                    <div class="item-registro">
-                        <div class="icono-marcador">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <div class="detalles-registro">
-                            <span class="nombre-vehiculo">P894-562</span>
-                            <span class="descripcion-servicio">Revisión de inyectores</span>
-                        </div>
-                        <div class="mas-opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </div>
+    <div class="contenedor-principal">
+
+        <div class="contenido-layout">
+            <aside class="panel-lateral">
+                <div class="tarjeta-sidebar">
+                    <div class="header-sidebar">
+                        <h3>Pendientes de Revisión</h3>
+                        <span class="badge-contador">4</span>
                     </div>
+                    <div class="lista-registros">
+                        <div class="item-registro">
+                            <div class="icono-vehiculo">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="info-vehiculo">
+                                <span class="placa-vehiculo">P894-562</span>
+                                <span class="servicio-vehiculo">Revisión de inyectores</span>
+                                <span class="fecha-vehiculo">Hace 2 horas</span>
+                            </div>
+                            <div class="acciones-vehiculo">
+                                <button class="btn-opciones" title="Más opciones">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
+                        </div>
 
-                    <div class="item-registro">
-                        <div class="icono-marcador">
-                            <i class="fas fa-car"></i>
+                        <div class="item-registro">
+                            <div class="icono-vehiculo">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="info-vehiculo">
+                                <span class="placa-vehiculo">P123-789</span>
+                                <span class="servicio-vehiculo">Cambio de aceite</span>
+                                <span class="fecha-vehiculo">Hace 4 horas</span>
+                            </div>
+                            <div class="acciones-vehiculo">
+                                <button class="btn-opciones" title="Más opciones">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="detalles-registro">
-                            <span class="nombre-vehiculo">P894-562</span>
-                            <span class="descripcion-servicio">Revisión de inyectores</span>
-                        </div>
-                        <div class="mas-opciones">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </div>
-                    </div>
 
-                    <div class="item-registro">
-                        <div class="icono-marcador">
-                            <i class="fas fa-car"></i>
+                        <div class="item-registro">
+                            <div class="icono-vehiculo">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="info-vehiculo">
+                                <span class="placa-vehiculo">P456-123</span>
+                                <span class="servicio-vehiculo">Revisión de frenos</span>
+                                <span class="fecha-vehiculo">Hace 6 horas</span>
+                            </div>
+                            <div class="acciones-vehiculo">
+                                <button class="btn-opciones" title="Más opciones">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="detalles-registro">
-                            <span class="nombre-vehiculo">P894-562</span>
-                            <span class="descripcion-servicio">Revisión de inyectores</span>
-                        </div>
-                        <div class="mas-opciones">
-                            <i class="fas fa-ellipsis-v"></i>
+
+                        <div class="item-registro">
+                            <div class="icono-vehiculo">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="info-vehiculo">
+                                <span class="placa-vehiculo">P789-456</span>
+                                <span class="servicio-vehiculo">Diagnóstico eléctrico</span>
+                                <span class="fecha-vehiculo">Hace 1 día</span>
+                            </div>
+                            <div class="acciones-vehiculo">
+                                <button class="btn-opciones" title="Más opciones">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </aside>
 
             <main class="contenido-principal">
-                <section class="tarjeta seccion-registro-vehiculos">
-                    <h2>Registro de Vehículos</h2>
+                <section class="tarjeta-principal">
+                    <div class="header-tarjeta">
+                        <h2><i class="fas fa-clipboard-list"></i> Registro de Vehículos</h2>
+                        <div class="controles-header">
+                            <button class="btn-exportar">
+                                <i class="fas fa-download"></i>
+                                Exportar
+                            </button>
+                        </div>
+                    </div>
+                    
                     <div class="controles-filtro">
-                        <input type="text" id="buscarRegistro" class="input-busqueda"
-                            placeholder="Buscar por placa, marca o modelo...">
-                        <div class="contenedor-seleccion filtro-anio">
-                            <select id="filtroAnio">
-                                <option value="all">Todos</option>
+                        <div class="buscador">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="buscarRegistro" placeholder="Buscar por placa, marca o modelo...">
+                        </div>
+                        <div class="filtros">
+                            <select id="filtroAnio" class="select-filtro">
+                                <option value="all">Todos los años</option>
                                 <option value="1er">Primer Año</option>
                                 <option value="2do">Segundo Año</option>
                                 <option value="3er">Tercer Año</option>
                             </select>
+                            <select id="filtroEstado" class="select-filtro">
+                                <option value="all">Todos los estados</option>
+                                <option value="pendiente">Pendiente</option>
+                                <option value="proceso">En proceso</option>
+                                <option value="completado">Completado</option>
+                            </select>
                         </div>
                     </div>
-                    <table class="tabla-registros">
-                        <thead>
-                            <tr>
-                                <th>Placa</th>
-                                <th>Marca</th>
-                                <th>Modelo</th>
-                                <th>Año</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>P894-562</td>
-                                <td>Toyota</td>
-                                <td>Corolla</td>
-                                <td>2025</td>
-                                <td><button type="button" class="boton-ver-detalles">Ver Detalles</button></td>
-                            </tr>
-                            <tr>
-                                <td>P123-456</td>
-                                <td>Honda</td>
-                                <td>Civic</td>
-                                <td>2024</td>
-                                <td><button type="button" class="boton-ver-detalles">Ver Detalles</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                    <div class="tabla-container">
+                        <table class="tabla-moderna">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" class="checkbox-all">
+                                    </th>
+                                    <th>Placa</th>
+                                    <th>Vehículo</th>
+                                    <th>Estado</th>
+                                    <th>Estudiante</th>
+                                    <th>Fecha</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="checkbox-row">
+                                    </td>
+                                    <td>
+                                        <span class="placa-badge">P894-562</span>
+                                    </td>
+                                    <td>
+                                        <div class="vehiculo-info">
+                                            <span class="marca">Toyota Corolla</span>
+                                            <span class="año">2025</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="estado-badge pendiente">Pendiente</span>
+                                    </td>
+                                    <td>
+                                        <div class="estudiante-info">
+                                            <span class="nombre">César Montoya</span>
+                                            <span class="carnet">20240141</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="fecha">08/04/2025</span>
+                                        <span class="hora">7:00 AM</span>
+                                    </td>
+                                    <td>
+                                        <div class="acciones-tabla">
+                                            <button class="btn-accion ver" title="Ver detalles">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-accion editar" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-accion aprobar" title="Aprobar">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="checkbox-row">
+                                    </td>
+                                    <td>
+                                        <span class="placa-badge">P123-456</span>
+                                    </td>
+                                    <td>
+                                        <div class="vehiculo-info">
+                                            <span class="marca">Honda Civic</span>
+                                            <span class="año">2024</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="estado-badge proceso">En proceso</span>
+                                    </td>
+                                    <td>
+                                        <div class="estudiante-info">
+                                            <span class="nombre">Ana García</span>
+                                            <span class="carnet">20240098</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="fecha">08/04/2025</span>
+                                        <span class="hora">8:30 AM</span>
+                                    </td>
+                                    <td>
+                                        <div class="acciones-tabla">
+                                            <button class="btn-accion ver" title="Ver detalles">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn-accion editar" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn-accion completar" title="Completar">
+                                                <i class="fas fa-check-double"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="paginacion">
+                        <div class="info-paginacion">
+                            Mostrando 1-2 de 24 registros
+                        </div>
+                        <div class="controles-paginacion">
+                            <button class="btn-paginacion" disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn-paginacion activo">1</button>
+                            <button class="btn-paginacion">2</button>
+                            <button class="btn-paginacion">3</button>
+                            <button class="btn-paginacion">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </section>
             </main>
+        </div>
+    </div>
 
-            <div id="modalVehiculo" class="modal">
-                <div class="contenido-modal">
-                    <span class="boton-cerrar">&times;</span>
-                    <main class="contenido-principal">
-                        <section class="tarjeta seccion-datos-vehiculo">
-                            <h2>Datos del vehículo</h2>
-                            <form>
-                                <div class="grupo-formulario">
-                                    <label for="placa">Placa</label>
-                                    <input type="text" id="placa" value="P894-562" readonly>
-                                    <small>Formato: P123-456</small>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="poliza">Póliza</label>
-                                    <div class="entrada-con-casilla">
-                                        <input type="text" id="poliza" value="N° de póliza" readonly>
-                                        <input type="checkbox" id="casilla-poliza" checked disabled>
-                                    </div>
-                                    <small>Formato: P123-456</small>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="marca">Marca</label>
-                                    <input type="text" id="marca" value="Toyota" readonly>
-                                    <small>Ej: Mazda</small>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="modelo">Modelo</label>
-                                    <input type="text" id="modelo" value="Corolla" readonly>
-                                    <small>Ej: B2900</small>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="tipo">Tipo</label>
-                                    <div class="contenedor-seleccion">
-                                        <select id="tipo" disabled>
-                                            <option value="sedan" selected>Sedan</option>
-                                            <option value="suv">SUV</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="color">Color</label>
-                                    <input type="text" id="color" value="Blanco" readonly>
-                                    <small>Ej: Blanco</small>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="tarjetaCirculacion">Tarjeta de circulación</label>
-                                    <input type="text" id="tarjetaCirculacion" value="8/26954235" readonly>
-                                    <small>Formato: 0/12345678</small>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label>Fotografía del auto:</label>
-                                    <img src="imgs/jeep.webp" alt="Fotografía del auto" class="foto-coche">
-                                </div>
-                            </form>
-                        </section>
-
-                        <section class="tarjeta seccion-detalles-orden-trabajo">
-                            <h2>Detalles de orden de trabajo</h2>
-                            <form>
-                                <div class="grupo-formulario">
-                                    <label>Nivel de atención:</label>
-                                    <div class="grupo-casillas">
-                                        <label class="contenedor-casilla">1er Año
-                                            <input type="checkbox" name="nivelAtencion" value="1er_anio" checked
-                                                disabled>
-                                            <span class="marca-verificacion"></span>
-                                        </label>
-                                        <label class="contenedor-casilla">2do Año
-                                            <input type="checkbox" name="nivelAtencion" value="2do_anio" disabled>
-                                            <span class="marca-verificacion"></span>
-                                        </label>
-                                        <label class="contenedor-casilla">3er Año
-                                            <input type="checkbox" name="nivelAtencion" value="3er_anio" disabled>
-                                            <span class="marca-verificacion"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="instructorResponsable">Instructor responsable</label>
-                                    <input type="text" id="instructorResponsable" value="José Eduardo Escalante Escobar"
-                                        readonly>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="estudianteAsignado">Estudiante asignado</label>
-                                    <input type="text" id="estudianteAsignado" value="Cesar Gerardo Montoya Parras"
-                                        readonly>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="carnet">Carnet</label>
-                                    <input type="text" id="carnet" value="20240141" readonly>
-                                    <small>Ejemplo: 20260669</small>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="operacionesEfectuar1">Operaciones a efectuar:</label>
-                                    <div class="contenedor-seleccion">
-                                        <select id="operacionesEfectuar1" disabled>
-                                            <option value="revision_inyectores" selected>Revisión de inyectores</option>
-                                            <option value="cambio_aceite">Cambio de aceite</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="moduloRespuesta">Modulo al que da respuesta la práctica:</label>
-                                    <div class="contenedor-seleccion">
-                                        <select id="moduloRespuesta" disabled>
-                                            <option value="modulo2" selected>Módulo 2</option>
-                                            <option value="modulo1">Módulo 1</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label>Tipo de operación:</label>
-                                    <div class="grupo-casillas">
-                                        <label class="contenedor-casilla">Preventivo
-                                            <input type="checkbox" name="tipoOperacion" value="preventivo" checked
-                                                disabled>
-                                            <span class="marca-verificacion"></span>
-                                        </label>
-                                        <label class="contenedor-casilla">Correctivo
-                                            <input type="checkbox" name="tipoOperacion" value="correctivo" disabled>
-                                            <span class="marca-verificacion"></span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="fecha">Fecha:</label>
-                                    <input type="text" id="fecha" value="08/04/2025" readonly>
-                                </div>
-                                <div class="grupo-formulario fila-entradas-tiempo">
-                                    <div class="grupo-entrada-tiempo">
-                                        <label for="horaIngreso">Hora de ingreso</label>
-                                        <input type="text" id="horaIngreso" value="7:00 AM" readonly>
-                                    </div>
-                                    <div class="grupo-entrada-tiempo">
-                                        <label for="horaSalida">Hora de salida</label>
-                                        <input type="text" id="horaSalida" value="5:00 PM" readonly>
-                                    </div>
-                                </div>
-                            </form>
-                        </section>
-
-                        <section class="tarjeta seccion-terminos-condiciones">
-                            <h2>Términos y Condiciones del Servicio</h2>
-                            <div class="contenido-terminos">
-                                <p>Las actividades y servicios del taller de Mantenimiento Automotriz están orientadas a
-                                    la formación y prácticas técnicas de los estudiantes en los diferentes niveles
-                                    académicos de la especialidad. Por tal motivo se establecen los siguientes términos
-                                    y condiciones a considerar al momento de solicitar un servicio para su vehículo:</p>
-                                <p>1. La autorización de órdenes de trabajo queda bajo criterio del docente asignado a
-                                    cada nivel formativo, considerando que dicha solicitud debe ser afín a los módulos
-                                    formativos en proceso.</p>
-                                <p>2. Únicamente serán autorizadas órdenes de trabajo menores (máximo 2 horas) y
-                                    medianas (máximo 8 horas).</p>
-                                <p>3. Al finalizar el proceso de Mantenimiento y reparación respectivo, el vehículo debe
-                                    ser retirado del taller de forma inmediata. por ningún motivo se permite la
-                                    permanencia de éste después de efectuado el proceso.</p>
-                                <p>4. Es terminantemente prohibida la permanencia de vehículos por un periodo mayor
-                                    jornada formativa. Exceptuando proyectos de exposición y módulos que conllevan
-                                    procesos de trabajo complejos.</p>
-                                <p>5. La institución no realiza cobros por servicios de reparación/mantenimiento, por lo
-                                    cual no se permite realizar pagos a estudiantes ni instructores en concepto de
-                                    servicios o compra de materiales y repuestos.</p>
-                                <p>6. Es obligación del propietario del vehículo proporcionar el material/repuestos
-                                    necesarios para la ejecución del proceso a realizar en su vehículo según
-                                    diagnóstico.</p>
-                                <p>7. Por tratarse de un proceso de mantenimiento/reparación con fines formativos para
-                                    los estudiantes, la institución no responderá de ninguna consecuencia y no se hace
-                                    responsable por daños, golpes, pérdidas o fallas en el vehículo en el ingreso al
-                                    taller, durante y después de efectuado el proceso en el vehículo.</p>
-                            </div>
-                            <form>
-                                <div class="grupo-formulario">
-                                    <label for="nombrePropietario">Nombre del propietario del Vehículo</label>
-                                    <input type="text" id="nombrePropietario" value="Eduardo José Gálvez Benítez"
-                                        readonly>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label class="contenedor-casilla-terminos">He leído y acepto los términos y
-                                        condiciones del servicio.
-                                        <input type="checkbox" id="aceptarTerminos" checked disabled>
-                                        <span class="marca-verificacion-terminos"></span>
-                                    </label>
-                                </div>
-                                <div class="grupo-formulario">
-                                    <label for="dui">DUI</label>
-                                    <input type="text" id="dui" value="07639650-0" readonly>
-                                </div>
-                                <div class="grupo-botones">
-                                    <button type="button" class="boton boton-primario">Aceptar solicitud</button>
-                                    <button type="button" class="boton boton-secundario">Rechazar solicitud</button>
-                                </div>
-                            </form>
-                        </section>
-                    </main>
+    <!-- Modal mejorado -->
+    <div id="modalVehiculo" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Detalles del Vehículo</h3>
+                <button class="btn-cerrar-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido del modal existente pero con mejor diseño -->
+                <div class="modal-tabs">
+                    <button class="tab-btn activo" data-tab="vehiculo">Vehículo</button>
+                    <button class="tab-btn" data-tab="orden">Orden de Trabajo</button>
+                    <button class="tab-btn" data-tab="terminos">Términos</button>
                 </div>
+                
+                <div class="tab-content activo" id="tab-vehiculo">
+                    <!-- Contenido de vehículo -->
+                </div>
+                
+                <div class="tab-content" id="tab-orden">
+                    <!-- Contenido de orden -->
+                </div>
+                
+                <div class="tab-content" id="tab-terminos">
+                    <!-- Contenido de términos -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal secundario">Rechazar</button>
+                <button class="btn-modal primario">Aprobar</button>
             </div>
         </div>
     </div>
+
     <script src="js/primer-año.js"></script>
 </body>
 
