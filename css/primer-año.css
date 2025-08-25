@@ -55,6 +55,7 @@ body {
 /* Ajustar la tarjeta principal para que ocupe más espacio */
 .contenido-principal .tarjeta-principal {
     width: 100%; /* Ocupa casi todo el ancho de la pantalla */
+    margin: 0px auto; /* Centrado horizontal */
     padding: 30px; /* Más espacio interno */
     background-color: var(--fondo-tarjeta);
     border: 1px solid var(--color-borde);
@@ -66,6 +67,7 @@ body {
 
 /* Ajustar el buscador para que sea más ancho */
 .contenido-principal .tarjeta-principal .buscador {
+    flex: 1; /* Ocupa todo el espacio disponible */
     min-width: 1100px;
 }
 
