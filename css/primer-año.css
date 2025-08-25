@@ -52,6 +52,24 @@ body {
     min-height: 100vh;
 }
 
+/* Ajustar la tarjeta principal para que ocupe más espacio */
+.contenido-principal .tarjeta-principal {
+    width: 100%; /* Ocupa casi todo el ancho de la pantalla */
+    padding: 30px; /* Más espacio interno */
+    background-color: var(--fondo-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde-grande);
+    box-shadow: var(--sombra-media);
+}
+
+
+
+/* Ajustar el buscador para que sea más ancho */
+.contenido-principal .tarjeta-principal .buscador {
+    min-width: 1100px;
+}
+
+
 /* Sidebar Styles */
 .sidebar {
     background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
